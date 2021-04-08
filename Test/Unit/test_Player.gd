@@ -1,16 +1,12 @@
-extends Node
+extends 'res://addons/gut/test.gd'
 
+var Player = load("res://Player/Player.gd");
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func test_some_method():
+	
+	var _player = Player.new()
+	var result = _player.some_method()
 	pass # Replace with function body.
+	
+	assert_eq(result, "bananas", "The result should have been bananas");
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
