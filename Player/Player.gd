@@ -16,7 +16,7 @@ func _physics_process(delta):
 	
 
 func some_method():
-	return "apples";
+	return "bananas";
 
 
 

@@ -10,4 +10,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+_run_on_load = true
 _directory1 = "res://Test/Unit"
