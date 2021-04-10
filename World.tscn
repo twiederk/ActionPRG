@@ -6,8 +6,3 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 56 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 56, 0, 32, 40, 64, 76, 43, 110, 64, 145, 154, 145, 186, 117, 238, 144, 275, 125, 266, 78, 243, 29, 202, 16, 276, 5, 310, 59, 310, 173, -1, 173, 0, -1 )
