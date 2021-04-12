@@ -21,9 +21,16 @@ func _ready():
 	animationTree.active = true
 
 func _physics_process(delta):
-	move_state(delta)
+	match state:
+		MOVE:
+			move_state(delta)
+			
+		ROLL:
+			pass
+			
+		ATTACK:
+			attack_state(delta)
 
-	
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -41,7 +48,8 @@ func move_state(delta):
 		
 	velocity = move_and_slide(velocity)
 	
-
+func attack_state(delta):
+	pass
 
 ############### TDD example ###############
 
