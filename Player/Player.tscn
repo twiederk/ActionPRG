@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -350,6 +351,10 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=34]
 
+[sub_resource type="CapsuleShape2D" id=35]
+radius = 7.44027
+height = 7.16374
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -385,3 +390,10 @@ parameters/playback = SubResource( 34 )
 parameters/Attack/blend_position = Vector2( -0.504043, -0.19017 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 35 )
+
+[editable path="Hitbox"]
