@@ -506,44 +506,46 @@ tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 1, -65534, 0, 2, -65530, 0, 0
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 132, 56 )
 
-[node name="Bush" parent="YSort" instance=ExtResource( 1 )]
+[node name="YSort" type="YSort" parent="YSort"]
+
+[node name="Bush" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 43, 42 )
 
-[node name="Bush2" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush2" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 87, 91 )
 
-[node name="Bush3" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush3" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 119, 123 )
 
-[node name="Bush4" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush4" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 222, 45 )
 
-[node name="Bush5" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush5" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 24, 132 )
 
-[node name="Bush6" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush6" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 86, 170 )
 
-[node name="Bush7" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush7" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 22, 68 )
 
-[node name="Bush8" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush8" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 23, 97 )
 
-[node name="Bush9" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush9" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 87, 123 )
 
-[node name="Bush10" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush10" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 26, 162 )
 
-[node name="Bush11" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush11" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 55, 170 )
 
-[node name="Bush12" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush12" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 144, 132 )
 
-[node name="Bush13" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush13" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 145, 157 )
 
-[node name="Bush14" parent="YSort" instance=ExtResource( 1 )]
+[node name="Bush14" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 117, 170 )
