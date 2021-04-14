@@ -13,7 +13,7 @@ enum {
 
 var state = MOVE
 var velocity = Vector2.ZERO
-var roll_vector = Vector2.DOWN
+var roll_vector = Vector2.LEFT
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
