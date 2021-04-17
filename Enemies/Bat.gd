@@ -39,6 +39,8 @@ func _physics_process(delta):
 				var direction = (player.global_position - global_position).normalized()
 				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 				sprite.flip_h = velocity.x < 0
+			else:
+				state = IDLE
 				
 	velocity = move_and_slide(velocity)
 	
