@@ -590,3 +590,8 @@ position = Vector2( 48, 56 )
 position = Vector2( 104, 144 )
 
 [node name="HealthUI" parent="." instance=ExtResource( 8 )]
+
+[node name="HeartUIFull" parent="HealthUI" index="1"]
+expand = true
+
+[editable path="HealthUI"]
