@@ -16,7 +16,7 @@ func set_max_hearts(value):
 	max_hearts = max(value, 1)
 	self.hearts = min (hearts, max_hearts)
 	if max_hearts != null:
-		heartUIEmpty.rect_size.x = hearts * heartUIEmpty.texture.get_width()
+		heartUIEmpty.rect_size.x = max_hearts * heartUIEmpty.texture.get_width()
 
 func _ready():
 	self.max_hearts = PlayerStats.max_health
