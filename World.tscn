@@ -491,7 +491,7 @@ position = Vector2( 320, 184 )
 scale = Vector2( 2, 2.04445 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 180 )
+region_rect = Rect2( 0, 0, 448, 320 )
 
 [node name="PathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -601,13 +601,10 @@ position = Vector2( 48, 56 )
 [node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 104, 144 )
 
-[node name="HealthUI" parent="." instance=ExtResource( 8 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 63.0
 margin_bottom = 14.0
-
-[node name="HeartUIFull" parent="HealthUI" index="1"]
-expand = true
-
-[editable path="HealthUI"]
