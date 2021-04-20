@@ -35,9 +35,16 @@ func _physics_process(delta):
 			
 			if wanderController.get_time_left() == 0:
 				state = pick_random_state([IDLE, WANDER])
+				wanderController.start_wander_timer(rand_range(1, 3))
 			
 		WANDER:
-			pass
+			seek_player()
+			if wanderController.get_time_left() == 0:
+				state = pick_random_state([IDLE, WANDER])
+				wanderController.start_wander_timer(rand_range(1, 3))
+				
+			var direction = position.direction_to(wanderController.target_position)
+			velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 			
 		CHASE:
 			var player = playerDetectionZone.player
@@ -60,7 +67,7 @@ func seek_player():
 
 
 func pick_random_state(state_list):
-	state_list.shuffel()
+	state_list.shuffle()
 	return state_list.pop_front()
 
 
