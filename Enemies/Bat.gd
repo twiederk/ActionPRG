@@ -45,6 +45,11 @@ func _physics_process(delta):
 				
 			var direction = position.direction_to(wanderController.target_position)
 			velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+			sprite.flip_h = velocity.x < 0
+			
+			if global_position.distance_to(wanderController.target_position) <= MAX_SPEED * delta:
+				state = pick_random_state([IDLE, WANDER])
+				wanderController.start_wander_timer(rand_range(1, 3))
 			
 		CHASE:
 			var player = playerDetectionZone.player
