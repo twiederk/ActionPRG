@@ -607,7 +607,7 @@ position = Vector2( 238, 290 )
 [node name="Bats" type="YSort" parent="YSort"]
 
 [node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 232, 136 )
+position = Vector2( 48, 140 )
 
 [node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 48, 56 )
@@ -648,10 +648,7 @@ position = Vector2( 318, 600 )
 [node name="Treasure" type="YSort" parent="YSort"]
 
 [node name="TreasureChest" parent="YSort/Treasure" instance=ExtResource( 10 )]
-position = Vector2( 335, 412 )
-
-[node name="Sprite" parent="YSort/Treasure/TreasureChest" index="0"]
-position = Vector2( 0, -14 )
+position = Vector2( 247, 135 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -660,5 +657,6 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 63.0
 margin_bottom = 14.0
+[connection signal="picked_up_treasure" from="YSort/Treasure/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
 
 [editable path="YSort/Treasure/TreasureChest"]

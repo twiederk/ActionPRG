@@ -105,6 +105,9 @@ func _on_Hurtbox_invincibility_started():
 
 func _on_Hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
+
+func _on_TreasureChest_picked_up_treasure():
+	stats.health = stats.max_health
 	
 ############### TDD example ###############
 
@@ -118,6 +121,4 @@ func take_damage(amount):
 		amount /= 2;
 		
 	hp = max(hp - amount, 0);
-
-
-
+	
