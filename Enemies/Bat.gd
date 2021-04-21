@@ -5,6 +5,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 export var FRICTION = 200
+export var WANDER_TARGET_RANGE = 4
 
 enum {
 	IDLE,
@@ -43,7 +44,7 @@ func _physics_process(delta):
 			if wanderController.get_time_left() == 0:
 				update_wander()
 			accelerate_towards_point(wanderController.target_position, delta)
-			if global_position.distance_to(wanderController.target_position) <= MAX_SPEED * delta:
+			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
 				update_wander()
 
 		CHASE:
