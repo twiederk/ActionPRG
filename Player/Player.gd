@@ -23,6 +23,7 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox =$HitboxPivot/SwordHitbox
 onready var hurtbox = $Hurtbox
+onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
 func _ready():
 	randomize()
@@ -98,7 +99,13 @@ func _on_Hurtbox_area_entered(area):
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
 	
+func _on_Hurtbox_invincibility_started():
+	blinkAnimationPlayer.play("Start")
 
+
+func _on_Hurtbox_invincibility_ended():
+	blinkAnimationPlayer.play("Stop")
+	
 ############### TDD example ###############
 
 var hp = 100;
@@ -111,4 +118,6 @@ func take_damage(amount):
 		amount /= 2;
 		
 	hp = max(hp - amount, 0);
-	
+
+
+
