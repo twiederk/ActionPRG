@@ -652,7 +652,6 @@ position = Vector2( 335, 412 )
 
 [node name="Sprite" parent="YSort/Treasure/TreasureChest" index="0"]
 position = Vector2( 0, -14 )
-scale = Vector2( 0.25, 0.25 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
