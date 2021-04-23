@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/TreasureChest.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/Keyboard.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -662,6 +663,9 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 63.0
 margin_bottom = 14.0
+
+[node name="Keyboard" parent="CanvasLayer" instance=ExtResource( 12 )]
+position = Vector2( 3, 121 )
 
 [connection signal="picked_up_treasure" from="YSort/Treasure/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
 
