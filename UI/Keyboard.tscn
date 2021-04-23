@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/rightButton.png" type="Texture" id=1]
 [ext_resource path="res://UI/leftButton.png" type="Texture" id=2]
 [ext_resource path="res://UI/upButton.png" type="Texture" id=3]
 [ext_resource path="res://UI/downButton.png" type="Texture" id=4]
+[ext_resource path="res://UI/Keyboard.gd" type="Script" id=5]
 
 [node name="Keyboard" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
 normal = ExtResource( 2 )
