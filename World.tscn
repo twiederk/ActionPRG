@@ -665,6 +665,7 @@ margin_right = 63.0
 margin_bottom = 14.0
 
 [node name="Keyboard" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
 position = Vector2( 3, 121 )
 
 [connection signal="picked_up_treasure" from="YSort/Treasure/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
