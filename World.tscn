@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://World/TreasureChest.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
 [ext_resource path="res://UI/Keyboard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -651,10 +652,12 @@ position = Vector2( 318, 576 )
 [node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 318, 600 )
 
-[node name="Treasure" type="YSort" parent="YSort"]
+[node name="Fixtures" type="YSort" parent="YSort"]
 
-[node name="TreasureChest" parent="YSort/Treasure" instance=ExtResource( 10 )]
+[node name="TreasureChest" parent="YSort/Fixtures" instance=ExtResource( 10 )]
 position = Vector2( 335, 409 )
+
+[node name="Door" parent="YSort/Fixtures" instance=ExtResource( 13 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -668,7 +671,8 @@ margin_bottom = 14.0
 visible = false
 position = Vector2( 3, 121 )
 
-[connection signal="picked_up_treasure" from="YSort/Treasure/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
+[connection signal="picked_up_treasure" from="YSort/Fixtures/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
 
 [editable path="Camera2D"]
-[editable path="YSort/Treasure/TreasureChest"]
+[editable path="YSort/Fixtures/TreasureChest"]
+[editable path="YSort/Fixtures/Door"]
