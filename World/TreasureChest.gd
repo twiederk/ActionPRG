@@ -1,4 +1,4 @@
-# TreasureChest
+class_name TreasureChest
 extends Area2D
 
 signal picked_up_treasure

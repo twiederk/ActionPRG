@@ -13,9 +13,27 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "Area2D",
+"class": "KeyGold",
+"language": "GDScript",
+"path": "res://World/KeyGold.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "TreasureChest",
+"language": "GDScript",
+"path": "res://World/TreasureChest.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": ""
+"GitAPI": "",
+"KeyGold": "",
+"Player": "",
+"TreasureChest": ""
 }
 
 [application]

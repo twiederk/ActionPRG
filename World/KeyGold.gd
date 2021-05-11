@@ -1,0 +1,9 @@
+class_name KeyGold
+extends Area2D
+
+signal picked_up_key_gold
+
+func _on_TreasureChest_body_entered(body: KinematicBody2D)-> void:
+	emit_signal("picked_up_key_gold")
+	queue_free()
+
