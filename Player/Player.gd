@@ -30,6 +30,8 @@ func _ready():
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector
+	OS.set_window_maximized(true)
+	
 
 func _physics_process(delta):
 	match state:
