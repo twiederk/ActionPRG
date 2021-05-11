@@ -113,7 +113,7 @@ func _on_TreasureChest_picked_up_treasure():
 	stats.health = stats.max_health
 	
 func _on_KeyGold_picked_up_key_gold() -> void:
-	 stats.health -= 1
+	stats.key_gold = true
 	
 	
 ############### TDD example ###############
