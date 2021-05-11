@@ -659,7 +659,7 @@ position = Vector2( 318, 600 )
 position = Vector2( 335, 409 )
 
 [node name="Door" parent="YSort/Fixtures" instance=ExtResource( 13 )]
-position = Vector2( 211.261, 370.831 )
+position = Vector2( 211.261, 388.811 )
 
 [node name="KeyGold" parent="YSort/Fixtures" instance=ExtResource( 14 )]
 position = Vector2( 114.62, 143.088 )
