@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://World/Door.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://World/TreasureChest.gd"
 } ]
 _global_script_class_icons={
+"Door": "",
 "GitAPI": "",
 "KeyGold": "",
 "Player": "",
