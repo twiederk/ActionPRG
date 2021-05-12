@@ -3,5 +3,5 @@ extends StaticBody2D
 
 signal entered_healing_area
 
-func _on_HealingArea2D_body_entered(body):
+func _on_HealingArea2D_body_entered(_body):
 	emit_signal("entered_healing_area")

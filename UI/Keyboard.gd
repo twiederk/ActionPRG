@@ -7,7 +7,7 @@ func _ready():
 		showKeyboard = true
 	set_visible(showKeyboard)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("keyboard"):
 		showKeyboard = !showKeyboard
 		set_visible(showKeyboard)

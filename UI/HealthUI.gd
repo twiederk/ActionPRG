@@ -18,6 +18,7 @@ func set_max_hearts(value):
 	if max_hearts != null:
 		heartUIEmpty.rect_size.x = max_hearts * heartUIEmpty.texture.get_width()
 
+# warning-ignore-all:return_value_discarded
 func _ready():
 	self.max_hearts = PlayerStats.max_health
 	self.hearts = PlayerStats.health

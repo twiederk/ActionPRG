@@ -1,5 +1,7 @@
 extends AnimatedSprite
 
+
+# warning-ignore:return_value_discarded
 func _ready():
 	connect("animation_finished", self, "_on_animation_finished")
 	play("Animate")
