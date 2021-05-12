@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World/WellGoldStar.png" type="Texture" id=1]
 [ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=2]
+[ext_resource path="res://World/HealingWell.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.5129
 height = 8.83395
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 62.2698
+
 [node name="HealingWell" type="StaticBody2D"]
+script = ExtResource( 3 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( -0.668171, 2.00452 )
@@ -21,3 +26,13 @@ texture = ExtResource( 1 )
 position = Vector2( -3.8147e-06, -5.74277 )
 rotation = -1.5708
 shape = SubResource( 1 )
+
+[node name="HealingArea2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="HealingCollisionShape2D" type="CollisionShape2D" parent="HealingArea2D"]
+shape = SubResource( 2 )
+
+[connection signal="entered_healing_area" from="." to="." method="_on_HealingWell_entered_healing_area"]
+[connection signal="body_entered" from="HealingArea2D" to="." method="_on_HealingArea2D_body_entered"]

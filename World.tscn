@@ -682,6 +682,7 @@ position = Vector2( 3, 121 )
 
 [connection signal="picked_up_treasure" from="YSort/Fixtures/TreasureChest" to="YSort/Player" method="_on_TreasureChest_picked_up_treasure"]
 [connection signal="picked_up_key_gold" from="YSort/Fixtures/KeyGold" to="YSort/Player" method="_on_KeyGold_picked_up_key_gold"]
+[connection signal="entered_healing_area" from="YSort/Fixtures/HealingWell" to="YSort/Player" method="_on_HealingWell_entered_healing_area"]
 
 [editable path="Camera2D"]
 [editable path="YSort/Fixtures/TreasureChest"]

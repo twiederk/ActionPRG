@@ -115,7 +115,11 @@ func _on_TreasureChest_picked_up_treasure():
 func _on_KeyGold_picked_up_key_gold() -> void:
 	stats.key_gold = true
 	
-	
+func _on_HealingWell_entered_healing_area():
+	stats.health = stats.max_health
+
+
+
 ############### TDD example ###############
 
 var hp = 100;
