@@ -1,3 +1,4 @@
+class_name SoftCollision
 extends Area2D
 
 func is_colliding():

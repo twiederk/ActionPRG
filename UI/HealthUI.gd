@@ -1,4 +1,4 @@
-# HealthUI
+class_name HealthUI
 extends Control
 
 var hearts = 4 setget set_hearts

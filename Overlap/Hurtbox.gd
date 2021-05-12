@@ -1,4 +1,4 @@
-# Hurtbox
+class_name Hurtbox
 extends Area2D
 
 var HitEffect = preload("res://Effects/HitEffect.tscn")

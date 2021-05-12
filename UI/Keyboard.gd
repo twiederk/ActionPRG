@@ -1,3 +1,4 @@
+class_name Keyboard
 extends Node2D
 
 export(bool) var showKeyboard = false

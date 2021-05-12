@@ -1,3 +1,4 @@
+class_name WanderController
 extends Node2D
 
 export(int) var wander_range = 32
