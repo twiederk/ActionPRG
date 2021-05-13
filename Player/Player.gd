@@ -32,7 +32,7 @@ func _ready():
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector
 	OS.set_window_maximized(true)
-	
+
 
 func _physics_process(delta):
 	match state:
@@ -44,6 +44,11 @@ func _physics_process(delta):
 			
 		ATTACK:
 			attack_state()
+	
+	handle_input()
+
+
+
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
@@ -65,7 +70,25 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
 	move()
-	
+
+
+
+func roll_state():
+	velocity = roll_vector * ROLL_SPEED
+	animationState.travel("Roll")
+	move()
+
+
+func attack_state():
+	velocity = Vector2.ZERO
+	animationState.travel("Attack")
+
+
+func move():
+	velocity = move_and_slide(velocity)
+
+
+func handle_input() -> void:
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
 	
@@ -73,63 +96,60 @@ func move_state(delta):
 		state = ATTACK
 		
 	if Input.is_action_just_pressed("heal"):
-		stats.health += 1
-		
-	
-func roll_state():
-	velocity = roll_vector * ROLL_SPEED
-	animationState.travel("Roll")
-	move()
-	
-func attack_state():
-	velocity = Vector2.ZERO
-	animationState.travel("Attack")
-	
-func move():
-	velocity = move_and_slide(velocity)
-	
-	
+		heal()
+
+
 func roll_animation_finished():
 	state = MOVE
-	
+
+
 func attack_animation_finished():
 	state = MOVE
 
-func _on_Hurtbox_area_entered(area):
+
+##############
+# game logic #
+##############
+func pickup_key_gold() -> void:
+	stats.key_gold = true
+
+
+func heal() -> void:
+	stats.health += 1
+
+
+func total_heal() -> void:
+	stats.health = stats.max_health
+
+
+###########
+# signals #
+###########
+func _on_Hurtbox_area_entered(area) -> void:
 	stats.health -= area.damage
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
-	
-func _on_Hurtbox_invincibility_started():
+
+
+func _on_Hurtbox_invincibility_started() -> void:
 	blinkAnimationPlayer.play("Start")
 
 
-func _on_Hurtbox_invincibility_ended():
+func _on_Hurtbox_invincibility_ended() -> void:
 	blinkAnimationPlayer.play("Stop")
 
-func _on_TreasureChest_picked_up_treasure():
-	stats.health = stats.max_health
-	
+
 func _on_KeyGold_picked_up_key_gold() -> void:
-	stats.key_gold = true
-	
-func _on_HealingWell_entered_healing_area():
-	stats.health = stats.max_health
+	pickup_key_gold();
 
 
+func _on_HealingWell_entered_healing_area() -> void:
+	total_heal()
 
-############### TDD example ###############
 
-var hp = 100;
-var max_hp = 100;
-var is_wearing_sheild = false;
+func _on_Sword_picked_up_sword() -> void:
+	swordHitbox.damage = 2
 
-func take_damage(amount):
-	
-	if is_wearing_sheild:
-		amount /= 2;
-		
-	hp = max(hp - amount, 0);
-	
+

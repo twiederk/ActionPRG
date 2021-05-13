@@ -1,30 +1,41 @@
 extends 'res://addons/gut/test.gd'
 
 var Player = load("res://Player/Player.gd");
-var _player = null;
+var player = null;
+
 
 func before_each():
-	_player = Player.new();
-	
+	player = Player.new();
+
+
 func after_each():
-	_player.free();
+	player.free();
 
 
-func test_take_damage():
-	_player.hp = 100;
-	var result = _player.take_damage(10);
+func test_total_heal():
+	# arrange
+	player.stats.health = 0;
 	
-	assert_eq(_player.hp, 90, "HP should be 90");
+	# act
+	player.total_heal();
 	
-func test_take_damage_not_below_zero():
-	_player.hp = 5;
-	_player.take_damage(10);
-	assert_eq(_player.hp, 0, "HP should be 0");
-	
-func test_take_damage_with_shield():
-	_player.hp = 100;
-	_player.is_wearing_sheild = true;
-	_player.take_damage(10);
-	assert_true(_player.hp > 90, "HP should be greater than 90");
-	
+	# assert
+	assert_eq(player.stats.health, player.stats.max_health, "HP should be stats.max_health");
 
+
+func test_heal():
+	# arrange
+	player.stats.health = 0;
+	
+	# act
+	player.heal();
+	
+	# assert
+	assert_eq(player.stats.health, 1, "HP should increase by 1");
+
+func test_pickup_key_gold():
+	# act
+	player.pickup_key_gold();
+	
+	# assert
+	assert_eq(player.stats.key_gold, true, "stats.key_gold should be true");

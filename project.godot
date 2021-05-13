@@ -80,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://Enemies/Stats.gd"
 }, {
 "base": "Area2D",
+"class": "Sword",
+"language": "GDScript",
+"path": "res://World/Sword.gd"
+}, {
+"base": "Area2D",
 "class": "SwordHitbox",
 "language": "GDScript",
 "path": "res://Player/SwordHitbox.gd"
@@ -109,6 +114,7 @@ _global_script_class_icons={
 "Player": "",
 "SoftCollision": "",
 "Stats": "",
+"Sword": "",
 "SwordHitbox": "",
 "TreasureChest": "",
 "WanderController": ""
@@ -117,6 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
+config/description="Version 1.0.0-SNAPSHOT"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 

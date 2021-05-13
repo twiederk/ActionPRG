@@ -5,7 +5,7 @@
 [ext_resource path="res://World/HealingWell.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 62.2698
+radius = 25.7268
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 12.5129
@@ -23,6 +23,7 @@ position = Vector2( 0.222725, -22.9406 )
 texture = ExtResource( 1 )
 
 [node name="HealingCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -6.8865 )
 shape = SubResource( 1 )
 
 [node name="HealingArea2D" type="StaticBody2D" parent="."]
