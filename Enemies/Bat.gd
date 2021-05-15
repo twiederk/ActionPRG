@@ -28,6 +28,7 @@ onready var wanderController = $WanderController
 onready var animationPlayer = $AnimationPlayer
 
 func _ready():
+	sprite.frame = rand_range(0, 4)
 	state = pick_random_state([IDLE, WANDER])
 
 func _physics_process(delta):
