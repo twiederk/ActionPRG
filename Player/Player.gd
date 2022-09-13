@@ -8,13 +8,9 @@ const MAX_SPEED = 80
 const ROLL_SPEED = 125
 const FRICTION = 500
 
-enum {
-	MOVE,
-	ROLL,
-	ATTACK
-}
+enum PlayerState { MOVE, ROLL, ATTACK }
 
-var state = MOVE
+var state = PlayerState.MOVE
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
@@ -36,13 +32,13 @@ func _ready():
 
 func _physics_process(delta):
 	match state:
-		MOVE:
+		PlayerState.MOVE:
 			move_state(delta)
 			
-		ROLL:
+		PlayerState.ROLL:
 			roll_state()
 			
-		ATTACK:
+		PlayerState.ATTACK:
 			attack_state()
 	
 	handle_input()
@@ -90,21 +86,21 @@ func move():
 
 func handle_input() -> void:
 	if Input.is_action_just_pressed("roll"):
-		state = ROLL
+		state = PlayerState.ROLL
 	
 	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
+		state = PlayerState.ATTACK
 		
 	if Input.is_action_just_pressed("heal"):
 		heal()
 
 
 func roll_animation_finished():
-	state = MOVE
+	state = PlayerState.MOVE
 
 
 func attack_animation_finished():
-	state = MOVE
+	state = PlayerState.MOVE
 
 
 ##############
@@ -112,6 +108,14 @@ func attack_animation_finished():
 ##############
 func pickup_key_gold() -> void:
 	stats.key_gold = true
+
+
+func pickup_key_copper() -> void:
+	stats.key_copper = true
+
+
+func pickup_sword() -> void: 
+	stats.weapon = IronSword.new()
 
 
 func heal() -> void:
@@ -126,7 +130,7 @@ func total_heal() -> void:
 # signals #
 ###########
 func _on_Hurtbox_area_entered(area) -> void:
-	stats.health -= area.damage
+	stats.health -= area.getDamage()
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()
@@ -145,11 +149,13 @@ func _on_KeyGold_picked_up_key_gold() -> void:
 	pickup_key_gold();
 
 
+func _on_KeyCopper_picked_up_key_copper() -> void:
+	pickup_key_copper()
+
 func _on_HealingWell_entered_healing_area() -> void:
 	total_heal()
 
 
 func _on_Sword_picked_up_sword() -> void:
-	swordHitbox.damage = 2
-
-
+	pickup_sword()
+	

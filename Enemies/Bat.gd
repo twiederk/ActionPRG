@@ -8,19 +8,15 @@ export var MAX_SPEED = 25
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 
-enum {
-	IDLE,
-	WANDER,
-	CHASE
-}
+enum BatState {IDLE, WANDER, CHASE}
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
-var state = CHASE
+var state = BatState.CHASE
 
 onready var sprite = $AnimatedSprite
-onready var stats = $Stats
+onready var stats : Stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
@@ -29,20 +25,20 @@ onready var animationPlayer = $AnimationPlayer
 
 func _ready():
 	sprite.frame = rand_range(0, 4)
-	state = pick_random_state([IDLE, WANDER])
+	state = pick_random_state([BatState.IDLE, BatState.WANDER])
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	
 	match state:
-		IDLE:
+		BatState.IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
 			if wanderController.get_time_left() == 0:
 				update_wander()
 				
-		WANDER:
+		BatState.WANDER:
 			seek_player()
 			if wanderController.get_time_left() == 0:
 				update_wander()
@@ -50,12 +46,12 @@ func _physics_process(delta):
 			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
 				update_wander()
 
-		CHASE:
+		BatState.CHASE:
 			var player = playerDetectionZone.player
 			if player != null:
 				accelerate_towards_point(player.global_position, delta)
 			else:
-				state = IDLE
+				state = BatState.IDLE
 				
 	if softCollision.is_colliding():
 		velocity = softCollision.get_push_vector() * delta * 400
@@ -70,10 +66,10 @@ func accelerate_towards_point(point, delta):
 	
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		state = CHASE
+		state = BatState.CHASE
 
 func update_wander():
-	state = pick_random_state([IDLE, WANDER])
+	state = pick_random_state([BatState.IDLE, BatState.WANDER])
 	wanderController.start_wander_timer(rand_range(1, 3))
 
 func pick_random_state(state_list):
@@ -82,7 +78,7 @@ func pick_random_state(state_list):
 
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
+	stats.health -= area.getDamage()
 	knockback = area.knockback_vector * 120
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)

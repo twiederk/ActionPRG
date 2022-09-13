@@ -1,4 +1,7 @@
 class_name SwordHitbox
-extends "res://Overlap/Hitbox.gd"
+extends Hitbox
 
 var knockback_vector = Vector2.ZERO
+
+func getDamage() -> int:
+	return PlayerStats.getDamage()

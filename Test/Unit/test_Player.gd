@@ -1,7 +1,6 @@
 extends 'res://addons/gut/test.gd'
 
-var Player = load("res://Player/Player.gd");
-var player = null;
+var player : Player = null;
 
 
 func before_each():
@@ -20,7 +19,7 @@ func test_total_heal():
 	player.total_heal();
 	
 	# assert
-	assert_eq(player.stats.health, player.stats.max_health, "HP should be stats.max_health");
+	assert_eq(player.stats.health, player.stats.max_health, "Should set health to max when player is totally healed");
 
 
 func test_heal():
@@ -31,11 +30,29 @@ func test_heal():
 	player.heal();
 	
 	# assert
-	assert_eq(player.stats.health, 1, "HP should increase by 1");
+	assert_eq(player.stats.health, 1, "Should increase health by 1 when player is healed");
+	
 
 func test_pickup_key_gold():
 	# act
 	player.pickup_key_gold();
 	
 	# assert
-	assert_eq(player.stats.key_gold, true, "stats.key_gold should be true");
+	assert_eq(player.stats.key_gold, true, "Should have gold key when gold key is picked up");
+
+
+func test_pickup_key_copper():
+	# act
+	player.pickup_key_copper();
+	
+	# assert
+	assert_eq(player.stats.key_copper, true, "Should have copper key when copper key is picked up");
+	
+	
+func test_pickup_sword():
+	# act
+	player.pickup_sword()
+
+	# assert
+	assert_eq(player.stats.getDamage(), 2, "Should have damage of sword when sword is picked up")
+
