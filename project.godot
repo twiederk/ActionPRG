@@ -69,11 +69,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://World/KeyGold.gd"
 }, {
-"base": "Node2D",
-"class": "Keyboard",
-"language": "GDScript",
-"path": "res://UI/Keyboard.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -127,7 +122,6 @@ _global_script_class_icons={
 "IronSword": "",
 "KeyCopper": "",
 "KeyGold": "",
-"Keyboard": "",
 "Player": "",
 "SoftCollision": "",
 "Stats": "",
@@ -141,7 +135,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.3.0"
+config/description="Version 1.4.0-SNAPSHOT"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 

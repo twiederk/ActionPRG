@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rightButton.png-1560acb272fbae30246d405bb3a4c0a9.stex"
+path="res://.import/TreasureChest_close.png-3122b37f563c8343def8c87d18793263.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/rightButton.png"
-dest_files=[ "res://.import/rightButton.png-1560acb272fbae30246d405bb3a4c0a9.stex" ]
+source_file="res://World/TreasureChest_close.png"
+dest_files=[ "res://.import/TreasureChest_close.png-3122b37f563c8343def8c87d18793263.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

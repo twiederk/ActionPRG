@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://World/TreasureChest.png" type="Texture" id=1]
+[ext_resource path="res://World/TreasureChest_close.png" type="Texture" id=1]
 [ext_resource path="res://World/TreasureChest.gd" type="Script" id=2]
 [ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=3]
 
@@ -8,6 +8,7 @@
 radius = 19.0
 
 [node name="TreasureChest" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 64
 collision_mask = 0
 script = ExtResource( 2 )

@@ -3,7 +3,21 @@ extends Area2D
 
 signal picked_up_sword
 
-func _on_Sword_body_entered(_body) -> void:
-	emit_signal("picked_up_sword")
-	queue_free()
+var pickable = false
 
+onready var animationPlayer = $AnimationPlayer
+
+func _ready():
+	var player = get_node("../../Player")
+	connect("picked_up_sword", player, "_on_Sword_picked_up_sword")
+	animationPlayer.play("Appear")
+
+
+func _on_Sword_body_entered(_body) -> void:
+	if (pickable == true):
+		emit_signal("picked_up_sword")
+		queue_free()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	pickable = true
