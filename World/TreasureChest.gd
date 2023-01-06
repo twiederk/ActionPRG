@@ -4,7 +4,6 @@ extends Area2D
 const TreasureChestOpen = preload("res://World/TreasureChestOpen.tscn")
 const Sword = preload("res://World/Sword.tscn")
 
-signal picked_up_treasure
 
 func _on_TreasureChest_body_entered(_body):
 	if PlayerStats.key_copper == true:

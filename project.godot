@@ -135,7 +135,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.4.0"
+config/description="Version 1.5.0-SNAPSHOT"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
@@ -154,7 +154,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "gut" )
+enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
 
 [gdnative]
 
