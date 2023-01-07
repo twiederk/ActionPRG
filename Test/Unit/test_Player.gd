@@ -50,8 +50,11 @@ func test_pickup_key_copper():
 	
 	
 func test_pickup_sword():
+	# arrange
+	var iron_sword : WeaponResource = load("res://Resources/Weapons/IronSword.tres")
+	
 	# act
-	player.pickup_sword()
+	player.pickup_sword(iron_sword)
 
 	# assert
 	assert_eq(player.stats.getDamage(), 2, "Should have damage of sword when sword is picked up")

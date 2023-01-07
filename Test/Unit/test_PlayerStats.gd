@@ -15,16 +15,6 @@ func test_health():
 	
 	# assert
 	assert_eq(PlayerStats.health, 6, "Should have health 6 when game starts")
-	
 
-func test_getDamage():
-	# arrange
-	PlayerStats.weapon = WoodSword.new()
-	
-	# act
-	var damage = PlayerStats.getDamage()
-	
-	# assert
-	assert_eq(damage, 1, "Should resturn damage of current weapon")
 
 

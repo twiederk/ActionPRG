@@ -34,6 +34,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://World/Grass.gd"
 }, {
+"base": "Reference",
+"class": "GutHookScript",
+"language": "GDScript",
+"path": "res://addons/gut/hook_script.gd"
+}, {
+"base": "Node",
+"class": "GutTest",
+"language": "GDScript",
+"path": "res://addons/gut/test.gd"
+}, {
 "base": "Area2D",
 "class": "HealingWell",
 "language": "GDScript",
@@ -54,25 +64,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Overlap/Hurtbox.gd"
 }, {
-"base": "Object",
-"class": "IronSword",
+"base": "Resource",
+"class": "ItemResource",
 "language": "GDScript",
-"path": "res://Weapons/IronSword.gd"
+"path": "res://Resources/ItemResource.gd"
 }, {
 "base": "Area2D",
-"class": "KeyCopper",
+"class": "Key",
 "language": "GDScript",
-"path": "res://World/KeyCopper.gd"
+"path": "res://World/Key.gd"
 }, {
-"base": "Area2D",
-"class": "KeyGold",
+"base": "Reference",
+"class": "KeyMaterial",
 "language": "GDScript",
-"path": "res://World/KeyGold.gd"
+"path": "res://World/KeyMaterial.gd"
+}, {
+"base": "ItemResource",
+"class": "KeyResource",
+"language": "GDScript",
+"path": "res://Resources/KeyResource.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "Potion",
+"language": "GDScript",
+"path": "res://World/Potion.gd"
+}, {
+"base": "ItemResource",
+"class": "PotionResource",
+"language": "GDScript",
+"path": "res://Resources/PotionResource.gd"
 }, {
 "base": "Area2D",
 "class": "SoftCollision",
@@ -83,11 +108,6 @@ _global_script_classes=[ {
 "class": "Stats",
 "language": "GDScript",
 "path": "res://Enemies/Stats.gd"
-}, {
-"base": "Area2D",
-"class": "Sword",
-"language": "GDScript",
-"path": "res://World/Sword.gd"
 }, {
 "base": "Hitbox",
 "class": "SwordHitbox",
@@ -104,10 +124,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Enemies/WanderController.gd"
 }, {
-"base": "Object",
-"class": "WoodSword",
+"base": "Area2D",
+"class": "Weapon",
 "language": "GDScript",
-"path": "res://Weapons/WoodSword.gd"
+"path": "res://World/Weapon.gd"
+}, {
+"base": "ItemResource",
+"class": "WeaponResource",
+"language": "GDScript",
+"path": "res://Resources/WeaponResource.gd"
 } ]
 _global_script_class_icons={
 "Bat": "",
@@ -115,28 +140,33 @@ _global_script_class_icons={
 "Effect": "",
 "GitAPI": "",
 "Grass": "",
+"GutHookScript": "",
+"GutTest": "",
 "HealingWell": "",
 "HealthUI": "",
 "Hitbox": "",
 "Hurtbox": "",
-"IronSword": "",
-"KeyCopper": "",
-"KeyGold": "",
+"ItemResource": "",
+"Key": "",
+"KeyMaterial": "",
+"KeyResource": "",
 "Player": "",
+"Potion": "",
+"PotionResource": "",
 "SoftCollision": "",
 "Stats": "",
-"Sword": "",
 "SwordHitbox": "",
 "TreasureChest": "",
 "WanderController": "",
-"WoodSword": ""
+"Weapon": "",
+"WeaponResource": ""
 }
 
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.5.0"
-run/main_scene="res://World.tscn"
+config/description="Version 1.6.0-SNAPSHOT"
+run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]

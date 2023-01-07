@@ -2,7 +2,7 @@ class_name TreasureChest
 extends Area2D
 
 const TreasureChestOpen = preload("res://World/TreasureChestOpen.tscn")
-const Sword = preload("res://World/Sword.tscn")
+const Sword = preload("res://World/Weapon.tscn")
 
 
 func _on_TreasureChest_body_entered(_body):

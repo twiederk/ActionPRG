@@ -114,8 +114,8 @@ func pickup_key_copper() -> void:
 	stats.key_copper = true
 
 
-func pickup_sword() -> void: 
-	stats.weapon = IronSword.new()
+func pickup_sword(weapon: WeaponResource) -> void: 
+	stats.weapon = weapon
 
 
 func heal() -> void:
@@ -145,17 +145,16 @@ func _on_Hurtbox_invincibility_ended() -> void:
 	blinkAnimationPlayer.play("Stop")
 
 
-func _on_KeyGold_picked_up_key_gold() -> void:
-	pickup_key_gold();
+func _on_Key_picked_up_key(keyMaterial: int) -> void:
+	if keyMaterial == KeyMaterial.COPPER:
+		pickup_key_copper()
+	if keyMaterial == KeyMaterial.GOLD:
+		pickup_key_gold()
 
-
-func _on_KeyCopper_picked_up_key_copper() -> void:
-	pickup_key_copper()
 
 func _on_HealingWell_entered_healing_area() -> void:
 	total_heal()
 
 
-func _on_Sword_picked_up_sword() -> void:
-	pickup_sword()
-	
+func _on_Sword_picked_up_sword(weapon: WeaponResource) -> void:
+	pickup_sword(weapon)
