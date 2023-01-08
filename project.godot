@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Armor",
+"language": "GDScript",
+"path": "res://World/Armor.gd"
+}, {
+"base": "ItemResource",
+"class": "ArmorResource",
+"language": "GDScript",
+"path": "res://Resources/ArmorResource.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Bat",
 "language": "GDScript",
@@ -135,6 +145,8 @@ _global_script_classes=[ {
 "path": "res://Resources/WeaponResource.gd"
 } ]
 _global_script_class_icons={
+"Armor": "",
+"ArmorResource": "",
 "Bat": "",
 "Door": "",
 "Effect": "",
@@ -165,7 +177,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.6.0"
+config/description="Version 1.7.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 

@@ -7,4 +7,5 @@
 stream = ExtResource( 1 )
 autoplay = true
 script = ExtResource( 2 )
+
 [connection signal="finished" from="." to="." method="_on_PlayerHurtSound_finished"]
