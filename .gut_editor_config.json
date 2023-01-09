@@ -37,7 +37,7 @@
   "font_size": 16,
   "hide_result_tree": false,
   "hide_output_text": false,
-  "hide_settings": false,
+  "hide_settings": true,
   "use_colors": false
  }
 }

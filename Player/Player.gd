@@ -34,13 +34,13 @@ func _physics_process(delta):
 	match state:
 		PlayerState.MOVE:
 			move_state(delta)
-			
+
 		PlayerState.ROLL:
 			roll_state()
-			
+
 		PlayerState.ATTACK:
 			attack_state()
-	
+
 	handle_input()
 
 
@@ -51,7 +51,7 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	
+
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
 		swordHitbox.knockback_vector = roll_vector
@@ -64,7 +64,7 @@ func move_state(delta):
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-		
+
 	move()
 
 
@@ -87,10 +87,10 @@ func move():
 func handle_input() -> void:
 	if Input.is_action_just_pressed("roll"):
 		state = PlayerState.ROLL
-	
+
 	if Input.is_action_just_pressed("attack"):
 		state = PlayerState.ATTACK
-		
+
 	if Input.is_action_just_pressed("heal"):
 		heal()
 
@@ -106,15 +106,7 @@ func attack_animation_finished():
 ##############
 # game logic #
 ##############
-func pickup_key_gold() -> void:
-	stats.key_gold = true
-
-
-func pickup_key_copper() -> void:
-	stats.key_copper = true
-
-
-func pickup_sword(weapon: WeaponResource) -> void: 
+func pickup_sword(weapon: WeaponResource) -> void:
 	stats.weapon = weapon
 
 
@@ -145,11 +137,8 @@ func _on_Hurtbox_invincibility_ended() -> void:
 	blinkAnimationPlayer.play("Stop")
 
 
-func _on_Key_picked_up_key(keyMaterial: int) -> void:
-	if keyMaterial == KeyMaterial.COPPER:
-		pickup_key_copper()
-	if keyMaterial == KeyMaterial.GOLD:
-		pickup_key_gold()
+func _on_Key_picked_up_key(key_material: int) -> void:
+	stats.increase_key(key_material)
 
 
 func _on_HealingWell_entered_healing_area() -> void:

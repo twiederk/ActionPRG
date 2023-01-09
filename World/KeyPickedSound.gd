@@ -1,4 +1,4 @@
 extends AudioStreamPlayer
 
-func _on_PlayerHurtSound_finished():
+func _on_KeyPickedSound_finished():
 	queue_free()
