@@ -1,22 +1,28 @@
 class_name TreasureChest
 extends Area2D
 
-const Weapon = preload("res://World/Weapon.tscn")
-
-onready var sprite = $Sprite
-
 enum TreasureState {CLOSE, OPEN}
+
+const Weapon = preload("res://World/Weapon.tscn")
 
 var treasure_state = TreasureState.CLOSE
 
+onready var sprite = $Sprite
+
 
 func _on_TreasureChest_body_entered(_body):
-	if can_be_opend():
+	if can_be_opened(PlayerStats.key_copper):
 		open_treasure_chest()
+	elif is_missing_key(PlayerStats.key_copper):
+		KeyEvents.emit_signal("key_missing", KeyMaterial.COPPER)
 
 
-func can_be_opend() -> bool:
-	return PlayerStats.key_copper > 0 and treasure_state == TreasureState.CLOSE
+func can_be_opened(key) -> bool:
+	return key > 0 and treasure_state == TreasureState.CLOSE
+
+
+func is_missing_key(key) -> bool:
+	return key <= 0 and treasure_state == TreasureState.CLOSE
 
 
 func open_treasure_chest() -> void:

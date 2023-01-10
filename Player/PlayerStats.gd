@@ -6,7 +6,7 @@ signal max_health_changed
 signal health_changed
 signal key_changed(key_material, count)
 
-export(int) var max_health = 1 setget set_max_health
+export(int) var max_health = 6 setget set_max_health
 export(int) var key_copper = 0
 export(int) var key_gold = 0
 

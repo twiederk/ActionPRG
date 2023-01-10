@@ -122,7 +122,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Stats",
 "language": "GDScript",
-"path": "res://Enemies/Stats.gd"
+"path": "res://Player/PlayerStats.gd"
 }, {
 "base": "Hitbox",
 "class": "SwordHitbox",
@@ -183,13 +183,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.8.0"
+config/description="Version 1.9.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-PlayerStats="*res://Player/PlayerStats.tscn"
+PlayerStats="*res://Player/PlayerStats.gd"
+KeyEvents="*res://UI/KeyEvents.gd"
 
 [display]
 

@@ -8,9 +8,17 @@
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 30.0
+margin_bottom = 40.0
+color = Color( 0.564706, 0.564706, 0.564706, 0.498039 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 31.0
+margin_right = 30.0
 margin_bottom = 40.0
 columns = 2
 
