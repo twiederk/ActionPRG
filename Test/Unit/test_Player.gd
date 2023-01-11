@@ -41,5 +41,5 @@ func test_pickup_sword():
 	player.pickup_sword(iron_sword)
 
 	# assert
-	assert_eq(player.stats.getDamage(), 2, "Should have damage of sword when sword is picked up")
+	assert_eq(player.stats.get_damage(), 2, "Should have damage of sword when sword is picked up")
 

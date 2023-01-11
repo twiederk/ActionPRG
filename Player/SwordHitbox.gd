@@ -3,5 +3,5 @@ extends Hitbox
 
 var knockback_vector = Vector2.ZERO
 
-func getDamage() -> int:
-	return PlayerStats.getDamage()
+func get_damage() -> int:
+	return PlayerStats.get_damage()

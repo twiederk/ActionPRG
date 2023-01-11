@@ -1,6 +1,8 @@
 class_name Key
 extends Area2D
 
+enum { COPPER, GOLD }
+
 signal picked_up_key
 
 export(Resource) var key_resource

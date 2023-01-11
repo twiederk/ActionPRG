@@ -8,10 +8,10 @@ var _opened: bool = false
 func _on_Area2D_body_entered(body : KinematicBody2D) -> void:
 	if can_open_door(body, PlayerStats.key_gold):
 		_opened = true
-		PlayerStats.decrease_key(KeyMaterial.GOLD)
+		PlayerStats.decrease_key(Key.GOLD)
 		collisionShape.set_deferred("disabled", true)
 	elif is_missing_key(body, PlayerStats.key_gold):
-		KeyEvents.emit_signal("key_missing", KeyMaterial.GOLD)
+		KeyEvents.emit_signal("key_missing", Key.GOLD)
 
 
 func can_open_door(body: KinematicBody2D, key: int) -> bool:

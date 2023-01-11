@@ -27,7 +27,7 @@
 [ext_resource path="res://Resources/Potions/BluePotion.tres" type="Resource" id=25]
 [ext_resource path="res://World/Armor.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Resources/Armor/SamuraiArmor.tres" type="Resource" id=27]
-[ext_resource path="res://Resources/Enemies/GiantBat.tres" type="Resource" id=28]
+[ext_resource path="res://Enemies/GiantBat.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -1665,30 +1665,25 @@ position = Vector2( -16.8964, 586.484 )
 
 [node name="GiantBats" type="YSort" parent="World/YSort"]
 
-[node name="GiantBat" parent="World/YSort/GiantBats" instance=ExtResource( 9 )]
-position = Vector2( 338.994, 426.176 )
-scale = Vector2( 1.4, 1.4 )
-enemie_resource = ExtResource( 28 )
+[node name="GiantBatA" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
+position = Vector2( 337, 423 )
+boss_name = "Hildegard"
 
-[node name="GiantBat2" parent="World/YSort/GiantBats" instance=ExtResource( 9 )]
-position = Vector2( 431.934, 232.877 )
-scale = Vector2( 1.5, 1.5 )
-enemie_resource = ExtResource( 28 )
+[node name="GiantBatB" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
+position = Vector2( 424, 238 )
+boss_name = "Gerda"
 
-[node name="GiantBat3" parent="World/YSort/GiantBats" instance=ExtResource( 9 )]
-position = Vector2( -225.042, 329.644 )
-scale = Vector2( 1.4, 1.4 )
-enemie_resource = ExtResource( 28 )
+[node name="GiantBatC" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
+position = Vector2( -226, 322 )
+boss_name = "Karl"
 
-[node name="GiantBat4" parent="World/YSort/GiantBats" instance=ExtResource( 9 )]
-position = Vector2( 816.109, 863.598 )
-scale = Vector2( 1.4, 1.4 )
-enemie_resource = ExtResource( 28 )
+[node name="GiantBatD" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
+position = Vector2( 817, 852 )
+boss_name = "George"
 
-[node name="GiantBat5" parent="World/YSort/GiantBats" instance=ExtResource( 9 )]
-position = Vector2( 814.918, 215.542 )
-scale = Vector2( 1.4, 1.4 )
-enemie_resource = ExtResource( 28 )
+[node name="GiantBatE" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
+position = Vector2( 817, 210 )
+boss_name = "Fritz"
 
 [node name="Bats" type="YSort" parent="World/YSort"]
 

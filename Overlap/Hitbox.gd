@@ -1,5 +1,5 @@
 class_name Hitbox
 extends Area2D
 
-func getDamage() -> int:
+func get_damage() -> int:
 	return 1

@@ -31,7 +31,7 @@ func set_health(value):
 		emit_signal("no_health")
 
 
-func getDamage() -> int:
+func get_damage() -> int:
 	return weapon.damage
 
 
@@ -46,10 +46,10 @@ func decrease_key(key_material) -> void:
 func change_key(key_material, count: int) -> void:
 	var key_count
 	match key_material:
-		KeyMaterial.COPPER:
+		Key.COPPER:
 			key_copper += count
 			key_count = key_copper
-		KeyMaterial.GOLD:
+		Key.GOLD:
 			key_gold += count
 			key_count = key_gold
 	emit_signal("key_changed", key_material, key_count)

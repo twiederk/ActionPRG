@@ -14,7 +14,7 @@ func _on_TreasureChest_body_entered(_body):
 	if can_be_opened(PlayerStats.key_copper):
 		open_treasure_chest()
 	elif is_missing_key(PlayerStats.key_copper):
-		KeyEvents.emit_signal("key_missing", KeyMaterial.COPPER)
+		KeyEvents.emit_signal("key_missing", Key.COPPER)
 
 
 func can_be_opened(key) -> bool:
@@ -26,7 +26,7 @@ func is_missing_key(key) -> bool:
 
 
 func open_treasure_chest() -> void:
-	PlayerStats.decrease_key(KeyMaterial.COPPER)
+	PlayerStats.decrease_key(Key.COPPER)
 	treasure_state = TreasureState.OPEN
 	sprite.texture = load("res://Assets/Graphics/World/TreasureChest_open.png")
 	create_sword_as_treasure()

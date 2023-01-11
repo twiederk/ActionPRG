@@ -9,7 +9,7 @@ export(int) var ACCELERATION = 150
 export(int) var MAX_SPEED = 25
 export(int) var FRICTION = 200
 export(int) var WANDER_TARGET_RANGE = 4
-export(int)  var health: int = 0
+export(int) var health: int = 0
 export(Resource) var enemie_resource
 
 
@@ -24,11 +24,12 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var animationPlayer = $AnimationPlayer
-
+onready var healthBar = $HealthBar
 
 
 func _ready():
 	health = enemie_resource.health
+	healthBar.max_value = health
 	sprite.frame = rand_range(0, 4)
 	state = pick_random_state([BatState.IDLE, BatState.WANDER])
 
@@ -94,7 +95,8 @@ func die():
 
 
 func _on_Hurtbox_area_entered(area):
-	health -= area.getDamage()
+	health -= area.get_damage()
+	healthBar.value = health
 	knockback = area.knockback_vector * 120
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)

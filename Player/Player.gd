@@ -122,7 +122,7 @@ func total_heal() -> void:
 # signals #
 ###########
 func _on_Hurtbox_area_entered(area) -> void:
-	stats.health -= area.getDamage()
+	stats.health -= area.get_damage()
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()

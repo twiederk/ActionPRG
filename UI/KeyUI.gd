@@ -35,9 +35,9 @@ func blink_key(key_texture) -> void:
 func _get_key_label(key_material: int) -> Label:
 	var key_label
 	match key_material:
-		KeyMaterial.COPPER:
+		Key.COPPER:
 			key_label = copper_key_label
-		KeyMaterial.GOLD:
+		Key.GOLD:
 			key_label = gold_key_label
 	return key_label
 
@@ -45,8 +45,8 @@ func _get_key_label(key_material: int) -> Label:
 func _get_key_texture(key_material: int) -> TextureRect:
 		var key_texture: TextureRect
 		match key_material:
-			KeyMaterial.COPPER:
+			Key.COPPER:
 				key_texture = copper_key_texture
-			KeyMaterial.GOLD:
+			Key.GOLD:
 				key_texture = gold_key_texture
 		return key_texture

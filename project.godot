@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Resources/EnemieResource.gd"
 }, {
+"base": "Bat",
+"class": "GiantBat",
+"language": "GDScript",
+"path": "res://Enemies/GiantBat.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -88,11 +93,6 @@ _global_script_classes=[ {
 "class": "Key",
 "language": "GDScript",
 "path": "res://World/Key.gd"
-}, {
-"base": "Reference",
-"class": "KeyMaterial",
-"language": "GDScript",
-"path": "res://World/KeyMaterial.gd"
 }, {
 "base": "ItemResource",
 "class": "KeyResource",
@@ -156,6 +156,7 @@ _global_script_class_icons={
 "Door": "",
 "Effect": "",
 "EnemieResource": "",
+"GiantBat": "",
 "GitAPI": "",
 "Grass": "",
 "GutHookScript": "",
@@ -166,7 +167,6 @@ _global_script_class_icons={
 "Hurtbox": "",
 "ItemResource": "",
 "Key": "",
-"KeyMaterial": "",
 "KeyResource": "",
 "Player": "",
 "Potion": "",
@@ -183,7 +183,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.9.0"
+config/description="Version 1.10.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
@@ -208,6 +208,10 @@ enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[gui]
+
+theme/custom="res://Assets/Themes/DefaultTheme.tres"
 
 [importer_defaults]
 

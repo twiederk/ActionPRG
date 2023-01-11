@@ -8,9 +8,9 @@ func before_each():
 func after_each():
 	hitbox.free();
 
-func test_getDamage():
+func test_get_damage():
 	# act
-	var damage = hitbox.getDamage()
+	var damage = hitbox.get_damage()
 	
 	# assert
 	assert_eq(damage, 1, "Should inflict 1 damage when default hitbox")
