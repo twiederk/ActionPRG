@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WeaponPickUp.ogg-e6c702e15166cac57a935aa378119852.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/WeaponPickUp.ogg"
+dest_files=[ "res://.import/WeaponPickUp.ogg-e6c702e15166cac57a935aa378119852.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

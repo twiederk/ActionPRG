@@ -13,13 +13,13 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 30.0
+margin_right = 33.0
 margin_bottom = 40.0
 color = Color( 0.564706, 0.564706, 0.564706, 0.498039 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 30.0
-margin_bottom = 40.0
+margin_right = 32.0
+margin_bottom = 44.0
 columns = 2
 
 [node name="CopperKeyLabel" type="Label" parent="GridContainer"]

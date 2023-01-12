@@ -106,10 +106,6 @@ func attack_animation_finished():
 ##############
 # game logic #
 ##############
-func pickup_sword(weapon: WeaponResource) -> void:
-	stats.weapon = weapon
-
-
 func heal() -> void:
 	stats.health += 1
 
@@ -137,13 +133,9 @@ func _on_Hurtbox_invincibility_ended() -> void:
 	blinkAnimationPlayer.play("Stop")
 
 
-func _on_Key_picked_up_key(key_material: int) -> void:
-	stats.increase_key(key_material)
-
-
 func _on_HealingWell_entered_healing_area() -> void:
 	total_heal()
 
 
-func _on_Sword_picked_up_sword(weapon: WeaponResource) -> void:
-	pickup_sword(weapon)
+func _on_Item_picked_up_item(item_resource: ItemResource) -> void:
+	item_resource.action(stats)

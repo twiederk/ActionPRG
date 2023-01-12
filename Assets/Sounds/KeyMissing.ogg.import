@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/KeyMissing.ogg"
+dest_files=[ "res://.import/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -101,15 +101,17 @@ script = ExtResource( 3 )
 enemie_resource = ExtResource( 11 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 5 )]
+visible = false
 margin_left = -9.0
 margin_top = -27.0
 margin_right = 9.0
-margin_bottom = -23.0
+margin_bottom = -24.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
 frames = SubResource( 7 )
 animation = "Fly"
+frame = 2
 playing = true
 offset = Vector2( 0, -12 )
 

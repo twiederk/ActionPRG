@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "Reference",
 "class": "Armor",
 "language": "GDScript",
-"path": "res://World/Armor.gd"
+"path": "res://World/Items/Armor.gd"
 }, {
 "base": "ItemResource",
 "class": "ArmorResource",
@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 }, {
+"base": "AudioStreamPlayer",
+"class": "GlobalAudioStreamPlayer",
+"language": "GDScript",
+"path": "res://World/GlobalAudioStreamPlayer.gd"
+}, {
 "base": "Node2D",
 "class": "Grass",
 "language": "GDScript",
@@ -84,15 +89,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Overlap/Hurtbox.gd"
 }, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://World/Items/Item.gd"
+}, {
 "base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
 "path": "res://Resources/ItemResource.gd"
 }, {
-"base": "Area2D",
+"base": "Item",
 "class": "Key",
 "language": "GDScript",
-"path": "res://World/Key.gd"
+"path": "res://World/Items/Key.gd"
 }, {
 "base": "ItemResource",
 "class": "KeyResource",
@@ -104,10 +114,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 }, {
-"base": "Area2D",
+"base": "Reference",
 "class": "Potion",
 "language": "GDScript",
-"path": "res://World/Potion.gd"
+"path": "res://World/Items/Potion.gd"
 }, {
 "base": "ItemResource",
 "class": "PotionResource",
@@ -139,10 +149,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Enemies/WanderController.gd"
 }, {
-"base": "Area2D",
+"base": "Item",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://World/Weapon.gd"
+"path": "res://World/Items/Weapon.gd"
 }, {
 "base": "ItemResource",
 "class": "WeaponResource",
@@ -158,6 +168,7 @@ _global_script_class_icons={
 "EnemieResource": "",
 "GiantBat": "",
 "GitAPI": "",
+"GlobalAudioStreamPlayer": "",
 "Grass": "",
 "GutHookScript": "",
 "GutTest": "",
@@ -165,6 +176,7 @@ _global_script_class_icons={
 "HealthUI": "",
 "Hitbox": "",
 "Hurtbox": "",
+"Item": "",
 "ItemResource": "",
 "Key": "",
 "KeyResource": "",
@@ -183,7 +195,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.10.0"
+config/description="Version 1.11.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
@@ -191,6 +203,7 @@ config/icon="res://icon.png"
 
 PlayerStats="*res://Player/PlayerStats.gd"
 KeyEvents="*res://UI/KeyEvents.gd"
+AudioEvents="*res://World/AudioEvents.gd"
 
 [display]
 

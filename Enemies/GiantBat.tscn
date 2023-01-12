@@ -23,14 +23,17 @@ boss_name = ""
 
 [node name="NameLabel" type="Label" parent="." index="0"]
 margin_left = -50.0
-margin_top = -30.0
+margin_top = -37.8571
 margin_right = 50.0
-margin_bottom = -19.0
+margin_bottom = -26.8571
 custom_fonts/font = SubResource( 2 )
 text = "myName"
 align = 1
 
-[node name="AnimatedSprite" parent="." index="1"]
+[node name="HealthBar" parent="." index="1"]
+visible = true
+
+[node name="AnimatedSprite" parent="." index="2"]
 material = SubResource( 1 )
 frame = 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Assets/Graphics/World/DirtTileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/World/CliffTileset.png" type="Texture" id=2]
@@ -16,17 +16,18 @@
 [ext_resource path="res://World/HealingWell.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/Plants/Tree.tscn" type="PackedScene" id=15]
 [ext_resource path="res://World/Plants/Bush.tscn" type="PackedScene" id=16]
-[ext_resource path="res://World/Key.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/Items/Key.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/TreasureChest.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/InvisibleBarrier.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/KeyUI.tscn" type="PackedScene" id=21]
-[ext_resource path="res://World/Potion.tscn" type="PackedScene" id=22]
+[ext_resource path="res://World/Items/Potion.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Resources/Keys/CopperKey.tres" type="Resource" id=23]
 [ext_resource path="res://Resources/Potions/RedPotion.tres" type="Resource" id=24]
 [ext_resource path="res://Resources/Potions/BluePotion.tres" type="Resource" id=25]
-[ext_resource path="res://World/Armor.tscn" type="PackedScene" id=26]
+[ext_resource path="res://World/Items/Armor.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Resources/Armor/SamuraiArmor.tres" type="Resource" id=27]
+[ext_resource path="res://World/GlobalAudioStreamPlayer.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Enemies/GiantBat.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=1]
@@ -1127,6 +1128,8 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 131090, 0, 0, 131091, 0, 1, 131092, 0, 1, 131093, 0, 1, 131094, 0, 1, 131095, 0, 1, 131096, 0, 1, 131097, 0, 1, 131098, 0, 1, 131099, 0, 1, 131100, 0, 1, 131101, 0, 1, 131102, 0, 1, 131103, 0, 1, 131104, 0, 1, 131105, 0, 2, 196626, 0, 65536, 196627, 0, 65541, 196628, 0, 131073, 196629, 0, 131073, 196630, 0, 131073, 196631, 0, 131073, 196632, 0, 131073, 196633, 0, 131073, 196634, 0, 131073, 196635, 0, 131073, 196636, 0, 131073, 196637, 0, 131073, 196638, 0, 65542, 196639, 0, 65541, 196640, 0, 131073, 196641, 0, 131074, 262162, 0, 131072, 262163, 0, 131074, 262174, 0, 65536, 262175, 0, 65538, 327710, 0, 65536, 327711, 0, 65538, 393244, 0, 0, 393245, 0, 1, 393246, 0, 131078, 393247, 0, 131077, 393248, 0, 1, 393249, 0, 2, 458780, 0, 65536, 458781, 0, 65537, 458782, 0, 65537, 458783, 0, 65537, 458784, 0, 65537, 458785, 0, 65538, 524316, 0, 65536, 524317, 0, 65537, 524318, 0, 65537, 524319, 0, 65537, 524320, 0, 65537, 524321, 0, 65538, 589852, 0, 131072, 589853, 0, 131073, 589854, 0, 131073, 589855, 0, 131073, 589856, 0, 131073, 589857, 0, 131074 )
 
+[node name="AudioStreamPlayer" parent="World" instance=ExtResource( 28 )]
+
 [node name="Camera2D" parent="World" instance=ExtResource( 12 )]
 position = Vector2( 306.145, 56.9439 )
 
@@ -1675,7 +1678,7 @@ boss_name = "Gerda"
 
 [node name="GiantBatC" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
 position = Vector2( -226, 322 )
-boss_name = "Karl"
+boss_name = "Charly"
 
 [node name="GiantBatD" parent="World/YSort/GiantBats" instance=ExtResource( 29 )]
 position = Vector2( 817, 852 )
@@ -1843,34 +1846,34 @@ position = Vector2( -205.384, 543.778 )
 position = Vector2( 305.127, 237.409 )
 
 [node name="TreasureChest" parent="World/YSort/Fixtures" instance=ExtResource( 18 )]
-position = Vector2( 338.895, 405.141 )
+position = Vector2( 337, 407 )
 
 [node name="InvisibleBarrier" parent="World/YSort/Fixtures" instance=ExtResource( 19 )]
 position = Vector2( 303.897, 89.4599 )
 
-[node name="KeyGold" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
-position = Vector2( 117.305, 141.271 )
-key_resource = ExtResource( 11 )
+[node name="SamuraiArmor" parent="World/YSort/Fixtures" instance=ExtResource( 26 )]
+position = Vector2( 816.429, 180.169 )
+item_resource = ExtResource( 27 )
 
-[node name="KeyGold2" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
-position = Vector2( 814.18, 880.958 )
-key_resource = ExtResource( 11 )
+[node name="GoldKey" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
+position = Vector2( 118, 138 )
+item_resource = ExtResource( 11 )
 
-[node name="KeyCopper" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
-position = Vector2( 461.963, 108.256 )
-key_resource = ExtResource( 23 )
+[node name="GoldKey2" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
+position = Vector2( 818, 881 )
+item_resource = ExtResource( 11 )
 
-[node name="BluePotion" parent="World/YSort/Fixtures" instance=ExtResource( 22 )]
-position = Vector2( -223.429, 298.438 )
-potion_resource = ExtResource( 25 )
+[node name="CopperKey" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
+position = Vector2( 463, 110 )
+item_resource = ExtResource( 23 )
 
 [node name="RedPotion" parent="World/YSort/Fixtures" instance=ExtResource( 22 )]
-position = Vector2( 45.3571, 236.761 )
-potion_resource = ExtResource( 24 )
+position = Vector2( 48, 236 )
+item_resource = ExtResource( 24 )
 
-[node name="SamuraiArmor" parent="World/YSort/Fixtures" instance=ExtResource( 26 )]
-position = Vector2( 816.321, 170.249 )
-armor_resource = ExtResource( 27 )
+[node name="BluePotion" parent="World/YSort/Fixtures" instance=ExtResource( 22 )]
+position = Vector2( -225, 300 )
+item_resource = ExtResource( 25 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -1883,13 +1886,9 @@ margin_bottom = 14.0
 [node name="KeyUI" parent="GUI" instance=ExtResource( 21 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -30.0
-margin_right = 0.0
+margin_left = -33.0
+margin_right = -3.0
 
 [connection signal="entered_healing_area" from="World/YSort/Fixtures/HealingWell" to="World/YSort/Player" method="_on_HealingWell_entered_healing_area"]
-[connection signal="picked_up_key" from="World/YSort/Fixtures/KeyGold" to="World/YSort/Player" method="_on_Key_picked_up_key"]
-[connection signal="picked_up_key" from="World/YSort/Fixtures/KeyGold2" to="World/YSort/Player" method="_on_Key_picked_up_key"]
-[connection signal="picked_up_key" from="World/YSort/Fixtures/KeyCopper" to="World/YSort/Player" method="_on_Key_picked_up_key"]
 
 [editable path="World/Camera2D"]
-[editable path="World/YSort/Fixtures/Door"]

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource( 1 )
 frame_coords = Vector2( 10, 30 )
+pickup_sfx = "KeyPickUp.ogg"
 material = 1
