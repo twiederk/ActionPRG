@@ -8,6 +8,7 @@ signal entered_healing_area
 func _on_HealingWell_body_entered(body) -> void:
 	if body is Player:
 		emit_signal("entered_healing_area")
+		AudioEvents.emit_signal("play_sound", "HealingWellHeal.ogg")
 		animationPlayer.play("Start")
 
 

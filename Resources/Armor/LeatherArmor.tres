@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-frame_coords = Vector2( 9, 3 )
+frame_coords = Vector2( 13, 3 )
 pickup_sfx = "ArmorPickUp.ogg"
-armor_class = 0
+armor_class = 1

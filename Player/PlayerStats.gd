@@ -8,13 +8,14 @@ signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
 
-export(int) var key_copper = 0
-export(int) var key_gold = 0
+export(int) var key_copper: int = 0
+export(int) var key_gold: int = 0
 
-var _max_health = 6
+var _max_health: int = 6
 var _health = _max_health
 var _weapon : WeaponResource = preload("res://Resources/Weapons/WoodSword.tres")
 var _armor : ArmorResource = preload("res://Resources/Armor/Cloth.tres")
+var _strength: int = 0
 
 
 func set_max_health(new_max_health) -> void:
@@ -57,7 +58,7 @@ func get_armor() -> ArmorResource:
 
 
 func get_damage() -> int:
-	return _weapon.damage
+	return _weapon.damage + _strength
 
 
 func increase_key(key_material) -> void:
@@ -78,3 +79,28 @@ func change_key(key_material, count: int) -> void:
 			key_gold += count
 			key_count = key_gold
 	emit_signal("key_changed", key_material, key_count)
+
+
+func heal(life: int = 1) -> void:
+	set_health(get_health() + life)
+
+
+func total_heal() -> void:
+	set_health(get_max_health())
+
+
+func hurt(hit_damage: int = 1) -> void:
+	var damage = max(hit_damage - _armor.armor_class, 0)
+	set_health(get_health() - damage)
+
+
+func set_strength(strength: int) -> void:
+	_strength = strength
+
+
+func get_strength() -> int:
+	return _strength
+
+
+func increase_strength(value: int = 1) -> void:
+	_strength += value

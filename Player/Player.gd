@@ -21,6 +21,7 @@ onready var swordHitbox =$HitboxPivot/SwordHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
+
 func _ready():
 	randomize()
 	stats.connect("no_health", self, "queue_free")
@@ -43,8 +44,6 @@ func _physics_process(delta):
 	handle_input()
 
 
-
-
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -65,7 +64,6 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	move()
-
 
 
 func roll_state():
@@ -91,7 +89,7 @@ func handle_input() -> void:
 		state = PlayerState.ATTACK
 
 	if Input.is_action_just_pressed("heal"):
-		heal()
+		stats.heal()
 
 
 func roll_animation_finished():
@@ -102,26 +100,11 @@ func attack_animation_finished():
 	state = PlayerState.MOVE
 
 
-##############
-# game logic #
-##############
-func heal(life: int = 1) -> void:
-	stats.set_health(stats.get_health() + life)
-
-
-func total_heal() -> void:
-	stats.set_health(stats.get_max_health())
-
-
-func hurt(damage: int = 1) -> void:
-	stats.set_health(stats.get_health() - damage)
-	
-
 ###########
 # signals #
 ###########
 func _on_Hurtbox_area_entered(area) -> void:
-	hurt(area.get_damage())
+	stats.hurt(area.get_damage())
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
 	AudioEvents.emit_signal("play_sound", "Hurt.wav")
@@ -136,7 +119,7 @@ func _on_Hurtbox_invincibility_ended() -> void:
 
 
 func _on_HealingWell_entered_healing_area() -> void:
-	total_heal()
+	stats.total_heal()
 
 
 func _on_Item_picked_up_item(item_resource: ItemResource) -> void:

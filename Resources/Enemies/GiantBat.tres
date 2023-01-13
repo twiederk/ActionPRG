@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 health = 6
 knockback_factor = 90
+damage = 2

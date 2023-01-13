@@ -96,6 +96,10 @@ func die():
 	enemyDeathEffect.global_position = global_position
 
 
+func get_damage() -> int:
+	return enemie_resource.damage
+
+
 func _on_Hurtbox_area_entered(area):
 	health -= area.get_damage()
 	healthBar.value = health

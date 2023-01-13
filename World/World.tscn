@@ -26,7 +26,7 @@
 [ext_resource path="res://Resources/Potions/RedPotion.tres" type="Resource" id=24]
 [ext_resource path="res://Resources/Potions/BluePotion.tres" type="Resource" id=25]
 [ext_resource path="res://World/Items/Armor.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Resources/Armor/SamuraiArmor.tres" type="Resource" id=27]
+[ext_resource path="res://Resources/Armor/LeatherArmor.tres" type="Resource" id=27]
 [ext_resource path="res://World/GlobalAudioStreamPlayer.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Enemies/GiantBat.tscn" type="PackedScene" id=29]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=30]
@@ -1847,13 +1847,13 @@ position = Vector2( -205.384, 543.778 )
 position = Vector2( 305.127, 237.409 )
 
 [node name="TreasureChest" parent="World/YSort/Fixtures" instance=ExtResource( 18 )]
-position = Vector2( 518, 115 )
+position = Vector2( 337, 404 )
 
 [node name="InvisibleBarrier" parent="World/YSort/Fixtures" instance=ExtResource( 19 )]
 position = Vector2( 303.897, 89.4599 )
 
-[node name="SamuraiArmor" parent="World/YSort/Fixtures" instance=ExtResource( 26 )]
-position = Vector2( 495, 137 )
+[node name="LeatherArmor" parent="World/YSort/Fixtures" instance=ExtResource( 26 )]
+position = Vector2( 817, 186 )
 item_resource = ExtResource( 27 )
 
 [node name="GoldKey" parent="World/YSort/Fixtures" instance=ExtResource( 17 )]
