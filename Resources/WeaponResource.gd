@@ -4,4 +4,4 @@ extends ItemResource
 export var damage: int
 
 func action(stats) -> void:
-	stats.weapon = self
+	stats.set_weapon(self)

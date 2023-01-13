@@ -1,7 +1,6 @@
 class_name Player
 extends KinematicBody2D
 
-const PlayerHurtSound = preload("res://Player/PlayerHurtSound.tscn")
 
 const ACCELERATION = 500
 const MAX_SPEED = 80
@@ -106,23 +105,26 @@ func attack_animation_finished():
 ##############
 # game logic #
 ##############
-func heal() -> void:
-	stats.health += 1
+func heal(life: int = 1) -> void:
+	stats.set_health(stats.get_health() + life)
 
 
 func total_heal() -> void:
-	stats.health = stats.max_health
+	stats.set_health(stats.get_max_health())
 
+
+func hurt(damage: int = 1) -> void:
+	stats.set_health(stats.get_health() - damage)
+	
 
 ###########
 # signals #
 ###########
 func _on_Hurtbox_area_entered(area) -> void:
-	stats.health -= area.get_damage()
+	hurt(area.get_damage())
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
-	var playerHurtSound = PlayerHurtSound.instance()
-	get_tree().current_scene.add_child(playerHurtSound)
+	AudioEvents.emit_signal("play_sound", "Hurt.wav")
 
 
 func _on_Hurtbox_invincibility_started() -> void:

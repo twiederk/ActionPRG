@@ -7,7 +7,7 @@
 [ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Graphics/Shadows/MediumShadow.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Swipe.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Sounds/Evade.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/PlayerRoll.wav" type="AudioStream" id=8]
 [ext_resource path="res://Shaders/WhiteColor.shader" type="Shader" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -709,7 +709,7 @@ states/Run/node = SubResource( 38 )
 states/Run/position = Vector2( 509, 72 )
 transitions = [ "Idle", "Run", SubResource( 39 ), "Run", "Idle", SubResource( 40 ), "Idle", "Attack", SubResource( 41 ), "Attack", "Idle", SubResource( 42 ), "Roll", "Idle", SubResource( 43 ), "Idle", "Roll", SubResource( 44 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 0, -155.952 )
+graph_offset = Vector2( 0, -190.209 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=46]
 
@@ -767,7 +767,7 @@ material = SubResource( 1 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 hframes = 60
-frame = 18
+frame = 55
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.52588e-05, 0 )
@@ -798,7 +798,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 46 )
 parameters/Attack/blend_position = Vector2( 0, 1 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
-parameters/Roll/blend_position = Vector2( 0, 1 )
+parameters/Roll/blend_position = Vector2( -1, 0.0170277 )
 parameters/Run/blend_position = Vector2( 0, 1 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]

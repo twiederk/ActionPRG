@@ -15,6 +15,7 @@ export(Resource) var enemie_resource
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+var knockback_factor = 0
 
 var state = BatState.CHASE
 
@@ -30,6 +31,7 @@ onready var healthBar = $HealthBar
 func _ready():
 	health = enemie_resource.health
 	healthBar.max_value = health
+	knockback_factor = enemie_resource.knockback_factor
 	sprite.frame = rand_range(0, 4)
 	state = pick_random_state([BatState.IDLE, BatState.WANDER])
 
@@ -97,7 +99,7 @@ func die():
 func _on_Hurtbox_area_entered(area):
 	health -= area.get_damage()
 	healthBar.value = health
-	knockback = area.knockback_vector * 120
+	knockback = area.knockback_vector * knockback_factor
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)
 	if health <= 0:

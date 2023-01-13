@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Menu Select.wav-33312024e21f5e5fbc7816194fa7cc1b.sample"
+path="res://.import/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Menu Select.wav"
-dest_files=[ "res://.import/Menu Select.wav-33312024e21f5e5fbc7816194fa7cc1b.sample" ]
+source_file="res://Assets/Sounds/PlayerRoll.wav"
+dest_files=[ "res://.import/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample" ]
 
 [params]
 

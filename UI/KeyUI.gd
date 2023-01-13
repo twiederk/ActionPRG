@@ -1,3 +1,4 @@
+class_name KeyUI
 extends Control
 
 onready var copper_key_label = $GridContainer/CopperKeyLabel

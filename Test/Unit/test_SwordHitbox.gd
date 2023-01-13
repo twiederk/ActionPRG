@@ -11,7 +11,7 @@ func after_each():
 func test_get_damage():
 	
 	# arrange
-	PlayerStats.weapon = load("res://Resources/Weapons/IronSword.tres")
+	PlayerStats.set_weapon(load("res://Resources/Weapons/IronSword.tres"))
 	
 	# act
 	var damage = swordHitbox.get_damage()
