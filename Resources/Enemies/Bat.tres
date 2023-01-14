@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=2]
-
-[ext_resource path="res://Resources/EnemieResource.gd" type="Script" id=1]
-
-[resource]
-script = ExtResource( 1 )
-health = 2
-knockback_factor = 120
-damage = 1

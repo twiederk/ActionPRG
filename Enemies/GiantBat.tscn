@@ -10,7 +10,7 @@
 size = 8
 font_data = ExtResource( 5 )
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = ExtResource( 4 )
 shader_param/active = false
@@ -33,9 +33,8 @@ align = 1
 [node name="HealthBar" parent="." index="1"]
 visible = true
 
-[node name="AnimatedSprite" parent="." index="2"]
-material = SubResource( 1 )
-frame = 1
+[node name="Sprite" parent="." index="2"]
+material = SubResource( 3 )
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]

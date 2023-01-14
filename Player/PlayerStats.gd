@@ -8,13 +8,13 @@ signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
 
-export(int) var key_copper: int = 0
-export(int) var key_gold: int = 0
+export(int) var _key_copper: int = 0
+export(int) var _key_gold: int = 0
 
 var _max_health: int = 6
 var _health = _max_health
-var _weapon : WeaponResource = preload("res://Resources/Weapons/WoodSword.tres")
-var _armor : ArmorResource = preload("res://Resources/Armor/Cloth.tres")
+var _weapon : WeaponResource = preload("res://Resources/Weapons/Hand.tres")
+var _armor : ArmorResource = preload("res://Resources/Armor/Shirt.tres")
 var _strength: int = 0
 
 
@@ -73,11 +73,11 @@ func change_key(key_material, count: int) -> void:
 	var key_count
 	match key_material:
 		Key.COPPER:
-			key_copper += count
-			key_count = key_copper
+			_key_copper += count
+			key_count = _key_copper
 		Key.GOLD:
-			key_gold += count
-			key_count = key_gold
+			_key_gold += count
+			key_count = _key_gold
 	emit_signal("key_changed", key_material, key_count)
 
 
@@ -104,3 +104,13 @@ func get_strength() -> int:
 
 func increase_strength(value: int = 1) -> void:
 	_strength += value
+
+
+func get_key(key: int) -> int:
+	var key_count
+	match key:
+		Key.COPPER:
+			key_count = _key_copper
+		Key.GOLD:
+			key_count = _key_gold
+	return key_count

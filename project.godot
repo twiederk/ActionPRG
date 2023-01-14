@@ -207,7 +207,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.13.0"
+config/description="Version 1.14.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 

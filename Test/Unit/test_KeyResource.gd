@@ -8,7 +8,7 @@ func test_action():
 	gold_key.action(PlayerStats)
 
 	# assert
-	assert_eq(PlayerStats.key_gold, 1, "Should add one gold key")
+	assert_eq(PlayerStats.get_key(Key.GOLD), 1, "Should add one gold key")
 
 
 

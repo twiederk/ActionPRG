@@ -13,9 +13,9 @@ onready var audioStreamPlayer = $AudioStreamPlayer
 
 
 func _on_TreasureChest_body_entered(_body):
-	if can_be_opened(PlayerStats.key_copper):
+	if can_be_opened(PlayerStats.get_key(Key.COPPER)):
 		open_treasure_chest()
-	elif is_missing_key(PlayerStats.key_copper):
+	elif is_missing_key(PlayerStats.get_key(Key.COPPER)):
 		audioStreamPlayer.play()
 		KeyEvents.emit_signal("key_missing", Key.COPPER)
 

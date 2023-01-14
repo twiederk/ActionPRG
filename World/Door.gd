@@ -9,13 +9,13 @@ onready var audioStreamPlayer = $AudioStreamPlayer
 var _opened: bool = false
 
 func _on_Area2D_body_entered(body : KinematicBody2D) -> void:
-	if can_open_door(body, PlayerStats.key_gold):
+	if can_open_door(body, PlayerStats.get_key(Key.GOLD)):
 		_opened = true
 		audioStreamPlayer.stream = door_open_sfx
 		audioStreamPlayer.play()
 		PlayerStats.decrease_key(Key.GOLD)
 		collisionShape.set_deferred("disabled", true)
-	elif is_missing_key(body, PlayerStats.key_gold):
+	elif is_missing_key(body, PlayerStats.get_key(Key.GOLD)):
 		audioStreamPlayer.play()
 		KeyEvents.emit_signal("key_missing", Key.GOLD)
 

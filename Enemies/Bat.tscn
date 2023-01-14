@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Assets/Graphics/Enemies/Bat.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/Enemies/Bat_purple.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/Shadows/SmallShadow.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Bat.gd" type="Script" id=3]
 [ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=4]
@@ -10,40 +10,12 @@
 [ext_resource path="res://Overlap/SoftCollision.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Shaders/WhiteColor.shader" type="Shader" id=10]
-[ext_resource path="res://Resources/Enemies/Bat.tres" type="Resource" id=11]
+[ext_resource path="res://Resources/Enemies/BatPurple.tres" type="Resource" id=11]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=17]
 resource_local_to_scene = true
 shader = ExtResource( 10 )
 shader_param/active = false
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 16, 24 )
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "Fly",
-"speed": 10.0
-} ]
 
 [sub_resource type="CircleShape2D" id=8]
 radius = 4.12311
@@ -61,12 +33,44 @@ radius = 4.12311
 [sub_resource type="CircleShape2D" id=12]
 radius = 5.0
 
+[sub_resource type="Animation" id=18]
+resource_name = "Fly"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [sub_resource type="Animation" id=13]
 resource_name = "Start"
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -82,7 +86,7 @@ tracks/0/keys = {
 resource_name = "Stop"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -107,13 +111,11 @@ margin_top = -27.0
 margin_right = 9.0
 margin_bottom = -24.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 1 )
-frames = SubResource( 7 )
-animation = "Fly"
-frame = 3
-playing = true
-offset = Vector2( 0, -12 )
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 17 )
+position = Vector2( 0, -12 )
+texture = ExtResource( 1 )
+hframes = 5
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -153,6 +155,9 @@ shape = SubResource( 12 )
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fly"
+anims/Fly = SubResource( 18 )
+anims/RESET = SubResource( 16 )
 anims/Start = SubResource( 13 )
 anims/Stop = SubResource( 14 )
 

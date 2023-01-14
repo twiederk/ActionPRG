@@ -10,8 +10,8 @@ onready var gold_key_texture = $GridContainer/GoldKeyTexture
 
 # warning-ignore-all:RETURN_VALUE_DISCARDED
 func _ready():
-	copper_key_label.text = str(PlayerStats.key_copper)
-	gold_key_label.text = str(PlayerStats.key_gold)
+	copper_key_label.text = str(PlayerStats.get_key(Key.COPPER))
+	gold_key_label.text = str(PlayerStats.get_key(Key.GOLD))
 	PlayerStats.connect("key_changed", self, "_on_PlayerStats_key_changed")
 	KeyEvents.connect("key_missing", self, "_on_KeyEvents_key_missing")
 

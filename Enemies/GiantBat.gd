@@ -6,6 +6,5 @@ export(String) var boss_name = ""
 onready var name_label = $NameLabel
 
 func _ready():
-	._ready()
 	name_label.text = boss_name
 	
