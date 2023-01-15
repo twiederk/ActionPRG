@@ -3,11 +3,9 @@ extends Area2D
 
 signal picked_up_item(item_resource)
 
-
 export(Resource) var item_resource
 
 var _pickable = true
-
 
 onready var sprite = $Sprite
 

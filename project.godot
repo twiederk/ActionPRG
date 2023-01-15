@@ -39,6 +39,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Resources/EnemieResource.gd"
 }, {
+"base": "Control",
+"class": "GameOverUI",
+"language": "GDScript",
+"path": "res://UI/GameOverUI.gd"
+}, {
+"base": "Control",
+"class": "GameStartUI",
+"language": "GDScript",
+"path": "res://UI/GameStartUI.gd"
+}, {
+"base": "Item",
+"class": "Gem",
+"language": "GDScript",
+"path": "res://World/Items/Gem.gd"
+}, {
+"base": "ItemResource",
+"class": "GemResource",
+"language": "GDScript",
+"path": "res://Resources/GemResource.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -171,6 +191,10 @@ _global_script_class_icons={
 "Door": "",
 "Effect": "",
 "EnemieResource": "",
+"GameOverUI": "",
+"GameStartUI": "",
+"Gem": "",
+"GemResource": "",
 "GitAPI": "",
 "GlobalAudioStreamPlayer": "",
 "Grass": "",
@@ -201,7 +225,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.15.0"
+config/description="Version 1.16.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
