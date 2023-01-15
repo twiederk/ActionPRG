@@ -13,8 +13,8 @@ export(int) var _key_gold: int = 0
 
 var _max_health: int = 6
 var _health = _max_health
-var _weapon : WeaponResource = preload("res://Resources/Weapons/Hand.tres")
-var _armor : ArmorResource = preload("res://Resources/Armor/Shirt.tres")
+var _weapon : WeaponResource = preload("res://Resources/Weapons/Dagger.tres")
+var _armor : ArmorResource = preload("res://Resources/Armor/Cloth.tres")
 var _strength: int = 0
 
 

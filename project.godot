@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Resources/EnemieResource.gd"
 }, {
-"base": "Bat",
-"class": "GiantBat",
-"language": "GDScript",
-"path": "res://Enemies/GiantBat.gd"
-}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -176,7 +171,6 @@ _global_script_class_icons={
 "Door": "",
 "Effect": "",
 "EnemieResource": "",
-"GiantBat": "",
 "GitAPI": "",
 "GlobalAudioStreamPlayer": "",
 "Grass": "",
@@ -207,9 +201,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.14.0"
+config/description="Version 1.15.0-SNAPSHOT"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
 [autoload]
 

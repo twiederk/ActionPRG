@@ -7,4 +7,5 @@ export(int) var acceleration: int = 150
 export(int) var max_speed: int = 25
 export(int) var knockback_factor: int = 120
 export(Texture) var texture: Texture
+export(Vector2) var scale = Vector2(1, 1)
 

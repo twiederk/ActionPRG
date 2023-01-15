@@ -11,6 +11,7 @@ export(int) var FRICTION = 200
 export(int) var WANDER_TARGET_RANGE = 4
 export(int) var health: int = 0
 export(Resource) var enemie_resource
+export(String) var boss_name = ""
 
 
 var velocity = Vector2.ZERO
@@ -28,13 +29,20 @@ onready var animationPlayer = $AnimationPlayer
 onready var healthBar = $HealthBar
 
 
+onready var name_label = $NameLabel
+
 func _ready():
 	acceleration = enemie_resource.acceleration
 	max_speed = enemie_resource.max_speed
 	health = enemie_resource.health
 	healthBar.max_value = health
 	sprite.texture = enemie_resource.texture
+	scale = enemie_resource.scale
 	knockback_factor = enemie_resource.knockback_factor
+	if not boss_name.empty():
+		name_label.visible = true
+		name_label.text = boss_name
+		healthBar.visible = true
 	animationPlayer.seek(rand_range(0, 0.5), true)
 	state = pick_random_state([BatState.IDLE, BatState.WANDER])
 

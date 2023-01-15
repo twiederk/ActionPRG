@@ -39,7 +39,7 @@ func test_get_damage():
 	var damage = stats.get_damage()
 
 	# assert
-	assert_eq(damage, 0, "Should be damage of Hand")
+	assert_eq(damage, 1, "Should be damage of Dagger")
 
 
 func test_get_damage_with_strength_1():
@@ -51,7 +51,7 @@ func test_get_damage_with_strength_1():
 	var damage = stats.get_damage()
 
 	# assert
-	assert_eq(damage, 1, "Should be damage of Hand and strength")
+	assert_eq(damage, 2, "Should be damage of Dagger and strength")
 
 
 func test_hurt_shirt_armor():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Graphics/Enemies/Bat_purple.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/Shadows/SmallShadow.png" type="Texture" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Shaders/WhiteColor.shader" type="Shader" id=10]
 [ext_resource path="res://Resources/Enemies/BatPurple.tres" type="Resource" id=11]
+[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=19]
+size = 8
+font_data = ExtResource( 12 )
 
 [sub_resource type="ShaderMaterial" id=17]
 resource_local_to_scene = true
@@ -103,6 +108,16 @@ collision_layer = 16
 collision_mask = 129
 script = ExtResource( 3 )
 enemie_resource = ExtResource( 11 )
+
+[node name="NameLabel" type="Label" parent="."]
+visible = false
+margin_left = -50.0
+margin_top = -37.8571
+margin_right = 50.0
+margin_bottom = -26.8571
+custom_fonts/font = SubResource( 19 )
+text = "myName"
+align = 1
 
 [node name="HealthBar" parent="." instance=ExtResource( 5 )]
 visible = false

@@ -11,3 +11,4 @@ acceleration = 300
 max_speed = 50
 knockback_factor = 120
 texture = ExtResource( 2 )
+scale = Vector2( 1, 1 )

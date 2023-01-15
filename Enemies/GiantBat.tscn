@@ -1,10 +1,22 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Enemies/GiantBat.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Enemies/GiantBat.tres" type="Resource" id=3]
 [ext_resource path="res://Shaders/WhiteColor.shader" type="Shader" id=4]
 [ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="GDScript" id=4]
+script/source = "class_name GiantBat
+extends Bat
+
+#export(String) var boss_name = \"\"
+#
+#onready var name_label = $NameLabel
+#
+#func _ready():
+#	name_label.text = boss_name
+#
+"
 
 [sub_resource type="DynamicFont" id=2]
 size = 8
@@ -17,18 +29,12 @@ shader_param/active = false
 
 [node name="GiantBat" instance=ExtResource( 1 )]
 scale = Vector2( 1.4, 1.4 )
-script = ExtResource( 2 )
+script = SubResource( 4 )
 enemie_resource = ExtResource( 3 )
-boss_name = ""
 
-[node name="NameLabel" type="Label" parent="." index="0"]
-margin_left = -50.0
-margin_top = -37.8571
-margin_right = 50.0
-margin_bottom = -26.8571
+[node name="NameLabel" parent="." index="0"]
+visible = true
 custom_fonts/font = SubResource( 2 )
-text = "myName"
-align = 1
 
 [node name="HealthBar" parent="." index="1"]
 visible = true
