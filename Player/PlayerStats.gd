@@ -1,6 +1,10 @@
 class_name Stats
 extends Node
 
+const MAX_HEALTH = 15
+const DEFAULT_WEAPON = preload("res://Resources/Weapons/Dagger.tres")
+const DEFAULT_ARMOR = preload("res://Resources/Armor/Cloth.tres")
+
 signal no_health
 signal max_health_changed
 signal health_changed
@@ -11,10 +15,10 @@ signal key_changed(key_material, count)
 export(int) var _key_copper: int = 0
 export(int) var _key_gold: int = 0
 
-var _max_health: int = 6
+var _max_health: int = MAX_HEALTH
 var _health = _max_health
-var _weapon : WeaponResource = preload("res://Resources/Weapons/Dagger.tres")
-var _armor : ArmorResource = preload("res://Resources/Armor/Cloth.tres")
+var _weapon : WeaponResource = DEFAULT_WEAPON
+var _armor : ArmorResource = DEFAULT_ARMOR
 var _strength: int = 0
 
 
@@ -58,7 +62,7 @@ func get_armor() -> ArmorResource:
 
 
 func get_damage() -> int:
-	return _weapon.damage + _strength
+	return Die.roll(_weapon.damage_die) + _strength
 
 
 func increase_key(key_material) -> void:
@@ -90,7 +94,7 @@ func total_heal() -> void:
 
 
 func hurt(hit_damage: int = 1) -> void:
-	var damage = max(hit_damage - _armor.armor_class, 0)
+	var damage = max(hit_damage - _armor.armor_class, 1)
 	set_health(get_health() - damage)
 
 
@@ -114,3 +118,13 @@ func get_key(key: int) -> int:
 		Key.GOLD:
 			key_count = _key_gold
 	return key_count
+
+
+func reset() -> void:
+	_max_health = MAX_HEALTH
+	_health = _max_health
+	_strength = 0
+	_key_gold = 0
+	_key_copper = 0
+	_armor = DEFAULT_ARMOR
+	_weapon = DEFAULT_WEAPON

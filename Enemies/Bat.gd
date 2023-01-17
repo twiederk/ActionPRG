@@ -108,7 +108,7 @@ func die():
 
 
 func get_damage() -> int:
-	return enemie_resource.damage
+	return Die.roll(enemie_resource.damage_die)
 
 
 func _on_Hurtbox_area_entered(area):

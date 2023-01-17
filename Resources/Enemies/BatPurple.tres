@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
-health = 2
-damage = 1
+health = 5
+damage_die = 4
 acceleration = 150
 max_speed = 25
 knockback_factor = 120

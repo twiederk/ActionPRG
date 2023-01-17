@@ -9,7 +9,7 @@ export(Effect) var effect = Effect.HEAL
 func action(stats) -> void:
 	match effect:
 		Effect.HEAL:
-			stats.heal()
+			stats.heal(5)
 		Effect.STRENGTH:
 			stats.increase_strength()
 

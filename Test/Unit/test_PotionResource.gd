@@ -10,7 +10,7 @@ func test_healing_potion():
 	healing_potion.action(PlayerStats)
 	
 	# assert
-	assert_eq(PlayerStats.get_health(), 2, "Should increase player health by 1")
+	assert_eq(PlayerStats.get_health(), 6, "Should increase player health by 5")
 	
 	
 func test_strength_potion():

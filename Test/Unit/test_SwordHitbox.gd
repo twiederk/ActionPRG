@@ -12,6 +12,7 @@ func test_get_damage():
 
 	# arrange
 	PlayerStats.set_weapon(load("res://Resources/Weapons/IronSword.tres"))
+	seed(1)
 
 	# act
 	var damage = swordHitbox.get_damage()

@@ -6,4 +6,4 @@
 script = ExtResource( 1 )
 frame_coords = Vector2( 12, 107 )
 pickup_sfx = "WeaponPickUp.ogg"
-damage = 2
+damage_die = 8
