@@ -14,23 +14,35 @@ func after_each():
 func test_total_heal():
 	# arrange
 	stats.set_health(0);
+	watch_signals(stats)
 
 	# act
 	stats.total_heal();
 
 	# assert
 	assert_eq(stats.get_health(), stats.get_max_health(), "Should set health to max when stats is totally healed");
+	assert_signal_emitted(stats, "health_changed")
 
 
 func test_heal():
 	# arrange
 	stats.set_health(0);
+	watch_signals(stats)
 
 	# act
 	stats.heal();
 
 	# assert
 	assert_eq(stats.get_health(), 1, "Should increase health by 1 when stats is healed");
+	assert_signal_emitted(stats, "health_changed")
+
+
+func test_heal_more_than_max_health():
+	# arrange
+	stats.heal(5)
+
+	# assert
+	assert_eq(stats.get_health(), 15, "Should not exceed max health when healed")
 
 
 func test_get_damage():
@@ -58,16 +70,18 @@ func test_get_damage_with_strength_1():
 	assert_eq(damage, 3, "Should be damage of Dagger and strength")
 
 
-func test_hurt_shirt_armor():
+func test_hurt():
 
 	# arrange
 	stats.set_health(10)
+	watch_signals(stats)
 
 	# act
 	stats.hurt(3)
 
 	# assert
 	assert_eq(stats.get_health(), 7, "Should reduce health by damage")
+	assert_signal_emitted(stats, "health_changed")
 
 
 func test_hurt_armor_class_lower_than_hit_damage():
@@ -101,7 +115,7 @@ func test_hurt_armor_class_higher_than_hit_damage():
 	assert_eq(stats.get_health(), 9, "Should reduce health by 1 when armor class is higher than damage")
 
 
-func test_rest():
+func test_reset():
 
 	# arrange
 	stats.set_max_health(20)
@@ -123,3 +137,31 @@ func test_rest():
 	assert_eq(stats.get_key(Key.COPPER), 0, "Should reset keys copper")
 	assert_eq(stats.get_weapon(), Stats.DEFAULT_WEAPON, "Should reset weapon")
 	assert_eq(stats.get_armor(), Stats.DEFAULT_ARMOR, "Should reset armor")
+
+
+func test_player_dies():
+
+	#arrange
+	watch_signals(stats)
+	
+	# act
+	stats.hurt(20)
+	
+	# assert
+	assert_eq(stats.get_health(), 0, "Should set hit points never be lower than 0")
+	assert_signal_emitted(stats, "health_changed")
+	assert_signal_emitted(stats, "no_health")
+
+
+func test_set_max_health():
+	
+	# arrange
+	watch_signals(stats)
+	
+	# act
+	stats.set_max_health(20)
+	
+	# assert
+	assert_eq(stats.get_max_health(), 20, "Should set max health properly")
+	assert_signal_emitted(stats, "max_health_changed")
+

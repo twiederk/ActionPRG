@@ -139,10 +139,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/KeyUI.gd"
 }, {
+"base": "Node",
+"class": "Main",
+"language": "GDScript",
+"path": "res://World/Main.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "PortalArea2D",
+"language": "GDScript",
+"path": "res://World/Portal.gd"
 }, {
 "base": "Item",
 "class": "Potion",
@@ -216,7 +226,9 @@ _global_script_class_icons={
 "Key": "",
 "KeyResource": "",
 "KeyUI": "",
+"Main": "",
 "Player": "",
+"PortalArea2D": "",
 "Potion": "",
 "PotionResource": "",
 "SoftCollision": "",
@@ -231,8 +243,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 1.17.0"
-run/main_scene="res://World/World.tscn"
+config/description="Version 2.0.0-SNAPSHOT"
+run/main_scene="res://World/Main.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
@@ -355,4 +367,5 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 environment/default_environment="res://default_env.tres"

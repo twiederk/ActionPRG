@@ -18,3 +18,7 @@ func get_version() -> String:
 func _on_StartButton_pressed():
 	get_tree().paused = false
 	hide()
+
+
+func _on_QuitButton_pressed():
+	get_tree().quit()

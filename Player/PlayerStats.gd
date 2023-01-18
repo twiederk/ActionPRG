@@ -33,7 +33,7 @@ func get_max_health() -> int:
 
 
 func set_health(new_health: int) -> void:
-	_health = new_health
+	_health = max(new_health, 0)
 	emit_signal("health_changed", _health)
 	if _health <= 0:
 		emit_signal("no_health")
@@ -86,7 +86,8 @@ func change_key(key_material, count: int) -> void:
 
 
 func heal(life: int = 1) -> void:
-	set_health(get_health() + life)
+	var health = min(get_health() + life, _max_health)
+	set_health(health)
 
 
 func total_heal() -> void:

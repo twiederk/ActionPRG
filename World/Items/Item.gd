@@ -12,15 +12,12 @@ onready var sprite = $Sprite
 
 func _ready() -> void:
 	sprite.frame_coords = item_resource.frame_coords
-	
-	var player = get_node("/root/Main/World/YSort/Player")
-
-	#warning-ignore:RETURN_VALUE_DISCARDED
-	connect("picked_up_item", player, "_on_Item_picked_up_item")
 
 
-func _on_Item_body_entered(_body) -> void:
+func _on_Item_body_entered(body) -> void:
 	if is_pickable():
+		#warning-ignore:RETURN_VALUE_DISCARDED
+		connect("picked_up_item", body, "_on_Item_picked_up_item", [], CONNECT_ONESHOT)
 		emit_signal("picked_up_item", item_resource)
 		AudioEvents.emit_signal("play_sound", item_resource.pickup_sfx)
 		queue_free()
