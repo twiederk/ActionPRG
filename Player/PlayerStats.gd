@@ -12,8 +12,7 @@ signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
 
-export(int) var _key_copper: int = 0
-export(int) var _key_gold: int = 0
+export(Array, int) var _keys = [0, 0]
 
 var _max_health: int = MAX_HEALTH
 var _health = _max_health
@@ -73,15 +72,13 @@ func decrease_key(key_material) -> void:
 	change_key(key_material, -1)
 
 
-func change_key(key_material, count: int) -> void:
-	var key_count
-	match key_material:
-		Key.COPPER:
-			_key_copper += count
-			key_count = _key_copper
-		Key.GOLD:
-			_key_gold += count
-			key_count = _key_gold
+func change_key(key_material: int, count: int) -> void:
+	var key_count = _keys[key_material] + count
+	set_key(key_material, key_count)
+
+
+func set_key(key_material: int, key_count: int) -> void:
+	_keys[key_material] = key_count
 	emit_signal("key_changed", key_material, key_count)
 
 
@@ -111,21 +108,16 @@ func increase_strength(value: int = 1) -> void:
 	_strength += value
 
 
-func get_key(key: int) -> int:
-	var key_count
-	match key:
-		Key.COPPER:
-			key_count = _key_copper
-		Key.GOLD:
-			key_count = _key_gold
-	return key_count
+func get_key(key_material: int) -> int:
+	return _keys[key_material]
 
 
 func reset() -> void:
-	_max_health = MAX_HEALTH
-	_health = _max_health
-	_strength = 0
-	_key_gold = 0
-	_key_copper = 0
-	_armor = DEFAULT_ARMOR
-	_weapon = DEFAULT_WEAPON
+	set_max_health(MAX_HEALTH)
+	set_health(MAX_HEALTH)
+	set_strength(0)
+	for key_material in _keys.size():
+		set_key(key_material, 0)
+
+	set_armor(DEFAULT_ARMOR)
+	set_weapon(DEFAULT_WEAPON)

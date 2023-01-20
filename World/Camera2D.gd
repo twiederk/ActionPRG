@@ -8,3 +8,8 @@ func _ready():
 	limit_left = topLeft.position.x
 	limit_bottom = bottomRight.position.y
 	limit_right = bottomRight.position.x
+	
+
+func _physics_process(_delta):
+	if smoothing_enabled == false:
+		smoothing_enabled = true

@@ -51,6 +51,7 @@ tracks/0/keys = {
 }
 
 [node name="HealingWell" type="Area2D"]
+collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]

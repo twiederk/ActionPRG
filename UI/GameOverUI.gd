@@ -9,5 +9,8 @@ func _ready():
 
 
 func _on_RestartButton_pressed():
-	get_tree().change_scene("res://World/Village.tscn")
+	var main = get_node("/root/Main")
+	main.goto_level("Village")
 	PlayerStats.reset()
+	hide()
+	

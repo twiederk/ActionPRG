@@ -149,6 +149,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 }, {
+"base": "Hitbox",
+"class": "PlayerHitbox",
+"language": "GDScript",
+"path": "res://Player/PlayerHitbox.gd"
+}, {
 "base": "Area2D",
 "class": "PortalArea2D",
 "language": "GDScript",
@@ -173,11 +178,6 @@ _global_script_classes=[ {
 "class": "Stats",
 "language": "GDScript",
 "path": "res://Player/PlayerStats.gd"
-}, {
-"base": "Hitbox",
-"class": "SwordHitbox",
-"language": "GDScript",
-"path": "res://Player/SwordHitbox.gd"
 }, {
 "base": "Area2D",
 "class": "TreasureChest",
@@ -228,12 +228,12 @@ _global_script_class_icons={
 "KeyUI": "",
 "Main": "",
 "Player": "",
+"PlayerHitbox": "",
 "PortalArea2D": "",
 "Potion": "",
 "PotionResource": "",
 "SoftCollision": "",
 "Stats": "",
-"SwordHitbox": "",
 "TreasureChest": "",
 "WanderController": "",
 "Weapon": "",
@@ -243,7 +243,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 2.0.0"
+config/description="Version 2.1.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"

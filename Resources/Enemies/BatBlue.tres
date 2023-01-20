@@ -9,6 +9,6 @@ health = 2
 damage_die = 4
 acceleration = 300
 max_speed = 50
-knockback_factor = 120
+weight = 80
 texture = ExtResource( 2 )
 scale = Vector2( 1, 1 )

@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 enum BatState {IDLE, WANDER, CHASE}
 
+const DAMAGE_FORCE = 200
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
 export(int) var acceleration = 150
@@ -16,7 +17,7 @@ export(String) var boss_name = ""
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
-var knockback_factor = 0
+var weight = 0
 
 var state = BatState.CHASE
 
@@ -38,7 +39,7 @@ func _ready():
 	healthBar.max_value = health
 	sprite.texture = enemie_resource.texture
 	scale = enemie_resource.scale
-	knockback_factor = enemie_resource.knockback_factor
+	weight = enemie_resource.weight
 	if not boss_name.empty():
 		name_label.visible = true
 		name_label.text = boss_name
@@ -111,14 +112,18 @@ func get_damage() -> int:
 	return Die.roll(enemie_resource.damage_die)
 
 
-func _on_Hurtbox_area_entered(area):
+func _on_Hurtbox_area_entered(area: Area2D):
 	health -= area.get_damage()
 	healthBar.value = health
-	knockback = area.knockback_vector * knockback_factor
+	knockback = _calculate_knockback(area)
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)
 	if health <= 0:
 		die()
+
+
+func _calculate_knockback(area: Area2D) -> Vector2:
+	return area.knockback_direction * (DAMAGE_FORCE - weight)
 
 
 func _on_Hurtbox_invincibility_started():

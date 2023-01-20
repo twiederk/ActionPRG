@@ -1,12 +1,12 @@
 extends 'res://addons/gut/test.gd'
 
-var swordHitbox : SwordHitbox = null;
+var playerHitbox : PlayerHitbox = null;
 
 func before_each():
-	swordHitbox = SwordHitbox.new();
+	playerHitbox = PlayerHitbox.new();
 
 func after_each():
-	swordHitbox.free();
+	playerHitbox.free();
 
 func test_get_damage():
 
@@ -15,7 +15,7 @@ func test_get_damage():
 	seed(1)
 
 	# act
-	var damage = swordHitbox.get_damage()
+	var damage = playerHitbox.get_damage()
 
 	# assert
 	assert_eq(damage, 2, "Should resturn damage of weapon which is currently equipped")

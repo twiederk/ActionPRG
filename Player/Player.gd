@@ -17,7 +17,7 @@ var stats = PlayerStats
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var swordHitbox =$HitboxPivot/SwordHitbox
+onready var playerHitbox =$HitboxPivot/PlayerHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
@@ -26,7 +26,7 @@ func _ready():
 	randomize()
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
-	swordHitbox.knockback_vector = roll_vector
+	playerHitbox.knockback_direction = roll_vector
 	OS.set_window_maximized(true)
 
 
@@ -52,7 +52,7 @@ func move_state(delta):
 
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
-		swordHitbox.knockback_vector = roll_vector
+		playerHitbox.knockback_direction = roll_vector
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
@@ -124,3 +124,7 @@ func _on_HealingWell_entered_healing_area() -> void:
 
 func _on_Item_picked_up_item(item_resource: ItemResource) -> void:
 	item_resource.action(stats)
+
+
+func set_starting_position(starting_position: Vector2) -> void:
+	global_position = starting_position

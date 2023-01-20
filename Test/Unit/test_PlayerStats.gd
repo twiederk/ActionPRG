@@ -125,6 +125,7 @@ func test_reset():
 	stats.increase_key(Key.COPPER)
 	stats.set_weapon(null)
 	stats.set_armor(null)
+	watch_signals(stats)
 
 	# act
 	stats.reset()
@@ -137,6 +138,12 @@ func test_reset():
 	assert_eq(stats.get_key(Key.COPPER), 0, "Should reset keys copper")
 	assert_eq(stats.get_weapon(), Stats.DEFAULT_WEAPON, "Should reset weapon")
 	assert_eq(stats.get_armor(), Stats.DEFAULT_ARMOR, "Should reset armor")
+	
+	assert_signal_emitted(stats, "max_health_changed", "Should emit max_health_changed signal")
+	assert_signal_emitted(stats, "health_changed", "Should emit health_changed signal")
+	assert_signal_emitted(stats, "weapon_changed", "Should emit weapon_changed signal")
+	assert_signal_emitted(stats, "armor_changed", "Should emit armor_changed signal")
+	assert_signal_emit_count(stats, "key_changed", 2, "Should emit key_changed signal two times")
 
 
 func test_player_dies():
@@ -165,3 +172,58 @@ func test_set_max_health():
 	assert_eq(stats.get_max_health(), 20, "Should set max health properly")
 	assert_signal_emitted(stats, "max_health_changed")
 
+
+func test_increase_key_copper() -> void:
+
+	# arrange
+	stats._keys[Key.COPPER] = 0
+	watch_signals(stats)
+	
+	# act
+	stats.increase_key(Key.COPPER)
+	
+	# assert
+	assert_eq(stats.get_key(Key.COPPER), 1, "Should increase copper key by one")
+	assert_signal_emitted(stats, "key_changed")
+
+
+func test_increase_key_gold() -> void:
+
+	# arrange
+	stats._keys[Key.GOLD] = 0
+	watch_signals(stats)
+
+	# act
+	stats.increase_key(Key.GOLD)
+
+	# assert
+	assert_eq(stats.get_key(Key.GOLD), 1, "Should increase gold key by one")
+	assert_signal_emitted(stats, "key_changed")
+
+
+func test_decrease_key_copper() -> void:
+
+	# arrange
+	stats._keys[Key.COPPER] = 5
+	watch_signals(stats)
+	
+	# act
+	stats.decrease_key(Key.COPPER)
+	
+	# assert
+	assert_eq(stats.get_key(Key.COPPER), 4, "Should decrease copper key by one")
+	assert_signal_emitted(stats, "key_changed")
+
+
+func test_decrease_key_gold() -> void:
+
+	# arrange
+	stats._keys[Key.GOLD] = 5
+	watch_signals(stats)
+	
+	# act
+	stats.decrease_key(Key.GOLD)
+	
+	# assert
+	assert_eq(stats.get_key(Key.GOLD), 4, "Should decrease gold key by one")
+	assert_signal_emitted(stats, "key_changed")
