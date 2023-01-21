@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_RestartButton_pressed():
-	var main = get_node("/root/Main")
+	var main = get_node(Main.MAIN_NODE_PATH)
 	main.goto_level("Village")
 	PlayerStats.reset()
 	hide()

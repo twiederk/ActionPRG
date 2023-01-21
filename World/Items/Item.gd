@@ -20,6 +20,7 @@ func _on_Item_body_entered(body) -> void:
 		connect("picked_up_item", body, "_on_Item_picked_up_item", [], CONNECT_ONESHOT)
 		emit_signal("picked_up_item", item_resource)
 		AudioEvents.emit_signal("play_sound", item_resource.pickup_sfx)
+		LevelStats.visited_node(get_path())
 		queue_free()
 
 

@@ -12,5 +12,5 @@ func _draw():
 
 func _on_Portal_body_entered(body):
 	if body is Player:
-		var main = get_node("/root/Main")
+		var main = get_node(Main.MAIN_NODE_PATH)
 		main.goto_level(target_level, starting_position)

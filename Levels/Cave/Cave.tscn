@@ -121,7 +121,7 @@ position = Vector2( 277, 423 )
 item_resource = ExtResource( 3 )
 
 [node name="Portal" parent="YSort/Fixtures" instance=ExtResource( 9 )]
-position = Vector2( -40, 126 )
+position = Vector2( -42, 136 )
 starting_position = Vector2( 500, 47 )
 
 [editable path="Camera"]

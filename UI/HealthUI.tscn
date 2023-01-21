@@ -7,12 +7,10 @@
 [node name="HealthUI" type="Control"]
 margin_right = 60.0
 margin_bottom = 11.0
+rect_scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="HeartUIEmpty" type="TextureRect" parent="."]
+[node name="HeartUIEmpty1" type="TextureRect" parent="."]
 margin_right = 60.0
 margin_bottom = 11.0
 texture = ExtResource( 2 )
@@ -21,7 +19,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HeartUIFull" type="TextureRect" parent="."]
+[node name="HeartUIEmpty2" type="TextureRect" parent="."]
+margin_top = 12.0
+margin_right = 60.0
+margin_bottom = 23.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUIFull1" type="TextureRect" parent="."]
 margin_right = 60.0
 margin_bottom = 11.0
 texture = ExtResource( 3 )
@@ -30,3 +38,11 @@ stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HeartUIFull2" type="TextureRect" parent="."]
+margin_top = 12.0
+margin_right = 60.0
+margin_bottom = 23.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2

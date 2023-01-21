@@ -10,6 +10,17 @@ func after_each():
 	door.free()
 
 
+func test_get_set_opened():
+	# arrange
+	door.collisionShape = CollisionShape2D.new()
+	
+	# assert
+	assert_accessors(door, "opened", false, true)
+	
+	# tear down
+	door.collisionShape.free()
+
+
 func test_can_open_door_not_Player():
 	# arrange
 	var body = double(KinematicBody2D).new()

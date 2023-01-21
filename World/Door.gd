@@ -13,6 +13,7 @@ func _on_Area2D_body_entered(body : KinematicBody2D) -> void:
 		_opened = true
 		audioStreamPlayer.stream = door_open_sfx
 		audioStreamPlayer.play()
+		LevelStats.visited_node(get_path())
 		PlayerStats.decrease_key(Key.GOLD)
 		collisionShape.set_deferred("disabled", true)
 	elif is_missing_key(body, PlayerStats.get_key(Key.GOLD)):
@@ -26,3 +27,12 @@ func can_open_door(body: KinematicBody2D, key: int) -> bool:
 
 func is_missing_key(body: KinematicBody2D, key: int) -> bool:
 	return body is Player and key <= 0 and !_opened
+
+
+func get_opened() -> bool:
+	return _opened
+
+
+func set_opened(opened: bool) -> void:
+	collisionShape.set_deferred("disabled", true)
+	_opened = opened

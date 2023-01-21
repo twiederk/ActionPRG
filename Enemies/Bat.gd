@@ -102,6 +102,7 @@ func pick_random_state(state_list):
 
 
 func die():
+	LevelStats.visited_node(get_path())
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
