@@ -45,7 +45,7 @@ format = 1
 tile_data = PoolIntArray( 917500, 8, 0, 983036, 8, 65536, 1048572, 8, 65536, 1048574, 8, 0, 1114108, 8, 65536, 1114110, 8, 65536, 1179644, 8, 65536, 1179646, 8, 65536, 1245180, 8, 65536, 1245182, 8, 65536, 1310716, 8, 65536, 1310718, 8, 65536, 1376252, 8, 65536, 1376254, 8, 131073, 1376255, 8, 2, 1310720, 8, 2, 1310721, 8, 2, 1310722, 8, 2, 1310723, 8, 2, 1310724, 8, 2, 1310725, 8, 2, 1310726, 8, 2, 1310727, 8, 2, 1310728, 8, 2, 1310729, 8, 2, 1310730, 8, 2, 1310731, 8, 2, 1310732, 8, 65538, 1441787, 8, 1, 1441788, 8, 131074, 1376268, 8, 65536, 1441804, 10, 1, 1572876, 8, 196608 )
 
 [node name="Camera" parent="." instance=ExtResource( 8 )]
-position = Vector2( -41, 154 )
+position = Vector2( -41, 171 )
 
 [node name="TopLeft" parent="Camera/Limits" index="0"]
 position = Vector2( -203, 65 )
@@ -56,7 +56,7 @@ position = Vector2( 354, 467 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -41, 154 )
+position = Vector2( -41, 171 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera")
@@ -122,6 +122,6 @@ item_resource = ExtResource( 3 )
 
 [node name="Portal" parent="YSort/Fixtures" instance=ExtResource( 9 )]
 position = Vector2( -42, 136 )
-starting_position = Vector2( 500, 47 )
+starting_position = Vector2( 650, 250 )
 
 [editable path="Camera"]
