@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Cave/CaveTileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Resources/Enemies/BatBlue.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/Potions/RedPotion.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/Enemies/GiantBat.tres" type="Resource" id=4]
+[ext_resource path="res://Enemies/Bat/BatBlue.tres" type="Resource" id=2]
+[ext_resource path="res://Items/Potions/RedPotion.tres" type="Resource" id=3]
+[ext_resource path="res://Enemies/Bat/GiantBat.tres" type="Resource" id=4]
 [ext_resource path="res://World/Items/Potion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Enemie.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=9]
 
@@ -85,15 +85,15 @@ position = Vector2( 226, 410 )
 enemie_resource = ExtResource( 2 )
 
 [node name="Bat8" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 111, 272 )
+position = Vector2( 89, 272 )
 enemie_resource = ExtResource( 2 )
 
 [node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 125, 277 )
+position = Vector2( 103, 277 )
 enemie_resource = ExtResource( 2 )
 
 [node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 96, 272 )
+position = Vector2( 74, 272 )
 enemie_resource = ExtResource( 2 )
 
 [node name="Bat10" parent="YSort/Bats" instance=ExtResource( 7 )]

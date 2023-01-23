@@ -2,7 +2,7 @@ extends GutTest
 
 func test_action():
 	# arrange
-	var gold_key = load("res://Resources/Keys/GoldKey.tres")
+	var gold_key = load("res://Items/Keys/GoldKey.tres")
 
 	# act
 	gold_key.action(PlayerStats)

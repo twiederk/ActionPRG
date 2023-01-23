@@ -1,7 +1,7 @@
 class_name PortalArea2D
 extends Area2D
 
-export(String) var target_level = "Village"
+export(String) var target_level = Village.NAME
 export(Vector2) var starting_position = Vector2.ZERO
 
 

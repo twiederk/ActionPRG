@@ -3,7 +3,7 @@ extends GutTest
 
 func test_healing_potion():
 	# assert
-	var healing_potion = load("res://Resources/Potions/RedPotion.tres")
+	var healing_potion = load("res://Items/Potions/RedPotion.tres")
 	PlayerStats.set_health(1)
 	
 	# act
@@ -15,7 +15,7 @@ func test_healing_potion():
 	
 func test_strength_potion():
 	# assert
-	var healing_potion = load("res://Resources/Potions/BluePotion.tres")
+	var healing_potion = load("res://Items/Potions/BluePotion.tres")
 	
 	# act
 	healing_potion.action(PlayerStats)

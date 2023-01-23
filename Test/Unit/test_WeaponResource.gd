@@ -1,6 +1,6 @@
 extends GutTest
 
-const iron_sword = preload("res://Resources/Weapons/IronSword.tres")
+const iron_sword = preload("res://Items/Weapons/IronSword.tres")
 
 func test_action():
 

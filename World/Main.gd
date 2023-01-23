@@ -4,6 +4,12 @@ extends Node
 const MAIN_NODE_PATH = "/root/Main"
 
 
+func restart():
+	goto_level(Village.NAME, Village.STARTING_POSITION)
+	PlayerStats.reset()
+	LevelStats.reset()
+
+
 func goto_level(level_name: String, starting_position: Vector2) -> void:
 	call_deferred("_deferred_goto_level", level_name, starting_position)
 
@@ -41,5 +47,4 @@ func _handle_visited_node(visited_node: Node) -> void:
 		visited_node.set_opened(true)
 	else:
 		visited_node.queue_free()
-
 

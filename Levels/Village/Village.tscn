@@ -1,22 +1,22 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=135 format=2]
 
-[ext_resource path="res://Resources/Keys/CopperKey.tres" type="Resource" id=1]
-[ext_resource path="res://Resources/Weapons/IronSword.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/Keys/GoldKey.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/Potions/BluePotion.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/Armor/LeatherArmor.tres" type="Resource" id=5]
-[ext_resource path="res://Resources/Gems/Amethyst.tres" type="Resource" id=6]
-[ext_resource path="res://Resources/Enemies/BatBlue.tres" type="Resource" id=7]
+[ext_resource path="res://Items/Keys/CopperKey.tres" type="Resource" id=1]
+[ext_resource path="res://Items/Weapons/IronSword.tres" type="Resource" id=2]
+[ext_resource path="res://Items/Keys/GoldKey.tres" type="Resource" id=3]
+[ext_resource path="res://Items/Potions/BluePotion.tres" type="Resource" id=4]
+[ext_resource path="res://Items/Armor/LeatherArmor.tres" type="Resource" id=5]
+[ext_resource path="res://Items/Gems/Amethyst.tres" type="Resource" id=6]
+[ext_resource path="res://Enemies/Bat/BatBlue.tres" type="Resource" id=7]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Resources/Potions/RedPotion.tres" type="Resource" id=9]
-[ext_resource path="res://Resources/Enemies/GiantBat.tres" type="Resource" id=10]
-[ext_resource path="res://Resources/Gems/Amber.tres" type="Resource" id=11]
-[ext_resource path="res://Resources/Gems/Topaz.tres" type="Resource" id=12]
-[ext_resource path="res://Resources/Gems/Opal.tres" type="Resource" id=13]
+[ext_resource path="res://Items/Potions/RedPotion.tres" type="Resource" id=9]
+[ext_resource path="res://Enemies/Bat/GiantBat.tres" type="Resource" id=10]
+[ext_resource path="res://Items/Gems/Amber.tres" type="Resource" id=11]
+[ext_resource path="res://Items/Gems/Topaz.tres" type="Resource" id=12]
+[ext_resource path="res://Items/Gems/Opal.tres" type="Resource" id=13]
 [ext_resource path="res://Levels/Cave/CaveTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://Levels/Village/Village.tres" type="TileSet" id=15]
 [ext_resource path="res://World/Plants/Bush.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Enemies/Enemie.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/Items/Key.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/Items/Potion.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=20]
@@ -28,6 +28,8 @@
 [ext_resource path="res://World/Plants/Grass.tscn" type="PackedScene" id=26]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=27]
 [ext_resource path="res://World/Items/Armor.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Levels/Village/Village.gd" type="Script" id=29]
+[ext_resource path="res://Enemies/Dragon/Dragon_blue.tres" type="Resource" id=30]
 [ext_resource path="res://Assets/Graphics/World/HouseBackground.png" type="Texture" id=36]
 [ext_resource path="res://Assets/Graphics/World/HouseTileset.png" type="Texture" id=37]
 [ext_resource path="res://Assets/Graphics/World/WoodTileset.png" type="Texture" id=38]
@@ -1007,6 +1009,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="Village" type="Node"]
+script = ExtResource( 29 )
 
 [node name="GrassBackground" type="Sprite" parent="."]
 position = Vector2( -385, -30 )
@@ -1719,6 +1722,13 @@ position = Vector2( -37.1006, 553.371 )
 [node name="Tree33" parent="YSort/Trees" instance=ExtResource( 21 )]
 position = Vector2( -16.8964, 586.484 )
 
+[node name="Dragons" type="YSort" parent="YSort"]
+
+[node name="Dragon_Zyxel" parent="YSort/Dragons" instance=ExtResource( 17 )]
+position = Vector2( 1280, 547 )
+enemie_resource = ExtResource( 30 )
+boss_name = "Zyxel"
+
 [node name="GiantBats" type="YSort" parent="YSort"]
 
 [node name="GiantBat_Hildegard" parent="YSort/GiantBats" instance=ExtResource( 17 )]
@@ -1745,16 +1755,6 @@ boss_name = "Georg"
 position = Vector2( 818, 234 )
 enemie_resource = ExtResource( 10 )
 boss_name = "Fritz"
-
-[node name="GiantBat_Kassandra" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 1300, 530 )
-enemie_resource = ExtResource( 10 )
-boss_name = "Kassandra"
-
-[node name="GiantBat_Anastasia" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 1299, 558 )
-enemie_resource = ExtResource( 10 )
-boss_name = "Anastasia"
 
 [node name="Bats" type="YSort" parent="YSort"]
 

@@ -1,7 +1,7 @@
 extends Node
 
 var _visited_nodes = {}
-var _current_level = "Village"
+var _current_level = Village.NAME
 
 
 func get_current_level() -> String:
@@ -22,3 +22,6 @@ func get_visited_nodes(level_name: String = _current_level) -> Array:
 		_visited_nodes[_current_level] = []
 	return _visited_nodes[level_name]
 
+
+func reset() -> void:
+	_visited_nodes = {}

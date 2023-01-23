@@ -7,7 +7,7 @@ func test_get_damage():
 	seed(1)
 	var enemie_resource = EnemieResource.new()
 	enemie_resource.damage_die = Die.Name.D8
-	var enemie = Bat.new()
+	var enemie = Enemie.new()
 	enemie.enemie_resource = enemie_resource
 	var hitbox = Hitbox.new();
 	enemie.add_child(hitbox)

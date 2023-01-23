@@ -2,8 +2,8 @@ class_name Stats
 extends Node
 
 const MAX_HEALTH = 15
-const DEFAULT_WEAPON = preload("res://Resources/Weapons/Dagger.tres")
-const DEFAULT_ARMOR = preload("res://Resources/Armor/Cloth.tres")
+const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
+const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 
 signal no_health
 signal max_health_changed

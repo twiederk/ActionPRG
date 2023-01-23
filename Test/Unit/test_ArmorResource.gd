@@ -1,6 +1,6 @@
 extends GutTest
 
-const samurai_armor = preload("res://Resources/Armor/SamuraiArmor.tres")
+const samurai_armor = preload("res://Items/Armor/SamuraiArmor.tres")
 
 func test_action():
 

@@ -11,7 +11,7 @@ func after_each():
 func test_get_damage():
 
 	# arrange
-	PlayerStats.set_weapon(load("res://Resources/Weapons/IronSword.tres"))
+	PlayerStats.set_weapon(load("res://Items/Weapons/IronSword.tres"))
 	seed(1)
 
 	# act

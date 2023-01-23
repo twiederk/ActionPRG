@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://Enemies/EnemieResource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Graphics/Shadows/SmallShadow.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Bat/BatSoftCollisionShape.tres" type="Shape2D" id=3]
+[ext_resource path="res://Assets/Graphics/Enemies/Bat_purple.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Bat/BatHitboxCollisionShape.tres" type="Shape2D" id=5]
+[ext_resource path="res://Enemies/Bat/BatHurtboxCollisionShape.tres" type="Shape2D" id=6]
+[ext_resource path="res://Enemies/Bat/BatBodyCollisionShape.tres" type="Shape2D" id=7]
+
+[resource]
+script = ExtResource( 1 )
+health = 5
+damage_die = 4
+acceleration = 150
+max_speed = 25
+weight = 80
+center = Vector2( 0, -12 )
+texture = ExtResource( 4 )
+shadow = ExtResource( 2 )
+scale = Vector2( 1, 1 )
+body_shape = ExtResource( 7 )
+hitbox_shape = ExtResource( 5 )
+hurtbox_shape = ExtResource( 6 )
+soft_shape = ExtResource( 3 )

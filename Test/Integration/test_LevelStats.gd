@@ -21,6 +21,16 @@ func test_visited_node():
 	assert_eq(visited_nodes[0], "Village/YSort/Fixtures/CopperKey", "Should be path of copper_key")
 
 
+func test_reset():
+	
+	# arrange
+	LevelStats._visited_nodes["Village"] = [ "Node1", "Node2"]
+	LevelStats._visited_nodes["Cave"] = [ "Node1", "Node2"]
 
-
+	# act
+	LevelStats.reset()
+	
+	# assert
+	assert_eq(LevelStats._visited_nodes.size(), 0, "Should clear visited nodes")
+	
 
