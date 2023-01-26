@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Items.png-63468f8fe3a88b974dfe03a603a1507c.stex"
+path="res://.import/HouseFilledWallTileset.png-971454f9eeb3fa2bae57c988fe688600.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/World/Items.png"
-dest_files=[ "res://.import/Items.png-63468f8fe3a88b974dfe03a603a1507c.stex" ]
+source_file="res://Assets/Graphics/World/HouseFilledWallTileset.png"
+dest_files=[ "res://.import/HouseFilledWallTileset.png-971454f9eeb3fa2bae57c988fe688600.stex" ]
 
 [params]
 

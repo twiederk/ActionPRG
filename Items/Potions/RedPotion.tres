@@ -6,4 +6,5 @@
 script = ExtResource( 1 )
 frame_coords = Vector2( 14, 36 )
 pickup_sfx = "PotionPickUp.ogg"
+value = 5
 effect = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/InventoryUI.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Graphics/World/Items.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/World/ItemSheet.png" type="Texture" id=2]
 
 [node name="InventoryUI" type="Control"]
 margin_right = 40.0

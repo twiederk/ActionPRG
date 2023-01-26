@@ -3,13 +3,14 @@ extends ItemResource
 
 enum Effect { HEAL, STRENGTH }
 
+export(int) var value = 0
 export(Effect) var effect = Effect.HEAL
 
 
 func action(stats) -> void:
 	match effect:
 		Effect.HEAL:
-			stats.heal(5)
+			stats.heal(value)
 		Effect.STRENGTH:
-			stats.increase_strength()
+			stats.increase_strength(value)
 

@@ -140,12 +140,12 @@ position = Vector2( 0, -13 )
 shape = ExtResource( 13 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
 __meta__ = {
 "_editor_description_": "The collision shape the player has to enter to be detected and followed by the bat."
 }
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-modulate = Color( 1, 1, 0, 0.415686 )
 shape = SubResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 7 )]

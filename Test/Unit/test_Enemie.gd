@@ -39,3 +39,29 @@ func test_calculate_knockback_with_bat_giant():
 
 	# assert
 	assert_eq(knockback, Vector2(0, 80), "Should knockback giant bat by 80")
+
+
+func test_calulate_health_bar_position_bat():
+	
+	# arrange
+	var health_bar_size = Vector2(18, 3)
+	var enemie_center = Vector2(0, -12)
+	
+	# act
+	var position = enemie._calulate_health_bar_position(health_bar_size, enemie_center)
+	
+	# assert
+	assert_eq(position, Vector2(-9, -27), "Should place health bar on top of enemie")
+
+
+func test_calulate_name_label_position_bat():
+	
+	# arrange
+	var name_label_size = Vector2(100, 11)
+	var enemie_center = Vector2(0, -12)
+	
+	# act
+	var position = enemie._calulate_name_label_position(name_label_size, enemie_center)
+	
+	# assert
+	assert_eq(position, Vector2(-50, -36), "Should place name label on top of enemie")

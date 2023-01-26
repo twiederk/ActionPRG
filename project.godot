@@ -149,6 +149,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://World/Main.gd"
 }, {
+"base": "StaticBody2D",
+"class": "Plant",
+"language": "GDScript",
+"path": "res://World/Plants/Plant.gd"
+}, {
+"base": "Resource",
+"class": "PlantResource",
+"language": "GDScript",
+"path": "res://World/Plants/PlantResource.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -238,6 +248,8 @@ _global_script_class_icons={
 "KeyResource": "",
 "KeyUI": "",
 "Main": "",
+"Plant": "",
+"PlantResource": "",
 "Player": "",
 "PlayerHitbox": "",
 "PortalArea2D": "",
@@ -255,7 +267,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 2.4.0"
+config/description="Version 2.5.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"

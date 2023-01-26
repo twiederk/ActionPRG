@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-frame_coords = Vector2( 3, 37 )
-pickup_sfx = "PotionPickUp.ogg"
+frame_coords = Vector2( 3, 111 )
+pickup_sfx = "FlowerPickUp.ogg"
 value = 1
-effect = 1
+effect = 0

@@ -4,6 +4,8 @@ extends KinematicBody2D
 enum EnemieState {IDLE, WANDER, CHASE}
 
 const DAMAGE_FORCE = 200
+const HEALTH_BAR_MARGIN = 3
+const NAME_LABE_MARGIN = 6
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
 export(int) var acceleration = 150
@@ -64,12 +66,20 @@ func _init_apperance():
 
 
 func _init_health_bar_and_name_label():
-	healthBar.set_position(Vector2(-healthBar.rect_size.x / 2, enemie_resource.center.y * 2))
-	nameLabel.set_position(Vector2(-nameLabel.rect_size.x /2, enemie_resource.center.y * 2.5))
+	healthBar.set_position(_calulate_health_bar_position(healthBar.rect_size, enemie_resource.center))
+	nameLabel.set_position(_calulate_name_label_position(nameLabel.rect_size, enemie_resource.center))
 	if not boss_name.empty():
 		nameLabel.visible = true
 		nameLabel.text = boss_name
 		healthBar.visible = true
+
+
+func _calulate_health_bar_position(rect_size: Vector2, center: Vector2) -> Vector2:
+	return Vector2(-rect_size.x / 2.0, center.y * 2 - HEALTH_BAR_MARGIN)
+
+
+func _calulate_name_label_position(rect_size: Vector2, center: Vector2) -> Vector2:
+	return Vector2(-rect_size.x / 2.0, center.y * 2.5 - NAME_LABE_MARGIN)
 
 
 func _physics_process(delta):
