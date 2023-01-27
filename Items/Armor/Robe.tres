@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/ArmorResource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/ArmorPickUp.ogg" type="AudioStream" id=2]
 
 [resource]
 script = ExtResource( 1 )
 frame_coords = Vector2( 11, 3 )
-pickup_sfx = "ArmorPickUp.ogg"
+shadow = true
+pickup_stream = ExtResource( 2 )
 armor_class = 0

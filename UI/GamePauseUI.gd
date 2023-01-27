@@ -30,7 +30,8 @@ func _on_ResumeButton_pressed():
 
 func _on_RestartButton_pressed():
 	get_node(Main.MAIN_NODE_PATH).restart()
+	get_tree().paused = false
 	hide()
-	
+
 
 

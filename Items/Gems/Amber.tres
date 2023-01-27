@@ -1,8 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/GemResource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/GemPickUp.ogg" type="AudioStream" id=2]
 
 [resource]
 script = ExtResource( 1 )
 frame_coords = Vector2( 11, 27 )
-pickup_sfx = "GemPickUp.ogg"
+shadow = true
+pickup_stream = ExtResource( 2 )

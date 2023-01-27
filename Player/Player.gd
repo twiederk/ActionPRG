@@ -7,6 +7,7 @@ const MAX_SPEED = 80
 const ROLL_SPEED = 125
 const FRICTION = 500
 
+
 enum PlayerState { MOVE, ROLL, ATTACK }
 
 var state = PlayerState.MOVE

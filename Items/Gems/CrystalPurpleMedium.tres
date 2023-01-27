@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-frame_coords = Vector2( 10, 27 )
-shadow = true
+frame_coords = Vector2( 7, 111 )
+shadow = false
 pickup_stream = ExtResource( 2 )
