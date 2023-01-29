@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HouseTileset.png-d366a19d6758427a5795ad4235f943c1.stex"
+path="res://.import/dungeon_B.png-58cdff1d95406e9f4d6d409967387c1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/World/HouseTileset.png"
-dest_files=[ "res://.import/HouseTileset.png-d366a19d6758427a5795ad4235f943c1.stex" ]
+source_file="res://Assets/Graphics/Tilesets/dungeon_B.png"
+dest_files=[ "res://.import/dungeon_B.png-58cdff1d95406e9f4d6d409967387c1e.stex" ]
 
 [params]
 

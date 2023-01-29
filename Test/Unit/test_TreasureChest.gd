@@ -4,7 +4,7 @@ const ROBE  = preload("res://Items/Armor/Robe.tres")
 const TOPAZ = preload("res://Items/Gems/Topaz.tres")
 const GOLD_KEY = preload("res://Items/Keys/GoldKey.tres")
 const RED_POTION = preload("res://Items/Potions/RedPotion.tres")
-const IRON_SWORD  = preload("res://Items/Weapons/IronSword.tres")
+const IRON_SWORD  = preload("res://Items/Weapons/Sword.tres")
 
 var treasure_chest: TreasureChest = null
 

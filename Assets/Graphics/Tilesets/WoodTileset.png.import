@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cave_A.png-cd63418ee7830111d9e6755c0af1eaa5.stex"
+path="res://.import/WoodTileset.png-1e0fe148d233f7b7065c631adba3838d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Cave/cave_A.png"
-dest_files=[ "res://.import/cave_A.png-cd63418ee7830111d9e6755c0af1eaa5.stex" ]
+source_file="res://Assets/Graphics/Tilesets/WoodTileset.png"
+dest_files=[ "res://.import/WoodTileset.png-1e0fe148d233f7b7065c631adba3838d.stex" ]
 
 [params]
 

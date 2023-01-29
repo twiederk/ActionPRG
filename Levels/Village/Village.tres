@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" load_steps=149 format=2]
 
-[ext_resource path="res://Assets/Graphics/World/DirtTileset.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Graphics/World/CliffTileset.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Graphics/World/FloorTileset.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Graphics/World/WoodTileset.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Graphics/World/HouseTileset.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Graphics/World/HouseFilledWallTileset.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphics/Tilesets/DirtTileset.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/Tilesets/CliffTileset.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/Tilesets/FloorTileset.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/Tilesets/WoodTileset.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/Tilesets/HouseTileset.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphics/Tilesets/HouseFilledWallTileset.png" type="Texture" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sounds/WeaponPickUp.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Items/WeaponResource.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+frame_coords = Vector2( 1, 107 )
+shadow = true
+pickup_stream = ExtResource( 1 )
+damage_die = 8

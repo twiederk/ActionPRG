@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DirtTileset.png-034e78845b3f4bce203346a1059a3667.stex"
+path="res://.import/cave_B.png-57ca2f72656e4e77ebc7bb8eddde4cbd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/World/DirtTileset.png"
-dest_files=[ "res://.import/DirtTileset.png-034e78845b3f4bce203346a1059a3667.stex" ]
+source_file="res://Assets/Graphics/Tilesets/cave_B.png"
+dest_files=[ "res://.import/cave_B.png-57ca2f72656e4e77ebc7bb8eddde4cbd.stex" ]
 
 [params]
 
