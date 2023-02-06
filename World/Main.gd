@@ -45,7 +45,7 @@ func _handle_visited_node(visited_node: Node) -> void:
 		pass
 	elif visited_node is Door:
 		visited_node.set_opened(true)
-	elif visited_node is SecretDoor:
+	elif visited_node is SecretDoor or visited_node is NormalDoor:
 		visited_node.open()
 	else:
 		visited_node.queue_free()

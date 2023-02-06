@@ -9,14 +9,22 @@ func test_can_create_Die():
 
 
 func test_roll_D4():
-	
+
 	# arrange
 	seed(1)
 	var die = Die.new()
-	
+
 	# act
 	var result = die.roll(Die.Name.D6)
-	
+
 	# assert
 	assert_eq(result, 4, "Should roll a 4")
-	
+
+
+func test_display_name_D4():
+
+	# act
+	var result = Die.Name.D4
+
+	# assert
+	assert_eq(result, 4, "Should have int value of 4 for D4")

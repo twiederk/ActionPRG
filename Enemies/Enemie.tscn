@@ -112,14 +112,14 @@ align = 1
 margin_right = 18.0
 margin_bottom = 3.0
 
+[node name="ShadowSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 17 )
 position = Vector2( 0, -12 )
 texture = ExtResource( 1 )
 hframes = 5
-
-[node name="ShadowSprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 modulate = Color( 0.921569, 0.647059, 0.12549, 0.705882 )

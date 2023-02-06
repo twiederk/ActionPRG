@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Items/ArmorResource.gd"
 }, {
 "base": "Node",
+"class": "Cave",
+"language": "GDScript",
+"path": "res://Levels/Cave/Cave.gd"
+}, {
+"base": "Node",
 "class": "Crypt",
 "language": "GDScript",
 "path": "res://Levels/Crypt/Crypt.gd"
@@ -154,6 +159,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://World/Main.gd"
 }, {
+"base": "Area2D",
+"class": "NormalDoor",
+"language": "GDScript",
+"path": "res://World/NormalDoor.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Plant",
 "language": "GDScript",
@@ -232,6 +242,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armor": "",
 "ArmorResource": "",
+"Cave": "",
 "Crypt": "",
 "Die": "",
 "Door": "",
@@ -259,6 +270,7 @@ _global_script_class_icons={
 "KeyResource": "",
 "KeyUI": "",
 "Main": "",
+"NormalDoor": "",
 "Plant": "",
 "PlantResource": "",
 "Player": "",
@@ -279,7 +291,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 3.0.0"
+config/description="Version 3.2.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"

@@ -8,3 +8,4 @@ export var pickup_stream = preload("res://Assets/Sounds/ItemPickUp.ogg")
 
 func action(_stats) -> void:
 	pass
+
