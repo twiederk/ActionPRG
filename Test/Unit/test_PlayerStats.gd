@@ -122,7 +122,7 @@ func test_reset():
 	stats.set_health(10)
 	stats.set_strength(10)
 	stats.increase_key(Key.GOLD)
-	stats.increase_key(Key.COPPER)
+	stats.increase_key(Key.SILVER)
 	stats.set_weapon(null)
 	stats.set_armor(null)
 	watch_signals(stats)
@@ -135,7 +135,7 @@ func test_reset():
 	assert_eq(stats.get_health(), Stats.MAX_HEALTH, "Should reset health")
 	assert_eq(stats.get_strength(), 0, "Should reset strength")
 	assert_eq(stats.get_key(Key.GOLD), 0, "Should reset keys gold")
-	assert_eq(stats.get_key(Key.COPPER), 0, "Should reset keys copper")
+	assert_eq(stats.get_key(Key.SILVER), 0, "Should reset keys silver")
 	assert_eq(stats.get_weapon(), Stats.DEFAULT_WEAPON, "Should reset weapon")
 	assert_eq(stats.get_armor(), Stats.DEFAULT_ARMOR, "Should reset armor")
 	
@@ -143,7 +143,7 @@ func test_reset():
 	assert_signal_emitted(stats, "health_changed", "Should emit health_changed signal")
 	assert_signal_emitted(stats, "weapon_changed", "Should emit weapon_changed signal")
 	assert_signal_emitted(stats, "armor_changed", "Should emit armor_changed signal")
-	assert_signal_emit_count(stats, "key_changed", 2, "Should emit key_changed signal two times")
+	assert_signal_emit_count(stats, "key_changed", 6, "Should emit key_changed signal two times")
 
 
 func test_player_dies():
@@ -173,17 +173,17 @@ func test_set_max_health():
 	assert_signal_emitted(stats, "max_health_changed")
 
 
-func test_increase_key_copper() -> void:
+func test_increase_key_silver() -> void:
 
 	# arrange
-	stats._keys[Key.COPPER] = 0
+	stats._keys[Key.SILVER] = 0
 	watch_signals(stats)
 	
 	# act
-	stats.increase_key(Key.COPPER)
+	stats.increase_key(Key.SILVER)
 	
 	# assert
-	assert_eq(stats.get_key(Key.COPPER), 1, "Should increase copper key by one")
+	assert_eq(stats.get_key(Key.SILVER), 1, "Should increase silver key by one")
 	assert_signal_emitted(stats, "key_changed")
 
 
@@ -201,17 +201,17 @@ func test_increase_key_gold() -> void:
 	assert_signal_emitted(stats, "key_changed")
 
 
-func test_decrease_key_copper() -> void:
+func test_decrease_key_silver() -> void:
 
 	# arrange
-	stats._keys[Key.COPPER] = 5
+	stats._keys[Key.SILVER] = 5
 	watch_signals(stats)
 	
 	# act
-	stats.decrease_key(Key.COPPER)
+	stats.decrease_key(Key.SILVER)
 	
 	# assert
-	assert_eq(stats.get_key(Key.COPPER), 4, "Should decrease copper key by one")
+	assert_eq(stats.get_key(Key.SILVER), 4, "Should decrease silver key by one")
 	assert_signal_emitted(stats, "key_changed")
 
 

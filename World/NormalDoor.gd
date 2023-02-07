@@ -6,9 +6,7 @@ export(Resource) var MISSING_KEY_SFX
 
 signal door_opened(world_position)
 
-export var key: int = Key.COPPER
-
-
+export var key: int = Key.GOLD
 
 
 func _on_NormalDoor_body_entered(body):

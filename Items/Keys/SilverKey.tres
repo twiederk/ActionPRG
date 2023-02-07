@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sounds/KeyPickUp.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Items/Keys/KeyResource.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+frame_coords = Vector2( 2, 33 )
+shadow = true
+pickup_stream = ExtResource( 1 )
+material = 1

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Sounds/ItemPickUp.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Items/WeaponResource.gd" type="Script" id=2]
+[ext_resource path="res://Items/Weapons/WeaponResource.gd" type="Script" id=2]
 
 [resource]
 script = ExtResource( 2 )

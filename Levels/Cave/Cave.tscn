@@ -4,7 +4,7 @@
 [ext_resource path="res://Enemies/Bat/BatBlue.tres" type="Resource" id=2]
 [ext_resource path="res://Items/Potions/RedPotion.tres" type="Resource" id=3]
 [ext_resource path="res://Enemies/Dragon/Dragon_brown.tres" type="Resource" id=4]
-[ext_resource path="res://World/Items/Potion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/Potions/Potion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Enemie.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
@@ -12,16 +12,16 @@
 [ext_resource path="res://Items/Gems/CrystalPurpleLarge.tres" type="Resource" id=10]
 [ext_resource path="res://Items/Gems/CrystalPurpleMedium.tres" type="Resource" id=11]
 [ext_resource path="res://Items/Gems/CrystalPurpleSmall.tres" type="Resource" id=12]
-[ext_resource path="res://World/Items/Gem.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Items/Gems/Gem.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/NormalDoor.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Cave/Cave.gd" type="Script" id=15]
-[ext_resource path="res://World/Items/Key.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Items/Keys/CopperKey.tres" type="Resource" id=17]
+[ext_resource path="res://Items/Keys/Key.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Items/Keys/BronzeKey.tres" type="Resource" id=17]
 [ext_resource path="res://Enemies/Dragon/Dragon_blue.tres" type="Resource" id=18]
 [ext_resource path="res://Items/Weapons/RubinSword.tres" type="Resource" id=19]
-[ext_resource path="res://World/Items/Weapon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Items/Weapons/Weapon.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Items/Armor/RubinPlate.tres" type="Resource" id=21]
-[ext_resource path="res://World/Items/Armor.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Items/Armor/Armor.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Items/Gems/CrystalGreenLarge.tres" type="Resource" id=23]
 [ext_resource path="res://Items/Gems/CrystalGreenMedium.tres" type="Resource" id=24]
 [ext_resource path="res://Items/Gems/CrystalGreenSmall.tres" type="Resource" id=25]
@@ -215,6 +215,7 @@ position = Vector2( 225, 387 )
 
 [node name="NormalDoor" parent="YSort/Fixtures" instance=ExtResource( 14 )]
 position = Vector2( -39, 393 )
+key = 2
 
 [node name="HealPotion" parent="YSort/Fixtures" instance=ExtResource( 5 )]
 position = Vector2( -135, 344 )
@@ -224,7 +225,7 @@ item_resource = ExtResource( 3 )
 position = Vector2( -42, 136 )
 starting_position = Vector2( 650, 250 )
 
-[node name="CopperKey" parent="YSort/Fixtures" instance=ExtResource( 16 )]
+[node name="BronzeKey" parent="YSort/Fixtures" instance=ExtResource( 16 )]
 position = Vector2( 277, 423 )
 item_resource = ExtResource( 17 )
 

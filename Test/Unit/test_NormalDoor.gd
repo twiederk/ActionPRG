@@ -27,7 +27,7 @@ func test_can_open_door_not_Player():
 func test_can_open_door_Player_with_key():
 	# arrange
 	var body = double(Player).new()
-	PlayerStats.set_key(Key.COPPER, 1)
+	PlayerStats.set_key(Key.GOLD, 1)
 
 	# act
 	var result = normal_door._can_open_door(body)
@@ -36,11 +36,12 @@ func test_can_open_door_Player_with_key():
 	assert_true(result, "Should open door when player has key")
 
 	# tear down
-	PlayerStats.set_key(Key.COPPER, 0)
+	PlayerStats.set_key(Key.GOLD, 0)
 
 
 func test_can_open_door_Player_no_key():
 	# arrange
+	PlayerStats.reset()
 	var body = double(Player).new()
 
 	# act
@@ -64,6 +65,7 @@ func test_open():
 
 func test_is_missing_key_true():
 	# arrange
+	PlayerStats.reset()
 	var body = double(Player).new()
 
 	# act

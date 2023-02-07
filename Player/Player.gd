@@ -123,7 +123,7 @@ func _on_HealingWell_entered_healing_area() -> void:
 	stats.total_heal()
 
 
-func _on_Item_picked_up_item(item_resource: ItemResource) -> void:
+func _on_Item_picked_up_item(item_resource: Resource) -> void:
 	item_resource.action(stats)
 
 

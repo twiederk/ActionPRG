@@ -43,8 +43,6 @@ func _free_visited_nodes() -> void:
 func _handle_visited_node(visited_node: Node) -> void:
 	if visited_node == null:
 		pass
-	elif visited_node is Door:
-		visited_node.set_opened(true)
 	elif visited_node is SecretDoor or visited_node is NormalDoor:
 		visited_node.open()
 	else:

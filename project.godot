@@ -9,15 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Item",
+"base": "Reference",
 "class": "Armor",
 "language": "GDScript",
-"path": "res://World/Items/Armor.gd"
+"path": "res://Items/Armor/Armor.gd"
 }, {
-"base": "ItemResource",
+"base": "Resource",
 "class": "ArmorResource",
 "language": "GDScript",
-"path": "res://Items/ArmorResource.gd"
+"path": "res://Items/Armor/ArmorResource.gd"
 }, {
 "base": "Node",
 "class": "Cave",
@@ -33,11 +33,6 @@ _global_script_classes=[ {
 "class": "Die",
 "language": "GDScript",
 "path": "res://World/Die.gd"
-}, {
-"base": "Node2D",
-"class": "Door",
-"language": "GDScript",
-"path": "res://World/Door.gd"
 }, {
 "base": "AnimatedSprite",
 "class": "Effect",
@@ -72,12 +67,12 @@ _global_script_classes=[ {
 "base": "Item",
 "class": "Gem",
 "language": "GDScript",
-"path": "res://World/Items/Gem.gd"
+"path": "res://Items/Gems/Gem.gd"
 }, {
-"base": "ItemResource",
+"base": "Resource",
 "class": "GemResource",
 "language": "GDScript",
-"path": "res://Items/GemResource.gd"
+"path": "res://Items/Gems/GemResource.gd"
 }, {
 "base": "",
 "class": "GitAPI",
@@ -132,22 +127,22 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Item",
 "language": "GDScript",
-"path": "res://World/Items/Item.gd"
-}, {
-"base": "Resource",
-"class": "ItemResource",
-"language": "GDScript",
-"path": "res://Items/ItemResource.gd"
+"path": "res://Items/Item.gd"
 }, {
 "base": "Item",
 "class": "Key",
 "language": "GDScript",
-"path": "res://World/Items/Key.gd"
+"path": "res://Items/Keys/Key.gd"
 }, {
-"base": "ItemResource",
+"base": "Resource",
 "class": "KeyResource",
 "language": "GDScript",
-"path": "res://Items/KeyResource.gd"
+"path": "res://Items/Keys/KeyResource.gd"
+}, {
+"base": "Sprite",
+"class": "KeySprite",
+"language": "GDScript",
+"path": "res://UI/KeySprite.gd"
 }, {
 "base": "Control",
 "class": "KeyUI",
@@ -192,12 +187,12 @@ _global_script_classes=[ {
 "base": "Item",
 "class": "Potion",
 "language": "GDScript",
-"path": "res://World/Items/Potion.gd"
+"path": "res://Items/Potions/Potion.gd"
 }, {
-"base": "ItemResource",
+"base": "Resource",
 "class": "PotionResource",
 "language": "GDScript",
-"path": "res://Items/PotionResource.gd"
+"path": "res://Items/Potions/PotionResource.gd"
 }, {
 "base": "Area2D",
 "class": "SecretDoor",
@@ -232,12 +227,12 @@ _global_script_classes=[ {
 "base": "Item",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://World/Items/Weapon.gd"
+"path": "res://Items/Weapons/Weapon.gd"
 }, {
-"base": "ItemResource",
+"base": "Resource",
 "class": "WeaponResource",
 "language": "GDScript",
-"path": "res://Items/WeaponResource.gd"
+"path": "res://Items/Weapons/WeaponResource.gd"
 } ]
 _global_script_class_icons={
 "Armor": "",
@@ -245,7 +240,6 @@ _global_script_class_icons={
 "Cave": "",
 "Crypt": "",
 "Die": "",
-"Door": "",
 "Effect": "",
 "Enemie": "",
 "EnemieResource": "",
@@ -265,9 +259,9 @@ _global_script_class_icons={
 "Hurtbox": "",
 "InventoryUI": "",
 "Item": "",
-"ItemResource": "",
 "Key": "",
 "KeyResource": "",
+"KeySprite": "",
 "KeyUI": "",
 "Main": "",
 "NormalDoor": "",
@@ -291,9 +285,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 3.2.0"
+config/description="Version 3.3.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
-config/icon="res://icon.png"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
 [autoload]

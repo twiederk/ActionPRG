@@ -3,11 +3,11 @@ extends Area2D
 
 enum TreasureState {CLOSE, OPEN}
 
-const ArmorScene = preload("res://World/Items/Armor.tscn")
-const GemScene = preload("res://World/Items/Gem.tscn")
-const KeyScene = preload("res://World/Items/Key.tscn")
-const PotionScene = preload("res://World/Items/Potion.tscn")
-const WeaponScene = preload("res://World/Items/Weapon.tscn")
+const ArmorScene = preload("res://Items/Armor/Armor.tscn")
+const GemScene = preload("res://Items/Gems/Gem.tscn")
+const KeyScene = preload("res://Items/Keys/Key.tscn")
+const PotionScene = preload("res://Items/Potions/Potion.tscn")
+const WeaponScene = preload("res://Items/Weapons/Weapon.tscn")
 const TWEEN_DISTANCE = 20
 
 export(Array, Resource) var treasure_content
@@ -26,11 +26,11 @@ onready var audioStreamPlayer = $AudioStreamPlayer
 
 
 func _on_TreasureChest_body_entered(_body):
-	if can_be_opened(PlayerStats.get_key(Key.COPPER)):
+	if can_be_opened(PlayerStats.get_key(Key.SILVER)):
 		open_treasure_chest()
-	elif is_missing_key(PlayerStats.get_key(Key.COPPER)):
+	elif is_missing_key(PlayerStats.get_key(Key.SILVER)):
 		audioStreamPlayer.play()
-		KeyEvents.emit_signal("key_missing", Key.COPPER)
+		KeyEvents.emit_signal("key_missing", Key.SILVER)
 
 
 func can_be_opened(key) -> bool:
@@ -42,7 +42,7 @@ func is_missing_key(key) -> bool:
 
 
 func open_treasure_chest() -> void:
-	PlayerStats.decrease_key(Key.COPPER)
+	PlayerStats.decrease_key(Key.SILVER)
 	LevelStats.visited_node(get_path())
 	treasure_state = TreasureState.OPEN
 	audioStreamPlayer.stream = check_open_sfx
@@ -59,7 +59,7 @@ func create_treasuries() -> Array:
 	return treasuries
 
 
-func create_node(item_resource: ItemResource) -> Node2D:
+func create_node(item_resource: Resource) -> Node2D:
 	var node
 	if item_resource is ArmorResource:
 		node = ArmorScene.instance()

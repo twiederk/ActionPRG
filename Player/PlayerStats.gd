@@ -12,7 +12,7 @@ signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
 
-export(Array, int) var _keys = [0, 0]
+export(Array, int) var _keys = [0, 0, 0, 0, 0, 0]
 
 var _max_health: int = MAX_HEALTH
 var _health = _max_health
