@@ -15,6 +15,7 @@ damage_die = 8
 acceleration = 200
 max_speed = 35
 weight = 120
+experience_points = 100
 center = Vector2( 3, -19 )
 texture = ExtResource( 2 )
 shadow = ExtResource( 3 )

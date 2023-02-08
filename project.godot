@@ -285,7 +285,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 3.4.0"
+config/description="Version 4.0.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
@@ -295,6 +295,7 @@ PlayerStats="*res://Player/PlayerStats.gd"
 KeyEvents="*res://UI/KeyEvents.gd"
 AudioEvents="*res://World/AudioEvents.gd"
 LevelStats="*res://World/LevelStats.gd"
+PlayerStatsEvents="*res://Player/PlayerStatsEvents.gd"
 
 [display]
 
