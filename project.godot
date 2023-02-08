@@ -285,7 +285,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 3.4.0-SNAPSHOT"
+config/description="Version 3.4.0"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
