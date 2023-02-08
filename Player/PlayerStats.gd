@@ -8,6 +8,7 @@ const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 signal no_health
 signal max_health_changed
 signal health_changed
+signal strength_changed(strength)
 signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
@@ -98,6 +99,7 @@ func hurt(hit_damage: int = 1) -> void:
 
 func set_strength(strength: int) -> void:
 	_strength = strength
+	emit_signal("strength_changed", _strength)
 
 
 func get_strength() -> int:
@@ -105,7 +107,7 @@ func get_strength() -> int:
 
 
 func increase_strength(value: int = 1) -> void:
-	_strength += value
+	set_strength(get_strength() + value)
 
 
 func get_key(key_material: int) -> int:

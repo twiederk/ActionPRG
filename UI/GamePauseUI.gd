@@ -34,4 +34,5 @@ func _on_RestartButton_pressed():
 	hide()
 
 
-
+func _on_QuitButton_pressed():
+	get_tree().quit()

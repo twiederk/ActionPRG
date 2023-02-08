@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Item",
 "class": "Armor",
 "language": "GDScript",
 "path": "res://Items/Armor/Armor.gd"
@@ -285,7 +285,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 3.3.0"
+config/description="Version 3.4.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
