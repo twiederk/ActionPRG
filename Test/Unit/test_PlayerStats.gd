@@ -260,7 +260,7 @@ func test_gain_experience_points_without_level_up():
 
 	# assert
 	assert_eq(stats.get_experience_points(), 10, "Should increase experience points by 10")
-	assert_signal_not_emitted(stats, "level_up")
+	assert_signal_not_emitted(stats, "level_changed")
 
 
 func test_set_get_level():
@@ -301,25 +301,27 @@ func test_gain_experience_points_with_level_up():
 	stats.gain_experience_points(150)
 
 	# assert
-	assert_signal_emitted(stats, "level_up")
+	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 150])
 
 
 func test_level_up_from_1st_level_to_2nd_level():
 
 	# arrange
 	watch_signals(stats)
+	watch_signals(AudioEvents)
 
 	# act
 	stats.level_up(1)
 
 	# assert
-	assert_signal_emitted(stats, "level_up")
+	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 0])
+	assert_signal_emitted(AudioEvents, "play_stream")
 	assert_eq(stats.get_level(), 2, "Should level set level to 2")
 	assert_eq(stats.get_max_health(), 15, "Should increase max health by 5")
 	assert_eq(stats.get_health(), 15, "Should increase health by 5")
 	assert_eq(stats.get_strength(), 0, "Should not increase strength")
-	
-	
+
+
 func test_level_up_from_2nd_level_to_3rd_level():
 
 	# arrange
@@ -327,13 +329,39 @@ func test_level_up_from_2nd_level_to_3rd_level():
 	stats.set_max_health(15)
 	stats.set_health(7)
 	watch_signals(stats)
+	watch_signals(AudioEvents)
 
 	# act
 	stats.level_up(2)
 
 	# assert
-	assert_signal_emitted(stats, "level_up")
+	assert_signal_emitted_with_parameters(stats, "level_changed", [3, 0])
+	assert_signal_emitted(AudioEvents, "play_stream")
 	assert_eq(stats.get_level(), 3, "Should level set level to 3")
 	assert_eq(stats.get_max_health(), 20, "Should increase max health by 5")
 	assert_eq(stats.get_health(), 12, "Should increase health by 5")
 	assert_eq(stats.get_strength(), 1, "Should increase strength by 1")
+
+
+func test_set_experience_points():
+
+	# arrange
+	watch_signals(stats)
+
+	# act
+	stats.set_experience_points(20)
+
+	# assert
+	assert_signal_emitted_with_parameters(stats, "experience_points_changed", [20])
+
+
+func test_set_level():
+
+	# arrange
+	watch_signals(stats)
+
+	# act
+	stats.set_level(2)
+
+	# assert
+	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 0])

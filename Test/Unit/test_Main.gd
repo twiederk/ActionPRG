@@ -45,12 +45,13 @@ func test_handle_visited_node_normal_door():
 	
 	# arrange
 	var normal_door = double(NormalDoor).new()
+	stub(normal_door, "open")
 
 	# act
 	main._handle_visited_node(normal_door)
 	
 	# assert
-	assert_called(normal_door, "open")
+	assert_called(normal_door, "open", [])
 
 	# tear down
 	normal_door.free()
@@ -60,12 +61,13 @@ func test_handle_visited_node_secret_door():
 	
 	# arrange
 	var secret_door = double(SecretDoor).new()
+	stub(secret_door, "open")
 
 	# act
 	main._handle_visited_node(secret_door)
 	
 	# assert
-	assert_called(secret_door, "open")
+	assert_called(secret_door, "open", [])
 
 	# tear down
 	secret_door.free()

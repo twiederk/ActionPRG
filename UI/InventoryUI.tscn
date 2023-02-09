@@ -20,7 +20,7 @@ script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 38.0
-margin_bottom = 24.0
+margin_bottom = 36.0
 color = Color( 0.564706, 0.564706, 0.564706, 0.498039 )
 
 [node name="GridContainer" type="GridContainer" parent="."]

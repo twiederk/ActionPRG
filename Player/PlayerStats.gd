@@ -1,9 +1,6 @@
 class_name Stats
 extends Node
 
-const MAX_HEALTH = 10
-const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
-const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 
 signal no_health
 signal max_health_changed
@@ -12,7 +9,16 @@ signal strength_changed(strength)
 signal weapon_changed(weapon_resource)
 signal armor_changed(armor_resource)
 signal key_changed(key_material, count)
-signal level_up
+signal level_changed(level, experience_points)
+signal experience_points_changed(experience_points)
+# warning-ignore:UNUSED_SIGNAL
+signal enemie_killed(enemie)
+
+
+const MAX_HEALTH = 10
+const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
+const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
+const LEVEL_UP_VOICE = preload("res://Assets/Sounds/LevelUpVoice.ogg")
 
 export(Array, int) var _keys = [0, 0, 0, 0, 0, 0]
 
@@ -27,7 +33,7 @@ var _level: int = 1
 
 func _ready():
 	# warning-ignore:RETURN_VALUE_DISCARDED
-	PlayerStatsEvents.connect("enemie_killed", self, "_on_PlayerStatsEvents_enemie_killed")
+	connect("enemie_killed", self, "_on_enemie_killed")
 
 
 func set_max_health(new_max_health) -> void:
@@ -137,6 +143,7 @@ func reset() -> void:
 
 func set_experience_points(experience_points: int) -> void:
 	_experience_points = experience_points
+	emit_signal("experience_points_changed", _experience_points)
 
 
 func get_experience_points() -> int:
@@ -151,13 +158,14 @@ func gain_experience_points(experience_points: int) -> void:
 
 func set_level(level: int) -> void:
 	_level = level
+	emit_signal("level_changed", _level, _experience_points)
 
 
 func get_level() -> int:
 	return _level
 
 
-func _on_PlayerStatsEvents_enemie_killed(enemie: EnemieResource) -> void:
+func _on_enemie_killed(enemie: EnemieResource) -> void:
 	gain_experience_points(enemie.experience_points)
 
 
@@ -169,10 +177,11 @@ func get_next_level_at(current_level: int) -> int:
 
 
 func level_up(current_level: int) -> void:
+	AudioEvents.emit_signal("play_stream", LEVEL_UP_VOICE)
 	var next_level = current_level + 1
 	set_level(next_level)
 	set_max_health(get_max_health() + 5)
 	set_health(get_health() + 5)
 	if next_level % 2 == 1:
 		increase_strength()
-	emit_signal("level_up")
+

@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://Enemies/EnemieResource.gd"
 }, {
 "base": "Control",
+"class": "ExperienceUI",
+"language": "GDScript",
+"path": "res://UI/ExperienceUI.gd"
+}, {
+"base": "Control",
 "class": "GameOverUI",
 "language": "GDScript",
 "path": "res://UI/GameOverUI.gd"
@@ -243,6 +248,7 @@ _global_script_class_icons={
 "Effect": "",
 "Enemie": "",
 "EnemieResource": "",
+"ExperienceUI": "",
 "GameOverUI": "",
 "GamePauseUI": "",
 "GameStartUI": "",
@@ -285,7 +291,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 4.0.0"
+config/description="Version 4.1.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
@@ -295,7 +301,6 @@ PlayerStats="*res://Player/PlayerStats.gd"
 KeyEvents="*res://UI/KeyEvents.gd"
 AudioEvents="*res://World/AudioEvents.gd"
 LevelStats="*res://World/LevelStats.gd"
-PlayerStatsEvents="*res://Player/PlayerStatsEvents.gd"
 
 [display]
 

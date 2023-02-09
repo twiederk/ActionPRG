@@ -47,16 +47,20 @@ func _get_key_label(key_material: int) -> Label:
 			key_label = silver_key_label
 		Key.BRONZE:
 			key_label = bronze_key_label
+		_: 
+			key_label = gold_key_label
 	return key_label
 
 
 func _get_key_sprite(key_material: int) -> Sprite:
-		var key_sprite: Sprite
-		match key_material:
-			Key.GOLD:
-				key_sprite = gold_key_sprite
-			Key.SILVER:
-				key_sprite = silver_key_sprite
-			Key.BRONZE:
-				key_sprite = bronze_key_sprite
-		return key_sprite
+	var key_sprite: Sprite
+	match key_material:
+		Key.GOLD:
+			key_sprite = gold_key_sprite
+		Key.SILVER:
+			key_sprite = silver_key_sprite
+		Key.BRONZE:
+			key_sprite = bronze_key_sprite
+		_: 
+			key_sprite = gold_key_sprite
+	return key_sprite
