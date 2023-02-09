@@ -1,19 +1,19 @@
 extends GutTest
 
-var healthUI = null
+var heart_row = null
 
 func before_each():
-	healthUI = HealthUI.new()
+	heart_row = HeartRow.new()
 
 
 func after_each():
-	healthUI.free()
+	heart_row.free()
 
 
 func test_calculate_width_5_hearts_in_first_row():
 
 	# act
-	var width = healthUI._calculate_width(0, 5)
+	var width = heart_row._calculate_width(5)
 
 	# assert
 	assert_eq(width, 75, "Should display 5 hearts")
@@ -22,16 +22,19 @@ func test_calculate_width_5_hearts_in_first_row():
 func test_calculate_width_10_hearts_in_first_row():
 
 	# act
-	var width = healthUI._calculate_width(0, 15)
+	var width = heart_row._calculate_width(15)
 
 	# assert
 	assert_eq(width, 150, "Should display 10 hearts")
 
 
 func test_calculate_width_3_hears_in_second_row():
+	
+	# arrange
+	heart_row.row = 1
 
 	# act
-	var width = healthUI._calculate_width(1, 13)
+	var width = heart_row._calculate_width(13)
 
 	# assert
 	assert_eq(width, 45, "Should display 3 hearts")

@@ -114,6 +114,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/HealthUI.gd"
 }, {
+"base": "Control",
+"class": "HeartRow",
+"language": "GDScript",
+"path": "res://UI/HeartRow.gd"
+}, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
@@ -261,6 +266,7 @@ _global_script_class_icons={
 "GutTest": "",
 "HealingWell": "",
 "HealthUI": "",
+"HeartRow": "",
 "Hitbox": "",
 "Hurtbox": "",
 "InventoryUI": "",
@@ -291,7 +297,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 4.1.0"
+config/description="Version 4.2.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
