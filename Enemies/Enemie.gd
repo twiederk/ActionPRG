@@ -136,7 +136,7 @@ func pick_random_state(state_list):
 
 
 func die():
-	LevelStats.visited_node(get_path())
+	LevelStats.emit_signal("node_visited", get_path())
 	PlayerStats.emit_signal("enemie_killed", enemie_resource)
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()

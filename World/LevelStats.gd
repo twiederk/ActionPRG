@@ -1,7 +1,15 @@
 extends Node
 
+# warning-ignore:UNUSED_SIGNAL
+signal node_visited(path)
+
 var _visited_nodes = {}
 var _current_level = Village.NAME
+
+
+func _ready():
+	# warning-ignore:RETURN_VALUE_DISCARDED
+	connect("node_visited", self, "visited_node")
 
 
 func get_current_level() -> String:

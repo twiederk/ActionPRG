@@ -2,7 +2,7 @@ class_name ExperienceUI
 extends Control
 
 onready var experience_progress_bar = $ExperienceProgressBar
-onready var animation_player = $AnimationPlayer
+onready var level_label = $LevelLabel
 
 
 var _level = 1
@@ -18,9 +18,8 @@ func _ready():
 func _on_PlayerStats_level_changed(level: int, experience_points: int) -> void:
 	_level = level
 	experience_progress_bar.max_value = _level * 100
+	level_label.text = str(level)
 	_on_PlayerStats_experience_points_changed(experience_points)
-	if level > 1:
-		animation_player.play("LevelUp")
 
 
 func _on_PlayerStats_experience_points_changed(experience_points: int) -> void:

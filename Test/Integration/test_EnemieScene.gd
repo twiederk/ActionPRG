@@ -8,6 +8,7 @@ func test_die():
 	# arrange
 	var enemie_scene = Enemie.instance()
 	watch_signals(PlayerStats)
+	watch_signals(LevelStats)
 	enemie_scene.enemie_resource = BAT_PURPLE
 	add_child(enemie_scene)
 
@@ -16,7 +17,7 @@ func test_die():
 
 	# assert
 	assert_signal_emitted(PlayerStats, "enemie_killed")
-	assert_eq(LevelStats.get_visited_nodes().size(), 1, "Should registerd visited node to LevelStats")
+	assert_signal_emitted(LevelStats, "node_visited")
 	assert_true(get_child(1) is Effect, "Should add EnemieDeathEffect to scene")
 
 	# tear down

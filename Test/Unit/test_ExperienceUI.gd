@@ -5,8 +5,7 @@ var experienceUI = null
 func before_each():
 	experienceUI = ExperienceUI.new()
 	experienceUI.experience_progress_bar = ProgressBar.new()
-	experienceUI.animation_player = double(AnimationPlayer).new()
-	stub(experienceUI.animation_player, "play")
+	experienceUI.level_label = double(Label).new()
 
 
 func after_each():

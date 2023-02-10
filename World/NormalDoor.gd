@@ -13,7 +13,7 @@ func _on_NormalDoor_body_entered(body):
 	if _can_open_door(body):
 		AudioEvents.emit_signal("play_stream", DOOR_OPEN_SFX)
 		PlayerStats.decrease_key(key)
-		LevelStats.visited_node(get_path())
+		LevelStats.emit_signal("node_visited", get_path())
 		open()
 	elif _is_missing_key(body):
 		KeyEvents.emit_signal("key_missing", key)

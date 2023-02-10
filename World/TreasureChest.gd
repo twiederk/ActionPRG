@@ -43,7 +43,7 @@ func is_missing_key(key) -> bool:
 
 func open_treasure_chest() -> void:
 	PlayerStats.decrease_key(Key.SILVER)
-	LevelStats.visited_node(get_path())
+	LevelStats.emit_signal("node_visited", get_path())
 	treasure_state = TreasureState.OPEN
 	audioStreamPlayer.stream = check_open_sfx
 	audioStreamPlayer.play()
