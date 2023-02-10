@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Enemies/EnemieResource.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Enemies/Dragon_blue.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Enemies/Dragon/DragonHitboxCollisionShape.tres" type="Shape2D" id=5]
 [ext_resource path="res://Enemies/Dragon/DragonHurtboxCollisionShape.tres" type="Shape2D" id=6]
 [ext_resource path="res://Enemies/Dragon/DragonBodyCollisionShape.tres" type="Shape2D" id=7]
+[ext_resource path="res://Items/RangedWeapons/Fireball.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 1 )
@@ -16,6 +17,7 @@ acceleration = 200
 max_speed = 35
 weight = 120
 experience_points = 100
+ranged_weapon = ExtResource( 8 )
 center = Vector2( 3, -19 )
 texture = ExtResource( 2 )
 shadow = ExtResource( 3 )

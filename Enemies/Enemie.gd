@@ -7,6 +7,7 @@ const DAMAGE_FORCE = 200
 const HEALTH_BAR_MARGIN = 3
 const NAME_LABE_MARGIN = 6
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const Projectile = preload("res://Enemies/Projectile.tscn")
 
 export(int) var acceleration = 150
 export(int) var max_speed = 25
@@ -20,6 +21,7 @@ export(String) var boss_name = ""
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var weight = 0
+var _ranged_weapon_cool_down_time: float = 0
 
 var state = EnemieState.CHASE
 
@@ -102,11 +104,8 @@ func _physics_process(delta):
 				update_wander()
 
 		EnemieState.CHASE:
-			var player = playerDetectionZone.player
-			if player != null:
-				accelerate_towards_point(player.global_position, delta)
-			else:
-				state = EnemieState.IDLE
+			chase(delta)
+
 
 	if softCollision.is_colliding():
 		velocity = softCollision.get_push_vector() * delta * 400
@@ -114,10 +113,37 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 
+func chase(delta: float) -> void:
+	var player = playerDetectionZone.player
+	if player != null:
+		accelerate_towards_point(player.global_position, delta)
+		shoot(delta, player.position)
+	else:
+		state = EnemieState.IDLE
+
+
 func accelerate_towards_point(point, delta):
 	var direction = position.direction_to(point)
 	velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
 	sprite.flip_h = velocity.x < 0
+
+
+func shoot(delta: float, player_position: Vector2) -> void:
+	if enemie_resource.ranged_weapon != null:
+		_ranged_weapon_cool_down_time -= delta
+		if _ranged_weapon_cool_down_time <= 0.0:
+			_ranged_weapon_cool_down_time = enemie_resource.ranged_weapon.cool_down_time
+			var projectile = create_projectile(global_position, player_position, enemie_resource.ranged_weapon)
+			get_parent().add_child(projectile)
+
+
+func create_projectile(global_position: Vector2, player_position, ranged_weapon: RangedWeaponResource) -> Projectile:
+	var projectile = Projectile.instance()
+	projectile.position = global_position
+	projectile.direction = global_position.direction_to(player_position)
+	projectile.velocity = projectile.direction * ranged_weapon.speed
+	projectile.damage_die = ranged_weapon.damage_die
+	return projectile
 
 
 func seek_player():

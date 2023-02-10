@@ -65,3 +65,17 @@ func test_calulate_name_label_position_bat():
 
 	# assert
 	assert_eq(position, Vector2(-50, -36), "Should place name label on top of enemie")
+
+
+func test_chase_player_null_stops_chase():
+
+	enemie.playerDetectionZone = PlayerDetectionZone.new()
+
+	# act
+	enemie.chase(1.0)
+
+	# assert
+	assert_eq(enemie.state, Enemie.EnemieState.IDLE, "Should set state to IDLE when no player is in PlayerDetectionZone")
+
+	# tear down
+	enemie.playerDetectionZone.free()
