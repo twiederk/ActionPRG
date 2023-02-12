@@ -13,8 +13,8 @@ func after_each():
 
 func test_init():
 	# assert
-	assert_eq(stats.get_max_health(), 10, "Should start with max health of 10")
-	assert_eq(stats.get_health(), 10, "Should start with health of 10")
+	assert_eq(stats.get_max_health(), 6, "Should start with max health of 10")
+	assert_eq(stats.get_health(), 6, "Should start with health of 10")
 	assert_eq(stats.get_strength(), 0, "Should start with strength of 0")
 	assert_eq(stats.get_experience_points(), 0, "Should start with experience points of 0")
 	assert_eq(stats.get_level(), 1, "Should start with level of 1")
@@ -53,7 +53,7 @@ func test_heal_more_than_max_health():
 	stats.heal(5)
 
 	# assert
-	assert_eq(stats.get_health(), 10, "Should not exceed max health when healed")
+	assert_eq(stats.get_health(), 6, "Should not exceed max health when healed")
 
 
 func test_get_damage():
@@ -317,8 +317,8 @@ func test_level_up_from_1st_level_to_2nd_level():
 	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 0])
 	assert_signal_emitted(AudioEvents, "play_stream")
 	assert_eq(stats.get_level(), 2, "Should level set level to 2")
-	assert_eq(stats.get_max_health(), 15, "Should increase max health by 5")
-	assert_eq(stats.get_health(), 15, "Should increase health by 5")
+	assert_eq(stats.get_max_health(), 9, "Should increase max health by 3")
+	assert_eq(stats.get_health(), 9, "Should increase health by 3")
 	assert_eq(stats.get_strength(), 0, "Should not increase strength")
 
 
@@ -338,8 +338,8 @@ func test_level_up_from_2nd_level_to_3rd_level():
 	assert_signal_emitted_with_parameters(stats, "level_changed", [3, 0])
 	assert_signal_emitted(AudioEvents, "play_stream")
 	assert_eq(stats.get_level(), 3, "Should level set level to 3")
-	assert_eq(stats.get_max_health(), 20, "Should increase max health by 5")
-	assert_eq(stats.get_health(), 12, "Should increase health by 5")
+	assert_eq(stats.get_max_health(), 18, "Should increase max health by 3")
+	assert_eq(stats.get_health(), 10, "Should increase health by 3")
 	assert_eq(stats.get_strength(), 1, "Should increase strength by 1")
 
 

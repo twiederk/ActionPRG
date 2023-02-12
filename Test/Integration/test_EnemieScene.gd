@@ -114,15 +114,15 @@ func test_create_projectile():
 	var ranged_weapon = RangedWeaponResource.new()
 	ranged_weapon.speed = 20
 	ranged_weapon.damage_die = Die.Name.D4
+	ranged_weapon.frame_coords = Vector2(10, 20)
 
 	# act
 	var projectile = enemie_scene.create_projectile(enemie_position, player_position, ranged_weapon)
 
 	# assert
 	assert_eq(projectile.position, enemie_position, "Should place projectile at same position of enemie")
-	assert_eq(projectile.direction, Vector2(1, 0), "Should point to position of player")
 	assert_eq(projectile.velocity, Vector2(20, 0), "Should move in position of player")
-	assert_eq(projectile.damage_die, Die.Name.D4, "Should contain damage die")
+	assert_eq(projectile.ranged_weapon, ranged_weapon, "Should set ranged weapon")
 
 	# tear down
 	projectile.free()

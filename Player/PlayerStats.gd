@@ -15,7 +15,8 @@ signal experience_points_changed(experience_points)
 signal enemie_killed(enemie)
 
 
-const MAX_HEALTH = 10
+const MAX_HEALTH = 6
+const LEVEL_UP_HEALTH = 3
 const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
 const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 const LEVEL_UP_VOICE = preload("res://Assets/Sounds/LevelUpVoice.ogg")
@@ -180,8 +181,8 @@ func level_up(current_level: int) -> void:
 	AudioEvents.emit_signal("play_stream", LEVEL_UP_VOICE)
 	var next_level = current_level + 1
 	set_level(next_level)
-	set_max_health(get_max_health() + 5)
-	set_health(get_health() + 5)
+	set_max_health(get_max_health() + LEVEL_UP_HEALTH)
+	set_health(get_health() + LEVEL_UP_HEALTH)
 	if next_level % 2 == 1:
 		increase_strength()
 

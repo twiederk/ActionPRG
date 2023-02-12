@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-frame_coords = Vector2( 0, 0 )
+frame_coords = Vector2( 11, 73 )
 shadow = true
 pickup_stream = ExtResource( 2 )
 damage_die = 4

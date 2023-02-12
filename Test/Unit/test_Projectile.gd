@@ -38,7 +38,9 @@ func test_get_damage():
 	
 	# arrange
 	seed(1)
-	projectile.damage_die = Die.Name.D4
+	var ranged_weapon = RangedWeaponResource.new()
+	ranged_weapon.damage_die = Die.Name.D4
+	projectile.ranged_weapon = ranged_weapon
 	
 	# act
 	var damage = projectile.get_damage()

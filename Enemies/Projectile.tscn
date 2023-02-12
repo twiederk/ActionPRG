@@ -17,7 +17,9 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 hframes = 16
 vframes = 128
-frame = 1179
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

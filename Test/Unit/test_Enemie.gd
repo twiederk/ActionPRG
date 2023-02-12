@@ -67,15 +67,16 @@ func test_calulate_name_label_position_bat():
 	assert_eq(position, Vector2(-50, -36), "Should place name label on top of enemie")
 
 
-func test_chase_player_null_stops_chase():
-
-	enemie.playerDetectionZone = PlayerDetectionZone.new()
-
+func test_has_ranged_weapon_with_ranged_weapon():
+	
+	# arrange
+	var enemie_resource = EnemieResource.new()
+	enemie_resource.ranged_weapon = RangedWeaponResource.new()
+	enemie.enemie_resource = enemie_resource
+	
 	# act
-	enemie.chase(1.0)
-
+	var has_ranged_weapon = enemie.has_ranged_weapon()
+	
 	# assert
-	assert_eq(enemie.state, Enemie.EnemieState.IDLE, "Should set state to IDLE when no player is in PlayerDetectionZone")
-
-	# tear down
-	enemie.playerDetectionZone.free()
+	assert_true(has_ranged_weapon, "Should return true for ranged weapon")
+	

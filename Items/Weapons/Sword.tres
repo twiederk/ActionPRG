@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sounds/WeaponPickUp.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Items/Weapons/WeaponResource.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Graphics/Player/Player.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 2 )
@@ -9,3 +10,4 @@ frame_coords = Vector2( 12, 107 )
 shadow = true
 pickup_stream = ExtResource( 1 )
 damage_die = 6
+swipe_texture = ExtResource( 3 )

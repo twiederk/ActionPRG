@@ -21,6 +21,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var playerHitbox =$HitboxPivot/PlayerHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+onready var sprite = $Sprite
 
 
 func _ready():
@@ -124,6 +125,8 @@ func _on_HealingWell_entered_healing_area() -> void:
 
 
 func _on_Item_picked_up_item(item_resource: Resource) -> void:
+	if (item_resource is WeaponResource):
+		sprite.texture = item_resource.swipe_texture
 	item_resource.action(stats)
 
 

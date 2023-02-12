@@ -1,7 +1,7 @@
 class_name Enemie
 extends KinematicBody2D
 
-enum EnemieState {IDLE, WANDER, CHASE}
+enum EnemieState {IDLE, WANDER, CHASE, SHOOT}
 
 const DAMAGE_FORCE = 200
 const HEALTH_BAR_MARGIN = 3
@@ -27,7 +27,8 @@ var state = EnemieState.CHASE
 
 onready var sprite = $Sprite
 onready var shadowSprite = $ShadowSprite
-onready var playerDetectionZone = $PlayerDetectionZone
+onready var chaseDetectionZone = $ChaseDetectionZone
+onready var shootDetectionZone = $ShootDetectionZone
 onready var hitbox = $Hitbox
 onready var hurtbox = $Hurtbox
 onready var bodyCollision = $BodyCollision
@@ -104,8 +105,10 @@ func _physics_process(delta):
 				update_wander()
 
 		EnemieState.CHASE:
-			chase(delta)
+			chase_state(delta)
 
+		EnemieState.SHOOT:
+			shoot_state(delta)
 
 	if softCollision.is_colliding():
 		velocity = softCollision.get_push_vector() * delta * 400
@@ -113,9 +116,19 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 
-func chase(delta: float) -> void:
-	var player = playerDetectionZone.player
-	if player != null:
+func chase_state(delta: float) -> void:
+	if chaseDetectionZone.can_see_player():
+		var player = chaseDetectionZone.player
+		accelerate_towards_point(player.global_position, delta)
+	else:
+		state = EnemieState.IDLE
+
+
+func shoot_state(delta: float) -> void:
+	if (chaseDetectionZone.can_see_player()):
+		state = EnemieState.CHASE
+	elif (shootDetectionZone.can_see_player()):
+		var player = shootDetectionZone.player
 		accelerate_towards_point(player.global_position, delta)
 		shoot(delta, player.position)
 	else:
@@ -140,15 +153,21 @@ func shoot(delta: float, player_position: Vector2) -> void:
 func create_projectile(global_position: Vector2, player_position, ranged_weapon: RangedWeaponResource) -> Projectile:
 	var projectile = Projectile.instance()
 	projectile.position = global_position
-	projectile.direction = global_position.direction_to(player_position)
-	projectile.velocity = projectile.direction * ranged_weapon.speed
-	projectile.damage_die = ranged_weapon.damage_die
+	var direction = global_position.direction_to(player_position)
+	projectile.velocity = direction * ranged_weapon.speed
+	projectile.ranged_weapon = ranged_weapon
 	return projectile
 
 
 func seek_player():
-	if playerDetectionZone.can_see_player():
+	if chaseDetectionZone.can_see_player():
 		state = EnemieState.CHASE
+	elif shootDetectionZone.can_see_player() and has_ranged_weapon():
+		state = EnemieState.SHOOT
+
+
+func has_ranged_weapon() -> bool:
+	return enemie_resource.ranged_weapon != null
 
 
 func update_wander():
