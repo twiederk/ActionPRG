@@ -99,7 +99,7 @@ tracks/0/keys = {
 
 [node name="Enemie" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 129
+collision_mask = 385
 script = ExtResource( 3 )
 enemie_resource = ExtResource( 11 )
 
@@ -143,6 +143,7 @@ position = Vector2( 0, -13 )
 shape = ExtResource( 13 )
 
 [node name="ChaseDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
 __meta__ = {
 "_editor_description_": "The collision shape the player has to enter to be detected and followed by the bat."
 }
@@ -151,6 +152,7 @@ __meta__ = {
 shape = SubResource( 10 )
 
 [node name="ShootDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="CollisionShape2D" parent="ShootDetectionZone" index="0"]
 shape = SubResource( 21 )

@@ -774,15 +774,15 @@ position = Vector2( 818, 234 )
 enemie_resource = ExtResource( 10 )
 boss_name = "Fritz"
 
-[node name="GiantBat_Anastasia" parent="YSort/GiantBats" instance=ExtResource( 17 )]
+[node name="GiantBat_Taffnuss" parent="YSort/GiantBats" instance=ExtResource( 17 )]
 position = Vector2( 1243, 533 )
 enemie_resource = ExtResource( 10 )
-boss_name = "Anastasia"
+boss_name = "Taffnuss"
 
-[node name="GiantBat_Katharina" parent="YSort/GiantBats" instance=ExtResource( 17 )]
+[node name="GiantBat_Raffnuss" parent="YSort/GiantBats" instance=ExtResource( 17 )]
 position = Vector2( 1243, 555 )
 enemie_resource = ExtResource( 10 )
-boss_name = "Katharina"
+boss_name = "Raffnuss"
 
 [node name="Bats" type="YSort" parent="YSort"]
 

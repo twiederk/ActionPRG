@@ -7,4 +7,5 @@ export var pickup_stream = preload("res://Assets/Sounds/ArmorPickUp.ogg")
 export(int) var armor_class = 0
 
 func action(stats) -> void:
-	stats.set_armor(self)
+	if armor_class > stats.get_armor().armor_class:
+		stats.set_armor(self)

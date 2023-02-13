@@ -9,4 +9,5 @@ export(Resource) var swipe_texture = preload("res://Assets/Graphics/Player/Playe
 
 
 func action(stats) -> void:
-	stats.set_weapon(self)
+	if damage_die > stats.get_weapon().damage_die:
+		stats.set_weapon(self)

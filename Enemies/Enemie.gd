@@ -129,7 +129,6 @@ func shoot_state(delta: float) -> void:
 		state = EnemieState.CHASE
 	elif (shootDetectionZone.can_see_player()):
 		var player = shootDetectionZone.player
-		accelerate_towards_point(player.global_position, delta)
 		shoot(delta, player.position)
 	else:
 		state = EnemieState.IDLE
