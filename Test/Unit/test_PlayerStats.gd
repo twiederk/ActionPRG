@@ -368,9 +368,26 @@ func test_set_level():
 
 
 func test_save():
-	
+
+	# arrange
+	stats.set_health(1)
+	stats.set_max_health(2)
+	stats.set_strength(3)
+	stats.set_experience_points(4)
+	stats.set_level(5)
+	stats.set_key(Key.GOLD, 1)
+	stats.set_key(Key.SILVER, 2)
+
 	# act
 	var save_data = stats.save()
-	
+
 	# assert
-	assert_eq(save_data["max_health"], 6, "Should store max_health in save_data")
+	assert_eq(save_data["health"], 1, "Should store health in save_data")
+	assert_eq(save_data["max_health"], 2, "Should store max_health in save_data")
+	assert_eq(save_data["strength"], 3, "Should store strength in save_data")
+	assert_eq(save_data["experience_points"], 4, "Should store experience_points in save_data")
+	assert_eq(save_data["level"], 5, "Should store level in save_data")
+	assert_eq(save_data["keys"], [1, 2, 0, 0, 0, 0], "Should store keys in save_data")
+	assert_eq(save_data["weapon"], PlayerStats.DEFAULT_WEAPON, "Should store weapon in save_data")
+	assert_eq(save_data["armor"], PlayerStats.DEFAULT_ARMOR, "Should store armor in save_data")
+

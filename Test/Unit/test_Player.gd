@@ -27,5 +27,15 @@ func test_on_Item_picked_up_item():
 	assert_eq(player.sprite.texture, PLAYER_RUBIN_TEXTURE, "Should set PlayerRubin.png as texture")
 	
 	
-
+func test_save():
+	
+	# arrange
+	player.position = Vector2(10, 20)
+	
+	# act
+	var save_data = player.save()
+	
+	# assert
+	assert_eq(save_data["position"], Vector2(10, 20), "Should store position in save_data")
+	
 

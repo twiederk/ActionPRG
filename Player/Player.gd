@@ -133,3 +133,9 @@ func _on_Item_picked_up_item(item_resource: Resource) -> void:
 
 func set_starting_position(starting_position: Vector2) -> void:
 	global_position = starting_position
+
+
+func save() -> Dictionary:
+	return {
+		"position": position
+	}

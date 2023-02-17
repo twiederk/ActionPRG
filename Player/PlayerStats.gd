@@ -193,5 +193,12 @@ func level_up(current_level: int) -> void:
 
 func save() -> Dictionary:
 	return {
-		"max_health" : _max_health,
+		"health": get_health(),
+		"max_health" : get_max_health(),
+		"strength": get_strength(),
+		"experience_points": get_experience_points(),
+		"level": get_level(),
+		"keys": _keys,
+		"weapon": get_weapon(),
+		"armor": get_armor()
 	}
