@@ -190,3 +190,8 @@ func level_up(current_level: int) -> void:
 	if next_level % 2 == 1:
 		increase_strength()
 
+
+func save() -> Dictionary:
+	return {
+		"max_health" : _max_health,
+	}

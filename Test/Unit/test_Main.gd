@@ -27,7 +27,7 @@ func test_handle_visited_node():
 
 	# act
 	main._handle_visited_node(node)
-	
+
 	# assert
 	assert_called(node, "queue_free")
 
@@ -36,20 +36,20 @@ func test_handle_visited_node_null():
 
 	# act
 	main._handle_visited_node(null)
-	
+
 	# assert
 	assert_true(true, "Should not crash when node is null")
 
 
 func test_handle_visited_node_normal_door():
-	
+
 	# arrange
 	var normal_door = double(NormalDoor).new()
 	stub(normal_door, "open")
 
 	# act
 	main._handle_visited_node(normal_door)
-	
+
 	# assert
 	assert_called(normal_door, "open", [])
 
@@ -58,14 +58,14 @@ func test_handle_visited_node_normal_door():
 
 
 func test_handle_visited_node_secret_door():
-	
+
 	# arrange
 	var secret_door = double(SecretDoor).new()
 	stub(secret_door, "open")
 
 	# act
 	main._handle_visited_node(secret_door)
-	
+
 	# assert
 	assert_called(secret_door, "open", [])
 
@@ -74,9 +74,10 @@ func test_handle_visited_node_secret_door():
 
 
 func test_save_game():
-	
+
 	# act
 	main.save_game()
-	
+
 	# assert
-	assert_file_exists("user://savegame.save")
+	assert_file_not_empty("user://savegame.save")
+

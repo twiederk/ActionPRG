@@ -52,4 +52,6 @@ func _handle_visited_node(visited_node: Node) -> void:
 func save_game() -> void:
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
+	var player_stats = PlayerStats.save()
+	save_game.store_line(to_json(player_stats))
 	save_game.close()

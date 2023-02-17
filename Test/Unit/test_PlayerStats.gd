@@ -365,3 +365,12 @@ func test_set_level():
 
 	# assert
 	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 0])
+
+
+func test_save():
+	
+	# act
+	var save_data = stats.save()
+	
+	# assert
+	assert_eq(save_data["max_health"], 6, "Should store max_health in save_data")

@@ -36,3 +36,7 @@ func _on_RestartButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+
+func _on_SaveButton_pressed():
+	get_node(Main.MAIN_NODE_PATH).save_game()
