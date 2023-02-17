@@ -75,9 +75,26 @@ func test_handle_visited_node_secret_door():
 
 func test_save_game():
 
+	# arrange
+	var player = Player.new()
+
 	# act
-	main.save_game()
+	main.save_game(player)
 
 	# assert
 	assert_file_not_empty("user://savegame.save")
+	var save_data = _get_lines("user://savegame.save")
+	assert_eq(save_data.size(), 2, "Should contain one line per stored script")
+	
+	# tear down
+	player.free()
 
+
+func _get_lines(file_name: String) -> Array:
+	var file = File.new()
+	file.open(file_name, File.READ)
+	var lines = []
+	while file.get_position() < file.get_len():
+		lines.append(file.get_line())
+	file.close()
+	return lines
