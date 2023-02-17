@@ -33,7 +33,7 @@ func _on_KeyEvents_key_missing(key_material: int) -> void:
 
 func blink_key(key_sprite) -> void:
 	var tween = create_tween()
-	for _i in range(5):
+	for _i in range(10):
 		tween.tween_property(key_sprite, "modulate", Color.red, 0.1)
 		tween.tween_property(key_sprite, "modulate", Color.white, 0.1)
 
