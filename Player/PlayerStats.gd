@@ -67,6 +67,10 @@ func get_weapon() -> WeaponResource:
 	return _weapon
 
 
+func get_weapon_swipe_texture() -> Texture:
+	return _weapon.swipe_texture
+
+
 func set_armor(armor_resource: ArmorResource) -> void:
 	_armor = armor_resource
 	emit_signal("armor_changed", _armor)

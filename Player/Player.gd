@@ -29,6 +29,7 @@ func _ready():
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	playerHitbox.knockback_direction = roll_vector
+	sprite.texture = stats.get_weapon_swipe_texture()
 	OS.set_window_maximized(true)
 
 
