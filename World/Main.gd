@@ -48,3 +48,8 @@ func _handle_visited_node(visited_node: Node) -> void:
 	else:
 		visited_node.queue_free()
 
+
+func save_game() -> void:
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.close()

@@ -71,3 +71,12 @@ func test_handle_visited_node_secret_door():
 
 	# tear down
 	secret_door.free()
+
+
+func test_save_game():
+	
+	# act
+	main.save_game()
+	
+	# assert
+	assert_file_exists("user://savegame.save")
