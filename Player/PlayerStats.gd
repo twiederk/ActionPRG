@@ -67,6 +67,10 @@ func get_weapon() -> WeaponResource:
 	return _weapon
 
 
+func get_weapon_swipe_texture() -> Texture:
+	return _weapon.swipe_texture
+
+
 func set_armor(armor_resource: ArmorResource) -> void:
 	_armor = armor_resource
 	emit_signal("armor_changed", _armor)
@@ -186,3 +190,28 @@ func level_up(current_level: int) -> void:
 	if next_level % 2 == 1:
 		increase_strength()
 
+
+func save() -> Dictionary:
+	return {
+		"health": _health,
+		"max_health": _max_health,
+		"strength": _strength,
+		"experience_points": _experience_points,
+		"level": _level,
+		"keys": _keys,
+		"weapon": _weapon.resource_path,
+		"armor": _armor.resource_path
+	}
+
+
+func load(player_data: Dictionary) -> void:
+	set_health(player_data["health"])
+	set_max_health(player_data["max_health"])
+	set_strength(player_data["strength"])
+	set_experience_points(player_data["experience_points"])
+	set_level(player_data["level"])
+	var keys = player_data["keys"]
+	for index in keys.size():
+		set_key(index, keys[index])
+	set_weapon(load(player_data["weapon"]))
+	set_armor(load(player_data["armor"]))

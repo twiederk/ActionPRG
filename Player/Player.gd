@@ -29,6 +29,7 @@ func _ready():
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	playerHitbox.knockback_direction = roll_vector
+	sprite.texture = stats.get_weapon_swipe_texture()
 	OS.set_window_maximized(true)
 
 
@@ -132,3 +133,10 @@ func _on_Item_picked_up_item(item_resource: Resource) -> void:
 
 func set_starting_position(starting_position: Vector2) -> void:
 	global_position = starting_position
+
+
+func save() -> Dictionary:
+	return {
+		"player_position_x": position.x,
+		"player_position_y": position.y
+	}

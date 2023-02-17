@@ -39,18 +39,6 @@ margin_right = 40.0
 custom_fonts/font = SubResource( 1 )
 text = "1.0.0"
 
-[node name="QuitButton" type="Button" parent="ColorRect"]
-pause_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.5
-margin_top = 17.5
-margin_right = 20.5
-margin_bottom = 40.5
-text = "Quit"
-
 [node name="StartButton" type="Button" parent="ColorRect"]
 pause_mode = 2
 anchor_left = 0.5
@@ -63,5 +51,30 @@ margin_right = 23.0
 margin_bottom = 11.5
 text = "Start"
 
-[connection signal="pressed" from="ColorRect/QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="LoadButton" type="Button" parent="ColorRect"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = 15.5
+margin_right = 23.0
+margin_bottom = 38.5
+text = "Load"
+
+[node name="QuitButton" type="Button" parent="ColorRect"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.5
+margin_top = 43.5
+margin_right = 19.5
+margin_bottom = 66.5
+text = "Quit"
+
 [connection signal="pressed" from="ColorRect/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="ColorRect/LoadButton" to="." method="_on_LoadButton_pressed"]
+[connection signal="pressed" from="ColorRect/QuitButton" to="." method="_on_QuitButton_pressed"]

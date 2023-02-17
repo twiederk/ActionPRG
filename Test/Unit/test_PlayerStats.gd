@@ -365,3 +365,56 @@ func test_set_level():
 
 	# assert
 	assert_signal_emitted_with_parameters(stats, "level_changed", [2, 0])
+
+
+func test_save():
+
+	# arrange
+	stats.set_health(1)
+	stats.set_max_health(2)
+	stats.set_strength(3)
+	stats.set_experience_points(4)
+	stats.set_level(5)
+	stats.set_key(Key.GOLD, 1)
+	stats.set_key(Key.SILVER, 2)
+
+	# act
+	var save_data = stats.save()
+
+	# assert
+	assert_eq(save_data["health"], 1, "Should store health in save_data")
+	assert_eq(save_data["max_health"], 2, "Should store max_health in save_data")
+	assert_eq(save_data["strength"], 3, "Should store strength in save_data")
+	assert_eq(save_data["experience_points"], 4, "Should store experience_points in save_data")
+	assert_eq(save_data["level"], 5, "Should store level in save_data")
+	assert_eq(save_data["keys"], [1, 2, 0, 0, 0, 0], "Should store keys in save_data")
+	assert_eq(save_data["weapon"], "res://Items/Weapons/Dagger.tres", "Should store weapon in save_data")
+	assert_eq(save_data["armor"], "res://Items/Armor/Cloth.tres", "Should store armor in save_data")
+
+
+func test_load():
+	
+	# arrange
+	var player_stats = {
+		"health": 1,
+		"max_health": 2,
+		"strength": 3,
+		"experience_points": 4,
+		"level": 5,
+		"keys": [1, 2, 0, 0, 0, 0],
+		"weapon": "res://Items/Weapons/Dagger.tres",
+		"armor": "res://Items/Armor/Cloth.tres"
+	}
+	
+	# act
+	stats.load(player_stats)
+	
+	# assert
+	assert_eq(stats.get_health(), 1, "Should set health to 1")
+	assert_eq(stats.get_max_health(), 2, "Should set max_health to 2")
+	assert_eq(stats.get_strength(), 3, "Should set strength to 3")
+	assert_eq(stats.get_experience_points(), 4, "Should set experience_points to 4")
+	assert_eq(stats.get_level(), 5, "Should set level to 5")
+	assert_eq(stats.get_key(Key.SILVER), 2, "Should set keys")
+	assert_eq(stats.get_weapon(), PlayerStats.DEFAULT_WEAPON, "Should set weapon")
+	assert_eq(stats.get_armor(), PlayerStats.DEFAULT_ARMOR, "Should set armor")

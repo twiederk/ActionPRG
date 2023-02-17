@@ -48,3 +48,48 @@ func _handle_visited_node(visited_node: Node) -> void:
 	else:
 		visited_node.queue_free()
 
+
+func save_game():
+	var player = get_tree().get_nodes_in_group("player")[0]
+	_save_game("savegame", player)
+
+
+func _save_game(file_name: String, player: Player) -> void:
+	var save_game = File.new()
+	save_game.open(str("user://", file_name, ".save"), File.WRITE)
+	var player_stats = PlayerStats.save()
+	var player_postion = player.save()
+	var level_stats = LevelStats.save()
+	save_game.store_line(to_json(player_stats))
+	save_game.store_line(to_json(player_postion))
+	save_game.store_line(to_json(level_stats))
+	save_game.close()
+
+
+func load_game() -> void:
+	var loaded_game = _load_game("savegame")
+	goto_level(loaded_game["current_level"], loaded_game["player_position"])
+
+
+func _load_game(file_name: String) -> Dictionary:
+	var dictionaries = _load_dictionaries(file_name)
+	PlayerStats.load(dictionaries[0])
+	var player_position = _load_player_position(dictionaries[1])
+	var level_name = LevelStats.load(dictionaries[2])
+	return { "current_level": level_name, "player_position": player_position }
+
+
+func _load_dictionaries(file_name) -> Array:
+	var file = File.new()
+	file.open(str("user://", file_name, ".save"), File.READ)
+	var dictionaries = []
+	while file.get_position() < file.get_len():
+		dictionaries.append(parse_json(file.get_line()))
+	file.close()
+	return dictionaries
+
+
+func _load_player_position(dict: Dictionary) -> Vector2:
+	var pos_x = dict["player_position_x"]
+	var pos_y = dict["player_position_y"]
+	return Vector2(pos_x, pos_y)

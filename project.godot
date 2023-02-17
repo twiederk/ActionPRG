@@ -160,6 +160,11 @@ _global_script_classes=[ {
 "path": "res://UI/KeyUI.gd"
 }, {
 "base": "Node",
+"class": "LvlStats",
+"language": "GDScript",
+"path": "res://World/LevelStats.gd"
+}, {
+"base": "Node",
 "class": "Main",
 "language": "GDScript",
 "path": "res://World/Main.gd"
@@ -290,6 +295,7 @@ _global_script_class_icons={
 "KeyResource": "",
 "KeySprite": "",
 "KeyUI": "",
+"LvlStats": "",
 "Main": "",
 "NormalDoor": "",
 "Plant": "",
@@ -315,7 +321,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Action RPG"
-config/description="Version 4.6.0"
+config/description="Version 4.7.0-SNAPSHOT"
 run/main_scene="res://World/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
