@@ -74,18 +74,36 @@ func test_handle_visited_node_secret_door():
 
 
 func test_save_game():
-
+	
 	# arrange
 	var player = Player.new()
 
 	# act
-	main.save_game(player)
+	main.save_game("test_save_game", player)
 
 	# assert
-	assert_file_not_empty("user://savegame.save")
-	var save_data = _get_lines("user://savegame.save")
-	assert_eq(save_data.size(), 2, "Should contain one line per stored script")
+	assert_file_exists("user://test_save_game.save")
+	assert_file_not_empty("user://test_save_game.save")
+	var save_data = _get_lines("user://test_save_game.save")
+	assert_eq(save_data.size(), 3, "Should contain one line per stored script")
 	
+	# tear down
+	player.free()
+
+
+func test_load_game():
+
+	# arrange
+	var player = Player.new()
+	player.position = Vector2(20, 20)
+	main.save_game("test_load_game", player)
+
+	# act
+	var player_position = main.load_game("test_load_game")
+
+	# assert
+	assert_eq(player_position, Vector2(20, 20), "Should return the player position")
+
 	# tear down
 	player.free()
 

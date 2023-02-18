@@ -49,11 +49,27 @@ func _handle_visited_node(visited_node: Node) -> void:
 		visited_node.queue_free()
 
 
-func save_game(player) -> void:
+func save_game(file_name: String, player: Player) -> void:
 	var save_game = File.new()
-	save_game.open("user://savegame.save", File.WRITE)
+	save_game.open(str("user://", file_name, ".save"), File.WRITE)
 	var player_stats = PlayerStats.save()
-	var player_position = player.save()
+	var player_postion = player.save()
+	var level_stats = LevelStats.save()
 	save_game.store_line(to_json(player_stats))
-	save_game.store_line(to_json(player_position))
+	save_game.store_line(to_json(player_postion))
+	save_game.store_line(to_json(level_stats))
 	save_game.close()
+
+
+func load_game(file_name: String) -> Vector2:
+	var file = File.new()
+	file.open(str("user://", file_name, ".save"), File.READ)
+	var dictionaries = []
+	while file.get_position() < file.get_len():
+		dictionaries.append(parse_json(file.get_line()))
+	file.close()
+	
+	var pos_x = dictionaries[1]["player_position_x"]
+	var pos_y = dictionaries[1]["player_position_y"]
+	return Vector2(pos_x, pos_y)
+

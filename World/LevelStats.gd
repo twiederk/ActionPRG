@@ -1,3 +1,4 @@
+class_name LvlStats
 extends Node
 
 # warning-ignore:UNUSED_SIGNAL
@@ -33,3 +34,10 @@ func get_visited_nodes(level_name: String = _current_level) -> Array:
 
 func reset() -> void:
 	_visited_nodes = {}
+
+
+func save() -> Dictionary:
+	return {
+		"current_level": get_current_level(),
+		"visited_nodes": _visited_nodes
+	}

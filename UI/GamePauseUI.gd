@@ -40,4 +40,4 @@ func _on_QuitButton_pressed():
 
 func _on_SaveButton_pressed():
 	var player = get_tree().get_nodes_in_group("player")[0]
-	get_node(Main.MAIN_NODE_PATH).save_game(player)
+	get_node(Main.MAIN_NODE_PATH).save_game("savegame", player)

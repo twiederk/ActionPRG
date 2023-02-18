@@ -137,5 +137,6 @@ func set_starting_position(starting_position: Vector2) -> void:
 
 func save() -> Dictionary:
 	return {
-		"position": position
+		"player_position_x": position.x,
+		"player_position_y": position.y
 	}
