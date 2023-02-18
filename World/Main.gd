@@ -68,6 +68,7 @@ func _save_game(file_name: String, player: Player) -> void:
 
 func load_game() -> void:
 	var player_position = _load_game("savegame")
+	goto_level(Village.NAME, player_position)
 
 
 func _load_game(file_name: String) -> Vector2:
