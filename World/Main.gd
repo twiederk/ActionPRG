@@ -62,14 +62,22 @@ func save_game(file_name: String, player: Player) -> void:
 
 
 func load_game(file_name: String) -> Vector2:
+	var dictionaries = _load_dictionaries(file_name)
+	var player_position = _load_player_position(dictionaries[1])
+	return player_position
+
+
+func _load_dictionaries(file_name) -> Array:
 	var file = File.new()
 	file.open(str("user://", file_name, ".save"), File.READ)
 	var dictionaries = []
 	while file.get_position() < file.get_len():
 		dictionaries.append(parse_json(file.get_line()))
 	file.close()
-	
-	var pos_x = dictionaries[1]["player_position_x"]
-	var pos_y = dictionaries[1]["player_position_y"]
-	return Vector2(pos_x, pos_y)
+	return dictionaries
 
+
+func _load_player_position(dict: Dictionary) -> Vector2:
+	var pos_x = dict["player_position_x"]
+	var pos_y = dict["player_position_y"]
+	return Vector2(pos_x, pos_y)
