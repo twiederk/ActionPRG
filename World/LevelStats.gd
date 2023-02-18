@@ -41,3 +41,7 @@ func save() -> Dictionary:
 		"current_level": get_current_level(),
 		"visited_nodes": _visited_nodes
 	}
+
+
+func load(load_data: Dictionary) -> void:
+	pass

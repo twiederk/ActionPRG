@@ -56,3 +56,9 @@ func test_save():
 	# assert
 	assert_eq(save_data["current_level"], "Cave", "Should store current level in save data")
 	assert_eq(save_data["visited_nodes"].size(), 2, "Should store visited nodes dictionary in save data")
+
+
+func test_load():
+
+	# act
+	level_stats.load({})

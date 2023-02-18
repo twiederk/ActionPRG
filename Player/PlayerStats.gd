@@ -202,3 +202,7 @@ func save() -> Dictionary:
 		"weapon": get_weapon(),
 		"armor": get_armor()
 	}
+
+
+func load(load_data: Dictionary) -> void:
+	pass

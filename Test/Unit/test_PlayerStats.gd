@@ -391,3 +391,8 @@ func test_save():
 	assert_eq(save_data["weapon"], PlayerStats.DEFAULT_WEAPON, "Should store weapon in save_data")
 	assert_eq(save_data["armor"], PlayerStats.DEFAULT_ARMOR, "Should store armor in save_data")
 
+
+func test_load():
+	
+	# act
+	stats.load({})

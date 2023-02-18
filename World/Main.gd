@@ -68,12 +68,14 @@ func _save_game(file_name: String, player: Player) -> void:
 
 func load_game() -> void:
 	var player_position = _load_game("savegame")
-	goto_level(Village.NAME, player_position)
+	goto_level(LevelStats.get_current_level(), player_position)
 
 
 func _load_game(file_name: String) -> Vector2:
 	var dictionaries = _load_dictionaries(file_name)
+	PlayerStats.load(dictionaries[0])
 	var player_position = _load_player_position(dictionaries[1])
+	LevelStats.load(dictionaries[2])
 	return player_position
 
 
