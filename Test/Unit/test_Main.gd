@@ -77,6 +77,8 @@ func test_save_game():
 	
 	# arrange
 	var player = Player.new()
+	PlayerStats.set_weapon(PlayerStats.DEFAULT_WEAPON)
+	PlayerStats.set_armor(PlayerStats.DEFAULT_ARMOR)
 
 	# act
 	main._save_game("test_save_game", player)

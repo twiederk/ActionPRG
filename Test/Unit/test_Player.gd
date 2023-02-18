@@ -36,7 +36,7 @@ func test_save():
 	var save_data = player.save()
 
 	# assert
-	assert_eq(save_data["player_position_x"], 10, "Should store x-position in save_data")
-	assert_eq(save_data["player_position_y"], 20, "Should store y-position in save_data")
+	assert_eq(save_data["player_position_x"], 10.0, "Should store x-position in save_data")
+	assert_eq(save_data["player_position_y"], 20.0, "Should store y-position in save_data")
 
 

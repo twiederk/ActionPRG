@@ -388,18 +388,12 @@ func test_save():
 	assert_eq(save_data["experience_points"], 4, "Should store experience_points in save_data")
 	assert_eq(save_data["level"], 5, "Should store level in save_data")
 	assert_eq(save_data["keys"], [1, 2, 0, 0, 0, 0], "Should store keys in save_data")
-	assert_eq(save_data["weapon"], PlayerStats.DEFAULT_WEAPON, "Should store weapon in save_data")
-	assert_eq(save_data["armor"], PlayerStats.DEFAULT_ARMOR, "Should store armor in save_data")
+	assert_eq(save_data["weapon"], "res://Items/Weapons/Dagger.tres", "Should store weapon in save_data")
+	assert_eq(save_data["armor"], "res://Items/Armor/Cloth.tres", "Should store armor in save_data")
 
 
 func test_load():
 	
-	var weapon = WeaponResource.new()
-	weapon.damage_die = Die.Name.D6
-	
-	var armor = ArmorResource.new()
-	armor.armor_class = 5
-
 	# arrange
 	var player_stats = {
 		"health": 1,
@@ -408,8 +402,8 @@ func test_load():
 		"experience_points": 4,
 		"level": 5,
 		"keys": [1, 2, 0, 0, 0, 0],
-		"weapon": weapon,
-		"armor": armor
+		"weapon": "res://Items/Weapons/Dagger.tres",
+		"armor": "res://Items/Armor/Cloth.tres"
 	}
 	
 	# act
@@ -422,5 +416,5 @@ func test_load():
 	assert_eq(stats.get_experience_points(), 4, "Should set experience_points to 4")
 	assert_eq(stats.get_level(), 5, "Should set level to 5")
 	assert_eq(stats.get_key(Key.SILVER), 2, "Should set keys")
-	assert_eq(stats.get_weapon(), weapon, "Should set weapon")
-	assert_eq(stats.get_armor(), armor, "Should set armor")
+	assert_eq(stats.get_weapon(), PlayerStats.DEFAULT_WEAPON, "Should set weapon")
+	assert_eq(stats.get_armor(), PlayerStats.DEFAULT_ARMOR, "Should set armor")
