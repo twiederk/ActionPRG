@@ -49,7 +49,12 @@ func _handle_visited_node(visited_node: Node) -> void:
 		visited_node.queue_free()
 
 
-func save_game(file_name: String, player: Player) -> void:
+func save_game():
+	var player = get_tree().get_nodes_in_group("player")[0]
+	_save_game("savegame", player)
+
+
+func _save_game(file_name: String, player: Player) -> void:
 	var save_game = File.new()
 	save_game.open(str("user://", file_name, ".save"), File.WRITE)
 	var player_stats = PlayerStats.save()
@@ -61,7 +66,11 @@ func save_game(file_name: String, player: Player) -> void:
 	save_game.close()
 
 
-func load_game(file_name: String) -> Vector2:
+func load_game() -> void:
+	var player_position = _load_game("savegame")
+
+
+func _load_game(file_name: String) -> Vector2:
 	var dictionaries = _load_dictionaries(file_name)
 	var player_position = _load_player_position(dictionaries[1])
 	return player_position

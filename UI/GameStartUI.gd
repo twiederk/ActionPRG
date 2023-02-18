@@ -20,5 +20,12 @@ func _on_StartButton_pressed():
 	hide()
 
 
+func _on_LoadButton_pressed():
+	var main = get_node(Main.MAIN_NODE_PATH)
+	var player_position = main.load_game("savegame")
+	get_tree().paused = false
+	hide()
+
+
 func _on_QuitButton_pressed():
 	get_tree().quit()

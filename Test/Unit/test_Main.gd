@@ -79,7 +79,7 @@ func test_save_game():
 	var player = Player.new()
 
 	# act
-	main.save_game("test_save_game", player)
+	main._save_game("test_save_game", player)
 
 	# assert
 	assert_file_exists("user://test_save_game.save")
@@ -96,10 +96,10 @@ func test_load_game():
 	# arrange
 	var player = Player.new()
 	player.position = Vector2(20, 20)
-	main.save_game("test_load_game", player)
+	main._save_game("test_load_game", player)
 
 	# act
-	var player_position = main.load_game("test_load_game")
+	var player_position = main._load_game("test_load_game")
 
 	# assert
 	assert_eq(player_position, Vector2(20, 20), "Should return the player position")
