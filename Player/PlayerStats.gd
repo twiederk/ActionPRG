@@ -205,11 +205,13 @@ func save() -> Dictionary:
 
 
 func load(player_data: Dictionary) -> void:
-	_health = player_data["health"]
-	_max_health = player_data["max_health"]
-	_strength = player_data["strength"]
-	_experience_points = player_data["experience_points"]
-	_level = player_data["level"]
-	_keys = player_data["keys"]
-	_weapon = load(player_data["weapon"])
-	_armor = load(player_data["armor"])
+	set_health(player_data["health"])
+	set_max_health(player_data["max_health"])
+	set_strength(player_data["strength"])
+	set_experience_points(player_data["experience_points"])
+	set_level(player_data["level"])
+	var keys = player_data["keys"]
+	for index in keys.size():
+		set_key(index, keys[index])
+	set_weapon(load(player_data["weapon"]))
+	set_armor(load(player_data["armor"]))
