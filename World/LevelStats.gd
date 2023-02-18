@@ -43,5 +43,6 @@ func save() -> Dictionary:
 	}
 
 
-func load(load_data: Dictionary) -> void:
-	pass
+func load(level_data: Dictionary) -> void:
+	_current_level = level_data["current_level"]
+	_visited_nodes = level_data["visited_nodes"]

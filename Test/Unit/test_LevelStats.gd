@@ -60,5 +60,19 @@ func test_save():
 
 func test_load():
 
+	# arrange
+	var level_dictionary = {
+		"current_level": "Cave",
+		"visited_nodes": {
+			"Village": [ "Node1", "Node2"],
+			"Cave": [ "Node3", "Node4"]
+		}
+	}
+
 	# act
-	level_stats.load({})
+	level_stats.load(level_dictionary)
+
+	# assert
+	assert_eq(level_stats.get_current_level(), "Cave", "Should set current level to cave")
+	assert_eq(level_stats.get_visited_nodes("Village"), [ "Node1", "Node2"], "Should contain visited nodes of village")
+	
