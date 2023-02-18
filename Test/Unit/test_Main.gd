@@ -101,10 +101,11 @@ func test_load_game():
 	main._save_game("test_load_game", player)
 
 	# act
-	var player_position = main._load_game("test_load_game")
+	var loaded_game = main._load_game("test_load_game")
 
 	# assert
-	assert_eq(player_position, Vector2(20, 20), "Should return the player position")
+	assert_eq(loaded_game["player_position"], Vector2(20, 20), "Should return the player position")
+	assert_eq(loaded_game["level_name"], "Village", "Should return the level name")
 
 	# tear down
 	player.free()

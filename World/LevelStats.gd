@@ -38,11 +38,11 @@ func reset() -> void:
 
 func save() -> Dictionary:
 	return {
-		"current_level": get_current_level(),
+		"level_name": _current_level,
 		"visited_nodes": _visited_nodes
 	}
 
 
-func load(level_data: Dictionary) -> void:
-	_current_level = level_data["current_level"]
+func load(level_data: Dictionary) -> String:
 	_visited_nodes = level_data["visited_nodes"]
+	return level_data["level_name"]

@@ -54,7 +54,7 @@ func test_save():
 	var save_data = level_stats.save()
 
 	# assert
-	assert_eq(save_data["current_level"], "Cave", "Should store current level in save data")
+	assert_eq(save_data["level_name"], "Cave", "Should store current level in save data")
 	assert_eq(save_data["visited_nodes"].size(), 2, "Should store visited nodes dictionary in save data")
 
 
@@ -62,7 +62,7 @@ func test_load():
 
 	# arrange
 	var level_dictionary = {
-		"current_level": "Cave",
+		"level_name": "Cave",
 		"visited_nodes": {
 			"Village": [ "Node1", "Node2"],
 			"Cave": [ "Node3", "Node4"]
@@ -70,9 +70,10 @@ func test_load():
 	}
 
 	# act
-	level_stats.load(level_dictionary)
+	var level_name = level_stats.load(level_dictionary)
 
 	# assert
-	assert_eq(level_stats.get_current_level(), "Cave", "Should set current level to cave")
+	assert_eq(level_name, "Cave", "Should return Cave as level name")
+	assert_eq(level_stats.get_current_level(), "Village", "Should NOT change current level")
 	assert_eq(level_stats.get_visited_nodes("Village"), [ "Node1", "Node2"], "Should contain visited nodes of village")
 	
