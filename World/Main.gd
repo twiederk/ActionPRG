@@ -68,7 +68,7 @@ func _save_game(file_name: String, player: Player) -> void:
 
 func load_game() -> void:
 	var loaded_game = _load_game("savegame")
-	goto_level(loaded_game["level_name"], loaded_game["player_position"])
+	goto_level(loaded_game["current_level"], loaded_game["player_position"])
 
 
 func _load_game(file_name: String) -> Dictionary:
@@ -76,7 +76,7 @@ func _load_game(file_name: String) -> Dictionary:
 	PlayerStats.load(dictionaries[0])
 	var player_position = _load_player_position(dictionaries[1])
 	var level_name = LevelStats.load(dictionaries[2])
-	return { "level_name": level_name, "player_position": player_position }
+	return { "current_level": level_name, "player_position": player_position }
 
 
 func _load_dictionaries(file_name) -> Array:

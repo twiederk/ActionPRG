@@ -54,7 +54,7 @@ func test_save():
 	var save_data = level_stats.save()
 
 	# assert
-	assert_eq(save_data["level_name"], "Cave", "Should store current level in save data")
+	assert_eq(save_data["current_level"], "Cave", "Should store current level in save data")
 	assert_eq(save_data["visited_nodes"].size(), 2, "Should store visited nodes dictionary in save data")
 
 
@@ -62,7 +62,7 @@ func test_load():
 
 	# arrange
 	var level_dictionary = {
-		"level_name": "Cave",
+		"current_level": "Cave",
 		"visited_nodes": {
 			"Village": [ "Node1", "Node2"],
 			"Cave": [ "Node3", "Node4"]

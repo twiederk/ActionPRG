@@ -105,7 +105,7 @@ func test_load_game():
 
 	# assert
 	assert_eq(loaded_game["player_position"], Vector2(20, 20), "Should return the player position")
-	assert_eq(loaded_game["level_name"], "Village", "Should return the level name")
+	assert_eq(loaded_game["current_level"], "Village", "Should return the current level")
 
 	# tear down
 	player.free()
