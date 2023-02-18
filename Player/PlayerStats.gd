@@ -204,5 +204,12 @@ func save() -> Dictionary:
 	}
 
 
-func load(load_data: Dictionary) -> void:
-	pass
+func load(player_data: Dictionary) -> void:
+	_health = player_data["health"]
+	_max_health = player_data["max_health"]
+	_strength = player_data["strength"]
+	_experience_points = player_data["experience_points"]
+	_level = player_data["level"]
+	_keys = player_data["keys"]
+	_weapon = player_data["weapon"]
+	_armor = player_data["armor"]

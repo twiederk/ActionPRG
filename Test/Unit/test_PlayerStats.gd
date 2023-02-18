@@ -394,5 +394,33 @@ func test_save():
 
 func test_load():
 	
+	var weapon = WeaponResource.new()
+	weapon.damage_die = Die.Name.D6
+	
+	var armor = ArmorResource.new()
+	armor.armor_class = 5
+
+	# arrange
+	var player_stats = {
+		"health": 1,
+		"max_health": 2,
+		"strength": 3,
+		"experience_points": 4,
+		"level": 5,
+		"keys": [1, 2, 0, 0, 0, 0],
+		"weapon": weapon,
+		"armor": armor
+	}
+	
 	# act
-	stats.load({})
+	stats.load(player_stats)
+	
+	# assert
+	assert_eq(stats.get_health(), 1, "Should set health to 1")
+	assert_eq(stats.get_max_health(), 2, "Should set max_health to 2")
+	assert_eq(stats.get_strength(), 3, "Should set strength to 3")
+	assert_eq(stats.get_experience_points(), 4, "Should set experience_points to 4")
+	assert_eq(stats.get_level(), 5, "Should set level to 5")
+	assert_eq(stats.get_key(Key.SILVER), 2, "Should set keys")
+	assert_eq(stats.get_weapon(), weapon, "Should set weapon")
+	assert_eq(stats.get_armor(), armor, "Should set armor")
