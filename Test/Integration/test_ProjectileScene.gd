@@ -16,7 +16,6 @@ func test_ready():
 	
 	# assert
 	assert_eq(projectile_scene.sprite.frame_coords, Vector2(10, 20), "Should set frame coords of ranged weapon")
-	assert_true(projectile_scene.sprite.flip_h, "Should flip sprite when moving the the left")
 
 	# tear down
 	for child in get_children():

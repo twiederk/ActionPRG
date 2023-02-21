@@ -74,7 +74,7 @@ func test_handle_visited_node_secret_door():
 
 
 func test_save_game():
-	
+
 	# arrange
 	var player = Player.new()
 	PlayerStats.set_weapon(PlayerStats.DEFAULT_WEAPON)
@@ -88,9 +88,10 @@ func test_save_game():
 	assert_file_not_empty("user://test_save_game.save")
 	var save_data = _get_lines("user://test_save_game.save")
 	assert_eq(save_data.size(), 3, "Should contain one line per stored script")
-	
+
 	# tear down
 	player.free()
+	_delete_file("test_save_game.save")
 
 
 func test_load_game():
@@ -109,6 +110,7 @@ func test_load_game():
 
 	# tear down
 	player.free()
+	_delete_file("test_load_game.save")
 
 
 func _get_lines(file_name: String) -> Array:
@@ -119,3 +121,9 @@ func _get_lines(file_name: String) -> Array:
 		lines.append(file.get_line())
 	file.close()
 	return lines
+
+
+func _delete_file(file_name: String) -> void:
+	var dir = Directory.new()
+	dir.open("user://")
+	dir.remove(file_name)

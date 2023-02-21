@@ -6,10 +6,10 @@ var enemie_scene = null
 
 func before_each():
 	var ranged_weapon = RangedWeaponResource.new()
-	
+
 	var enemie_resource = EnemieResource.new()
 	enemie_resource.ranged_weapon = ranged_weapon
-	
+
 	enemie_scene = Enemie.instance()
 	enemie_scene.enemie_resource = enemie_resource
 	add_child(enemie_scene)
@@ -107,23 +107,75 @@ func test_shoot_with_range_attack_cooling_down():
 
 
 func test_create_projectile():
-	
+
 	# arrange
-	var enemie_position = Vector2(10, -50)
-	var player_position = Vector2(100, -50)
+	enemie_scene.position = Vector2(10, -47)
+	enemie_scene.projectilePosition.position = Vector2(5, -3)
+	var player_position = Vector2(45, -50)
 	var ranged_weapon = RangedWeaponResource.new()
 	ranged_weapon.speed = 20
 	ranged_weapon.damage_die = Die.Name.D4
 	ranged_weapon.frame_coords = Vector2(10, 20)
 
 	# act
-	var projectile = enemie_scene.create_projectile(enemie_position, player_position, ranged_weapon)
+	var projectile = enemie_scene.create_projectile(player_position, ranged_weapon)
 
 	# assert
-	assert_eq(projectile.position, enemie_position, "Should place projectile at same position of enemie")
+	assert_eq(projectile.position, Vector2(15, -50), "Should place projectile at projectilePosition.global_position")
 	assert_eq(projectile.velocity, Vector2(20, 0), "Should move in position of player")
 	assert_eq(projectile.ranged_weapon, ranged_weapon, "Should set ranged weapon")
 
 	# tear down
 	projectile.free()
+
+
+func test_create_projectile_sprite_flipped():
+
+	# arrange
+	enemie_scene.sprite.flip_h = true
+	enemie_scene.position = Vector2(45, -47)
+	enemie_scene.projectilePosition.position = Vector2(5, -3)
+	var player_position = Vector2(10, -50)
+	var ranged_weapon = RangedWeaponResource.new()
+	ranged_weapon.speed = 20
+	ranged_weapon.damage_die = Die.Name.D4
+	ranged_weapon.frame_coords = Vector2(10, 20)
+
+	# act
+	var projectile = enemie_scene.create_projectile(player_position, ranged_weapon)
+
+	# assert
+	assert_eq(projectile.position, Vector2(40, -50), "Should place projectile at projectilePosition.global_position")
+	assert_eq(projectile.velocity, Vector2(-20, 0), "Should move in position of player")
+	assert_eq(projectile.ranged_weapon, ranged_weapon, "Should set ranged weapon")
+
+	# tear down
+	projectile.free()
+
+
+func test_calc_projectile_position_left():
+
+	# arrange
+	var player_position = Vector2(10, 0)
+	enemie_scene.projectilePosition.position = Vector2(5, -3)
+
+	# act
+	var projectile_position = enemie_scene.calc_projectile_position(player_position)
+
+	# assert
+	assert_eq(projectile_position, Vector2(5, -3), "Should place projectile to the left when player is to the left")
+
+
+func test_calc_projectile_position_right():
+
+	# arrange
+	var player_position = Vector2(-10, 0)
+	enemie_scene.projectilePosition.position = Vector2(5, -3)
+
+	# act
+	var projectile_position = enemie_scene.calc_projectile_position(player_position)
+
+	# assert
+	assert_eq(projectile_position, Vector2(-5, -3), "Should place projectile to the right when player is to the right")
+
 

@@ -8,6 +8,7 @@ const HEALTH_BAR_MARGIN = 3
 const NAME_LABE_MARGIN = 6
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Projectile = preload("res://Enemies/Projectile.tscn")
+const PROJECTILE_TILE_FACING = Vector2(1, 1)
 
 export(int) var acceleration = 150
 export(int) var max_speed = 25
@@ -37,6 +38,7 @@ onready var wanderController = $WanderController
 onready var animationPlayer = $AnimationPlayer
 onready var healthBar = $HealthBar
 onready var nameLabel = $NameLabel
+onready var projectilePosition = $ProjectilePosition
 
 
 func _ready():
@@ -141,21 +143,32 @@ func accelerate_towards_point(point, delta):
 
 
 func shoot(delta: float, player_position: Vector2) -> void:
+	sprite.flip_h = player_position.x < global_position.x
 	if enemie_resource.ranged_weapon != null:
 		_ranged_weapon_cool_down_time -= delta
 		if _ranged_weapon_cool_down_time <= 0.0:
 			_ranged_weapon_cool_down_time = enemie_resource.ranged_weapon.cool_down_time
-			var projectile = create_projectile(global_position, player_position, enemie_resource.ranged_weapon)
+			var projectile = create_projectile(player_position, enemie_resource.ranged_weapon)
 			get_parent().add_child(projectile)
 
 
-func create_projectile(global_position: Vector2, player_position, ranged_weapon: RangedWeaponResource) -> Projectile:
+func create_projectile(player_position: Vector2, ranged_weapon: RangedWeaponResource) -> Projectile:
 	var projectile = Projectile.instance()
-	projectile.position = global_position
-	var direction = global_position.direction_to(player_position)
+	projectile.position = calc_projectile_position(player_position)
+	var direction = projectile.position.direction_to(player_position)
 	projectile.velocity = direction * ranged_weapon.speed
 	projectile.ranged_weapon = ranged_weapon
 	return projectile
+
+
+func calc_projectile_position(player_position: Vector2) -> Vector2:
+	var projectile_position : Vector2
+	if player_position.x >= global_position.x:
+		projectile_position = global_position + projectilePosition.position
+	else:
+		projectile_position = Vector2(global_position.x - projectilePosition.position.x,
+									  global_position.y + projectilePosition.position.y)
+	return projectile_position
 
 
 func seek_player():

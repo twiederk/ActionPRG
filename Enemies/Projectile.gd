@@ -9,7 +9,6 @@ onready var sprite = $Sprite
 
 func _ready():
 	sprite.frame_coords = ranged_weapon.frame_coords
-	sprite.flip_h = velocity.x < 0
 
 
 func _physics_process(delta: float):
