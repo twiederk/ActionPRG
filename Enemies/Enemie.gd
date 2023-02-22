@@ -4,21 +4,18 @@ extends KinematicBody2D
 enum EnemieState {IDLE, WANDER, CHASE, SHOOT}
 
 const DAMAGE_FORCE = 200
-const HEALTH_BAR_MARGIN = 3
-const NAME_LABE_MARGIN = 6
-const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
-const Projectile = preload("res://Enemies/Projectile.tscn")
 const PROJECTILE_TILE_FACING = Vector2(1, 1)
+const Projectile = preload("res://Enemies/Projectile.tscn")
+const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
-export(int) var acceleration = 150
-export(int) var max_speed = 25
-export(int) var FRICTION = 200
-export(int) var WANDER_TARGET_RANGE = 4
-export(int) var health: int = 0
 export(Resource) var enemie_resource
 export(String) var boss_name = ""
 
-
+var acceleration = 150
+var max_speed = 25
+var FRICTION = 200
+var WANDER_TARGET_RANGE = 4
+var health: int = 0
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var weight = 0
@@ -43,8 +40,8 @@ onready var projectilePosition = $ProjectilePosition
 
 func _ready():
 	_init_game_properties()
-	_init_apperance()
-	_init_health_bar_and_name_label()
+	nameLabel.text = boss_name
+	animationPlayer.seek(rand_range(0, 0.5), true)
 	state = pick_random_state([EnemieState.IDLE, EnemieState.WANDER])
 
 
@@ -54,37 +51,6 @@ func _init_game_properties():
 	acceleration = enemie_resource.acceleration
 	max_speed = enemie_resource.max_speed
 	weight = enemie_resource.weight
-
-
-func _init_apperance():
-	sprite.position = enemie_resource.center
-	sprite.texture = enemie_resource.texture
-	shadowSprite.texture = enemie_resource.shadow
-	bodyCollision.shape = enemie_resource.body_shape
-	hitbox.set_position(enemie_resource.center)
-	hitbox.set_shape(enemie_resource.hitbox_shape)
-	hurtbox.set_position(enemie_resource.center)
-	hurtbox.set_shape(enemie_resource.hurtbox_shape)
-	softCollision.set_shape(enemie_resource.soft_shape)
-	scale = enemie_resource.scale
-	animationPlayer.seek(rand_range(0, 0.5), true)
-
-
-func _init_health_bar_and_name_label():
-	healthBar.set_position(_calulate_health_bar_position(healthBar.rect_size, enemie_resource.center))
-	nameLabel.set_position(_calulate_name_label_position(nameLabel.rect_size, enemie_resource.center))
-	if not boss_name.empty():
-		nameLabel.visible = true
-		nameLabel.text = boss_name
-		healthBar.visible = true
-
-
-func _calulate_health_bar_position(rect_size: Vector2, center: Vector2) -> Vector2:
-	return Vector2(-rect_size.x / 2.0, center.y * 2 - HEALTH_BAR_MARGIN)
-
-
-func _calulate_name_label_position(rect_size: Vector2, center: Vector2) -> Vector2:
-	return Vector2(-rect_size.x / 2.0, center.y * 2.5 - NAME_LABE_MARGIN)
 
 
 func _physics_process(delta):

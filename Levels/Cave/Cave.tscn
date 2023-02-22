@@ -1,12 +1,10 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/Cave/CaveTileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Enemies/Bat/BatBlue.tres" type="Resource" id=2]
 [ext_resource path="res://Items/Potions/RedPotion.tres" type="Resource" id=3]
-[ext_resource path="res://Enemies/Dragon/Dragon_brown.tres" type="Resource" id=4]
+[ext_resource path="res://Enemies/Dragon/DragonBrown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Items/Potions/Potion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Enemie.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Items/Gems/CrystalPurpleLarge.tres" type="Resource" id=10]
@@ -17,7 +15,7 @@
 [ext_resource path="res://Levels/Cave/Cave.gd" type="Script" id=15]
 [ext_resource path="res://Items/Keys/Key.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Items/Keys/BronzeKey.tres" type="Resource" id=17]
-[ext_resource path="res://Enemies/Dragon/Dragon_blue.tres" type="Resource" id=18]
+[ext_resource path="res://Enemies/Dragon/DragonBlue.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Items/Weapons/RubinSword.tres" type="Resource" id=19]
 [ext_resource path="res://Items/Weapons/Weapon.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Items/Armor/RubinPlate.tres" type="Resource" id=21]
@@ -25,6 +23,8 @@
 [ext_resource path="res://Items/Gems/CrystalGreenLarge.tres" type="Resource" id=23]
 [ext_resource path="res://Items/Gems/CrystalGreenMedium.tres" type="Resource" id=24]
 [ext_resource path="res://Items/Gems/CrystalGreenSmall.tres" type="Resource" id=25]
+[ext_resource path="res://Enemies/Bat/BatPurple.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Enemies/Bat/BatBlue.tscn" type="PackedScene" id=27]
 
 [node name="Cave" type="Node"]
 script = ExtResource( 15 )
@@ -95,14 +95,12 @@ remote_path = NodePath("../../../Camera")
 
 [node name="Dragons" type="YSort" parent="YSort"]
 
-[node name="Dragon_Dragon" parent="YSort/Dragons" instance=ExtResource( 7 )]
-position = Vector2( 231, 312 )
-enemie_resource = ExtResource( 4 )
+[node name="Dragon_Dragon" parent="YSort/Dragons" instance=ExtResource( 4 )]
+position = Vector2( 227, 315 )
 boss_name = "Dragon"
 
-[node name="Dragon_Zyxel" parent="YSort/Dragons" instance=ExtResource( 7 )]
-position = Vector2( 127, 710 )
-enemie_resource = ExtResource( 18 )
+[node name="Dragon_Zyxel" parent="YSort/Dragons" instance=ExtResource( 18 )]
+position = Vector2( 127, 692 )
 boss_name = "Zyxel"
 
 [node name="Trasure_Dragon" type="YSort" parent="YSort"]
@@ -176,49 +174,29 @@ item_resource = ExtResource( 21 )
 
 [node name="Bats" type="YSort" parent="YSort"]
 
-[node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -99, 335 )
+[node name="BatBlue" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 78, 381 )
 
-[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -95, 357 )
+[node name="BatBlue2" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 91, 384 )
 
-[node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 241, 396 )
-enemie_resource = ExtResource( 2 )
+[node name="BatBlue3" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 70, 392 )
 
-[node name="Bat5" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 226, 410 )
-enemie_resource = ExtResource( 2 )
+[node name="BatBlue4" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 86, 272 )
 
-[node name="Bat8" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 78, 292 )
-enemie_resource = ExtResource( 2 )
+[node name="BatBlue5" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 98, 279 )
 
-[node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 69, 284 )
-enemie_resource = ExtResource( 2 )
+[node name="BatBlue6" parent="YSort/Bats" instance=ExtResource( 27 )]
+position = Vector2( 109, 286 )
 
-[node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 74, 272 )
-enemie_resource = ExtResource( 2 )
+[node name="BatPurple" parent="YSort/Bats" instance=ExtResource( 26 )]
+position = Vector2( -86, 327 )
 
-[node name="Bat10" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 97, 369 )
-enemie_resource = ExtResource( 2 )
-
-[node name="Bat11" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 87, 369 )
-enemie_resource = ExtResource( 2 )
-
-[node name="Bat12" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 78, 367 )
-enemie_resource = ExtResource( 2 )
-
-[node name="Bat6" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 216, 399 )
-
-[node name="Bat7" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 225, 387 )
+[node name="BatPurple2" parent="YSort/Bats" instance=ExtResource( 26 )]
+position = Vector2( -86, 348 )
 
 [node name="Fixtures" type="YSort" parent="YSort"]
 
@@ -237,6 +215,18 @@ starting_position = Vector2( 650, 250 )
 [node name="BronzeKey" parent="YSort/Fixtures" instance=ExtResource( 16 )]
 position = Vector2( 277, 423 )
 item_resource = ExtResource( 17 )
+
+[node name="BatBlue" parent="." instance=ExtResource( 27 )]
+position = Vector2( 245, 396 )
+
+[node name="BatBlue2" parent="." instance=ExtResource( 27 )]
+position = Vector2( 236, 408 )
+
+[node name="BatPurple" parent="BatBlue2" instance=ExtResource( 26 )]
+position = Vector2( -4, -17 )
+
+[node name="BatPurple2" parent="BatBlue2" instance=ExtResource( 26 )]
+position = Vector2( -14, -6 )
 
 [connection signal="door_opened" from="YSort/Fixtures/NormalDoor" to="." method="_on_NormalDoor_door_opened"]
 

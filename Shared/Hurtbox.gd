@@ -32,14 +32,6 @@ func create_hit_effect():
 	effect.global_position = global_position
 
 
-func set_position(position: Vector2) -> void:
-	collisionShape.position = position
-
-
-func set_shape(shape: Shape2D) -> void:
-	collisionShape.shape = shape
-
-
 func _on_Timer_timeout():
 	self.invincible = false
 

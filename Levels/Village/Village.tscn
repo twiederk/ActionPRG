@@ -6,17 +6,14 @@
 [ext_resource path="res://Items/Potions/BluePotion.tres" type="Resource" id=4]
 [ext_resource path="res://Items/Armor/LeatherArmor.tres" type="Resource" id=5]
 [ext_resource path="res://Items/Gems/Amethyst.tres" type="Resource" id=6]
-[ext_resource path="res://Enemies/Bat/BatBlue.tres" type="Resource" id=7]
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Items/Potions/RedPotion.tres" type="Resource" id=9]
-[ext_resource path="res://Enemies/Bat/GiantBat.tres" type="Resource" id=10]
 [ext_resource path="res://Items/Gems/Amber.tres" type="Resource" id=11]
 [ext_resource path="res://Items/Gems/Topaz.tres" type="Resource" id=12]
 [ext_resource path="res://Items/Gems/Opal.tres" type="Resource" id=13]
 [ext_resource path="res://Levels/Cave/CaveTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://Levels/Village/Village.tres" type="TileSet" id=15]
 [ext_resource path="res://World/Plants/Bush.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Enemies/Enemie.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Items/Keys/Key.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Items/Potions/Potion.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=20]
@@ -37,6 +34,9 @@
 [ext_resource path="res://Items/Weapons/LongSword.tres" type="Resource" id=35]
 [ext_resource path="res://Assets/Graphics/World/HouseBackground.png" type="Texture" id=36]
 [ext_resource path="res://Items/Keys/SilverKey.tres" type="Resource" id=37]
+[ext_resource path="res://Enemies/Bat/BatPurple.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Enemies/Bat/BatBlue.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Enemies/Bat/GiantBat.tscn" type="PackedScene" id=40]
 
 [node name="Village" type="Node"]
 script = ExtResource( 29 )
@@ -749,247 +749,217 @@ position = Vector2( -16.8964, 586.484 )
 
 [node name="GiantBats" type="YSort" parent="YSort"]
 
-[node name="GiantBat_Hildegard" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 337, 421 )
-enemie_resource = ExtResource( 10 )
-boss_name = "Hildegard"
-
-[node name="GiantBat_Gerda" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 651.433, 233.539 )
-enemie_resource = ExtResource( 10 )
-boss_name = "Gerda"
-
-[node name="GiantBat_Charly" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( -226, 341 )
-enemie_resource = ExtResource( 10 )
+[node name="GiantBat_Charly" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( -224, 319 )
 boss_name = "Charly"
 
-[node name="GiantBat_Georg" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 785, 671 )
-enemie_resource = ExtResource( 10 )
-boss_name = "Georg"
+[node name="GiantBat_Hildegard" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 336, 421 )
+boss_name = "Hildegard"
 
-[node name="GiantBat_Fritz" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 818, 234 )
-enemie_resource = ExtResource( 10 )
+[node name="GiantBat_Gerda" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 652, 237 )
+boss_name = "Gerda"
+
+[node name="GiantBat_Fritz" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 818, 225 )
 boss_name = "Fritz"
 
-[node name="GiantBat_Taffnuss" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 1243, 533 )
-enemie_resource = ExtResource( 10 )
+[node name="GiantBat_Georg" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 784, 708 )
+boss_name = "Georg"
+
+[node name="GiantBat_Taffnuss" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 1246, 535 )
 boss_name = "Taffnuss"
 
-[node name="GiantBat_Raffnuss" parent="YSort/GiantBats" instance=ExtResource( 17 )]
-position = Vector2( 1243, 555 )
-enemie_resource = ExtResource( 10 )
+[node name="GiantBat_Raffnuss" parent="YSort/GiantBats" instance=ExtResource( 40 )]
+position = Vector2( 1245, 553 )
 boss_name = "Raffnuss"
 
-[node name="Bats" type="YSort" parent="YSort"]
+[node name="BatsPurple" type="YSort" parent="YSort"]
 
-[node name="Bat" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 48, 140 )
+[node name="BatPurple" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 192, 118 )
 
-[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 192.503, 125.416 )
+[node name="BatPurple2" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 59, 137 )
 
-[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 47, 69 )
+[node name="BatPurple4" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 73, 245 )
 
-[node name="Bat4" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 220, 343 )
+[node name="BatPurple5" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 97, 236 )
 
-[node name="Bat5" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 201, 342 )
+[node name="BatPurple6" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 188, 339 )
 
-[node name="Bat6" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 365, 462 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple7" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 223, 339 )
 
-[node name="Bat7" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 185.079, 562.001 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple3" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 66, 63 )
 
-[node name="Bat8" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 223.511, 617.866 )
+[node name="BatPurple8" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( -249, 499 )
 
-[node name="Bat9" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 300, 459 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple9" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( -238, 490 )
 
-[node name="Bat10" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 175.889, 617.758 )
+[node name="BatPurple10" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 179, 625 )
 
-[node name="Bat11" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 245.08, 601.271 )
+[node name="BatPurple11" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 632, 249 )
 
-[node name="Bat12" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 227.62, 566.486 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple12" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 666, 250 )
 
-[node name="Bat13" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 197.296, 597.027 )
+[node name="BatPurple13" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 737, 614 )
 
-[node name="Bat14" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 73.4478, 250.071 )
+[node name="BatPurple14" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 756, 614 )
 
-[node name="Bat15" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 85.8324, 231.605 )
+[node name="BatPurple15" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 756, 629 )
 
-[node name="Bat16" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 627, 248 )
+[node name="BatPurple16" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 735, 631 )
 
-[node name="Bat20" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 672, 244 )
+[node name="BatPurple17" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 807, 615 )
 
-[node name="Bat21" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 335, 459 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple18" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 824, 614 )
 
-[node name="Bat22" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 317, 452 )
+[node name="BatPurple19" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 806, 632 )
 
-[node name="Bat23" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 350, 453 )
+[node name="BatPurple20" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 826, 631 )
 
-[node name="Bat24" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 378, 452 )
+[node name="BatPurple21" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 975, 521 )
 
-[node name="Bat17" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 981, 566 )
+[node name="BatPurple22" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 987, 539 )
 
-[node name="Bat35" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 835, 616 )
+[node name="BatPurple23" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 972, 556 )
 
-[node name="Bat36" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 746, 618 )
+[node name="BatPurple24" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 207, 625 )
 
-[node name="Bat37" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 722, 617 )
+[node name="BatPurple25" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 192, 604 )
 
-[node name="Bat38" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 742, 632 )
+[node name="BatPurple26" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 299, 433 )
 
-[node name="Bat39" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 719, 632 )
+[node name="BatPurple27" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 316, 449 )
 
-[node name="Bat40" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 813, 616 )
+[node name="BatPurple28" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 330, 435 )
 
-[node name="Bat41" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 814, 633 )
+[node name="BatPurple29" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 343, 449 )
 
-[node name="Bat42" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 836, 632 )
+[node name="BatPurple30" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 359, 437 )
 
-[node name="Bat25" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1004, 543 )
+[node name="BatPurple31" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 369, 450 )
 
-[node name="Bat26" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 974, 521 )
+[node name="BatPurple32" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 227, 604 )
 
-[node name="Bat43" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 797, 238 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple33" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1229, 578 )
 
-[node name="Bat44" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 784, 247 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple34" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1251, 573 )
 
-[node name="Bat45" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 837, 241 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple35" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1273, 566 )
 
-[node name="Bat46" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 851, 250 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple36" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1226, 503 )
 
-[node name="Bat47" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 862, 257 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple37" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1248, 507 )
 
-[node name="Bat48" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 771, 257 )
-enemie_resource = ExtResource( 7 )
+[node name="BatPurple38" parent="YSort/BatsPurple" instance=ExtResource( 38 )]
+position = Vector2( 1271, 515 )
 
-[node name="Bat27" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -251, 492 )
+[node name="BatsBlue" type="YSort" parent="YSort"]
 
-[node name="Bat28" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -180, 445 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -244, 326 )
 
-[node name="Bat49" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -246, 331 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue2" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -205, 329 )
 
-[node name="Bat50" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -206, 330 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue3" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -171, 450 )
 
-[node name="Bat29" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -195, 438 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue4" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -183, 442 )
 
-[node name="Bat30" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -263, 472 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue5" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -195, 434 )
 
-[node name="Bat31" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -167, 451 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue6" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -266, 502 )
 
-[node name="Bat32" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -272, 489 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue7" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -255, 490 )
 
-[node name="Bat33" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -257, 505 )
+[node name="BatBlue8" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( -247, 479 )
 
-[node name="Bat34" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( -276, 505 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue9" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 186, 556 )
 
-[node name="Bat51" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1234, 593 )
+[node name="BatBlue10" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 229, 556 )
 
-[node name="Bat52" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1256, 588 )
+[node name="BatBlue11" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 799, 236 )
 
-[node name="Bat53" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1279, 574 )
+[node name="BatBlue12" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 784, 249 )
 
-[node name="Bat54" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1276, 514 )
+[node name="BatBlue13" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 771, 264 )
 
-[node name="Bat55" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1253, 501 )
+[node name="BatBlue14" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 836, 238 )
 
-[node name="Bat56" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1229, 494 )
+[node name="BatBlue15" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 848, 249 )
 
-[node name="Bat57" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1104, 499 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue16" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 861, 264 )
 
-[node name="Bat58" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1171, 497 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue17" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1041, 504 )
 
-[node name="Bat59" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1041, 501 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue18" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1103, 505 )
 
-[node name="Bat60" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1041, 590 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue19" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1169, 506 )
 
-[node name="Bat61" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1107, 590 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue20" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1040, 598 )
 
-[node name="Bat62" parent="YSort/Bats" instance=ExtResource( 17 )]
-position = Vector2( 1168, 591 )
-enemie_resource = ExtResource( 7 )
+[node name="BatBlue21" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1103, 599 )
+
+[node name="BatBlue22" parent="YSort/BatsBlue" instance=ExtResource( 39 )]
+position = Vector2( 1167, 597 )
 
 [node name="Fixtures" type="YSort" parent="YSort"]
 

@@ -17,6 +17,3 @@ func get_push_vector():
 		push_vector = push_vector.normalized()
 	return push_vector
 
-
-func set_shape(shape: Shape2D) -> void:
-	collisionShape2D = shape
