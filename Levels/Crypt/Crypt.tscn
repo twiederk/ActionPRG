@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Crypt/DungeonTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://World/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Crypt/Crypt.gd" type="Script" id=5]
 [ext_resource path="res://World/SecretDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Items/Keys/SilverKey.tres" type="Resource" id=7]
+[ext_resource path="res://Items/Keys/Key.tscn" type="PackedScene" id=8]
 
 [node name="Crypt" type="Node"]
 script = ExtResource( 5 )
@@ -73,6 +75,10 @@ starting_position = Vector2( 1423, 570 )
 
 [node name="SecretDoor" parent="YSort/Fixtures" instance=ExtResource( 6 )]
 position = Vector2( 184, 183 )
+
+[node name="Key" parent="." instance=ExtResource( 8 )]
+position = Vector2( -36, 219 )
+item_resource = ExtResource( 7 )
 
 [connection signal="door_opened" from="YSort/Fixtures/SecretDoor" to="." method="_on_SecretDoor_door_opened"]
 

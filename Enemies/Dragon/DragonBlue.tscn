@@ -43,6 +43,12 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 3 )
 
+[node name="ChaseDetectionZone" parent="." index="6"]
+visible = true
+
+[node name="ShootDetectionZone" parent="." index="7"]
+visible = true
+
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 4 )
 
