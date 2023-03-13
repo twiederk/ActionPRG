@@ -10,7 +10,7 @@ const PotionScene = preload("res://Items/Potions/Potion.tscn")
 const WeaponScene = preload("res://Items/Weapons/Weapon.tscn")
 const TWEEN_DISTANCE = 20
 
-@export var treasure_content # (Array, Resource)
+@export var treasure_content: Array[Resource] = []
 
 var treasure_state = TreasureState.CLOSE
 var check_open_sfx = load("res://Assets/Sounds/ChestOpen.ogg")
