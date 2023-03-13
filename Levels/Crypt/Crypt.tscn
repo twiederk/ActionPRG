@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Levels/Crypt/DungeonTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://World/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenery/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenery/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Crypt/Crypt.gd" type="Script" id=5]
-[ext_resource path="res://World/SecretDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenery/SecretDoor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Items/Keys/SilverKey.tres" type="Resource" id=7]
 [ext_resource path="res://Items/Keys/Key.tscn" type="PackedScene" id=8]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://World/NormalDoor.gd" type="Script" id=1]
+[ext_resource path="res://Scenery/NormalDoor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sounds/KeyMissing.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Sounds/DoorOpen.ogg" type="AudioStream" id=3]
 

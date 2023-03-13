@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Die",
 "language": "GDScript",
-"path": "res://World/Die.gd"
+"path": "res://Scenery/Die.gd"
 }, {
 "base": "AnimatedSprite",
 "class": "Effect",
@@ -87,12 +87,12 @@ _global_script_classes=[ {
 "base": "AudioStreamPlayer",
 "class": "GlobalAudioStreamPlayer",
 "language": "GDScript",
-"path": "res://World/GlobalAudioStreamPlayer.gd"
+"path": "res://Scenery/GlobalAudioStreamPlayer.gd"
 }, {
 "base": "Node2D",
 "class": "Grass",
 "language": "GDScript",
-"path": "res://World/Plants/Grass.gd"
+"path": "res://Scenery/Plants/Grass.gd"
 }, {
 "base": "Reference",
 "class": "GutHookScript",
@@ -107,7 +107,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "HealingWell",
 "language": "GDScript",
-"path": "res://World/HealingWell.gd"
+"path": "res://Scenery/HealingWell.gd"
 }, {
 "base": "Control",
 "class": "HealthUI",
@@ -162,27 +162,27 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "LvlStats",
 "language": "GDScript",
-"path": "res://World/LevelStats.gd"
+"path": "res://Scenery/LevelStats.gd"
 }, {
 "base": "Node",
 "class": "Main",
 "language": "GDScript",
-"path": "res://World/Main.gd"
+"path": "res://Scenery/Main.gd"
 }, {
 "base": "Area2D",
 "class": "NormalDoor",
 "language": "GDScript",
-"path": "res://World/NormalDoor.gd"
+"path": "res://Scenery/NormalDoor.gd"
 }, {
 "base": "StaticBody2D",
 "class": "Plant",
 "language": "GDScript",
-"path": "res://World/Plants/Plant.gd"
+"path": "res://Scenery/Plants/Plant.gd"
 }, {
 "base": "Resource",
 "class": "PlantResource",
 "language": "GDScript",
-"path": "res://World/Plants/PlantResource.gd"
+"path": "res://Scenery/Plants/PlantResource.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -202,7 +202,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "PortalArea2D",
 "language": "GDScript",
-"path": "res://World/Portal.gd"
+"path": "res://Scenery/Portal.gd"
 }, {
 "base": "Item",
 "class": "Potion",
@@ -227,7 +227,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "SecretDoor",
 "language": "GDScript",
-"path": "res://World/SecretDoor.gd"
+"path": "res://Scenery/SecretDoor.gd"
 }, {
 "base": "Area2D",
 "class": "SoftCollision",
@@ -242,7 +242,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "TreasureChest",
 "language": "GDScript",
-"path": "res://World/TreasureChest.gd"
+"path": "res://Scenery/TreasureChest.gd"
 }, {
 "base": "Node",
 "class": "Village",
@@ -322,15 +322,15 @@ _global_script_class_icons={
 
 config/name="Action RPG"
 config/description="Version 5.0.0-SNAPSHOT"
-run/main_scene="res://World/Main.tscn"
+run/main_scene="res://Scenery/Main.tscn"
 config/windows_native_icon="res://Assets/Graphics/icon.ico"
 
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.gd"
 KeyEvents="*res://UI/KeyEvents.gd"
-AudioEvents="*res://World/AudioEvents.gd"
-LevelStats="*res://World/LevelStats.gd"
+AudioEvents="*res://Scenery/AudioEvents.gd"
+LevelStats="*res://Scenery/LevelStats.gd"
 
 [display]
 
