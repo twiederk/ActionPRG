@@ -1,11 +1,11 @@
 class_name GameOverUI
 extends Control
 
-onready var restartButton = $ColorRect/RestartButton
+@onready var restartButton = $ColorRect/RestartButton
 
 func _ready():
 	# warning-ignore-all:RETURN_VALUE_DISCARDED
-	PlayerStats.connect("no_health", self, "show")
+	PlayerStats.connect("no_health",Callable(self,"show"))
 
 
 func _on_RestartButton_pressed():

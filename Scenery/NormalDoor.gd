@@ -1,12 +1,12 @@
 class_name NormalDoor
 extends Area2D
 
-export(Resource) var DOOR_OPEN_SFX
-export(Resource) var MISSING_KEY_SFX
+@export var DOOR_OPEN_SFX: Resource
+@export var MISSING_KEY_SFX: Resource
 
 signal door_opened(world_position)
 
-export var key: int = Key.GOLD
+@export var key: int = Key.GOLD
 
 
 func _on_NormalDoor_body_entered(body):
@@ -31,5 +31,5 @@ func open() -> void:
 	queue_free()
 
 
-func _is_missing_key(body: KinematicBody2D) -> bool:
+func _is_missing_key(body: CharacterBody2D) -> bool:
 	return body is Player and PlayerStats.get_key(key) <= 0

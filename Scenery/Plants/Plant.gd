@@ -1,9 +1,9 @@
 class_name Plant
 extends StaticBody2D
 
-export(Resource) var plant_resource = preload("res://Scenery/Plants/Tree.tres")
+@export var plant_resource: Resource = preload("res://Scenery/Plants/Tree.tres")
 
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 
 func _ready():
 	sprite.texture = plant_resource.texture

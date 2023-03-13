@@ -1,5 +1,5 @@
 class_name Player
-extends KinematicBody2D
+extends CharacterBody2D
 
 
 const ACCELERATION = 500
@@ -15,22 +15,22 @@ var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
 
-onready var animationPlayer = $AnimationPlayer
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
-onready var playerHitbox =$HitboxPivot/PlayerHitbox
-onready var hurtbox = $Hurtbox
-onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-onready var sprite = $Sprite
+@onready var animationPlayer = $AnimationPlayer
+@onready var animationTree = $AnimationTree
+@onready var animationState = animationTree.get("parameters/playback")
+@onready var playerHitbox =$HitboxPivot/PlayerHitbox
+@onready var hurtbox = $Hurtbox
+@onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+@onready var sprite = $Sprite2D
 
 
 func _ready():
 	randomize()
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health",Callable(self,"queue_free"))
 	animationTree.active = true
 	playerHitbox.knockback_direction = roll_vector
 	sprite.texture = stats.get_weapon_swipe_texture()
-	OS.set_window_maximized(true)
+	get_window().mode = Window.MODE_MAXIMIZED if (true) else Window.MODE_WINDOWED
 
 
 func _physics_process(delta):
@@ -81,7 +81,9 @@ func attack_state():
 
 
 func move():
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
 
 
 func handle_input() -> void:

@@ -1,8 +1,8 @@
 class_name ExperienceUI
 extends Control
 
-onready var experience_progress_bar = $ExperienceProgressBar
-onready var level_label = $LevelLabel
+@onready var experience_progress_bar = $ExperienceProgressBar
+@onready var level_label = $LevelLabel
 
 
 var _level = 1
@@ -11,8 +11,8 @@ var _level = 1
 func _ready():
 	_on_PlayerStats_level_changed(PlayerStats.get_level(), PlayerStats.get_experience_points())
 	_on_PlayerStats_experience_points_changed(PlayerStats.get_experience_points())
-	PlayerStats.connect("level_changed", self, "_on_PlayerStats_level_changed")
-	PlayerStats.connect("experience_points_changed", self, "_on_PlayerStats_experience_points_changed")
+	PlayerStats.connect("level_changed",Callable(self,"_on_PlayerStats_level_changed"))
+	PlayerStats.connect("experience_points_changed",Callable(self,"_on_PlayerStats_experience_points_changed"))
 
 
 func _on_PlayerStats_level_changed(level: int, experience_points: int) -> void:

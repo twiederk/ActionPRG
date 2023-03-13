@@ -4,17 +4,17 @@ extends Control
 const HEART_WIDTH = 15
 const HEARTS_PER_ROW = 10
 
-export var row: int
+@export var row: int
 
-onready var heartUIFull = $HeartUIFull
-onready var heartUIEmpty = $HeartUIEmpty
+@onready var heartUIFull = $HeartUIFull
+@onready var heartUIEmpty = $HeartUIEmpty
 
 func calculate_health(health: int) -> void:
-	heartUIFull.rect_size.x = _calculate_width(health)
+	heartUIFull.size.x = _calculate_width(health)
 
 
 func calculate_max_health(max_health: int) -> void:
-	heartUIEmpty.rect_size.x = _calculate_width(max_health)
+	heartUIEmpty.size.x = _calculate_width(max_health)
 
 
 func _calculate_width(health: int) -> int:

@@ -1,28 +1,28 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="FontFile" id=1]
 [ext_resource path="res://UI/GameOverUI.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 32
 font_data = ExtResource( 1 )
 
 [node name="GameOverUI" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 320.0
-margin_bottom = 180.0
+offset_right = 320.0
+offset_bottom = 180.0
 color = Color( 0, 0, 0, 0.294118 )
 
 [node name="GameOverLabel" type="Label" parent="ColorRect"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -19.5
-margin_bottom = 19.5
+offset_top = -19.5
+offset_bottom = 19.5
 custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
 align = 1
@@ -32,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -32.0
-margin_top = 18.5
-margin_right = 32.0
-margin_bottom = 41.5
+offset_left = -32.0
+offset_top = 18.5
+offset_right = 32.0
+offset_bottom = 41.5
 text = "Restart"
 
 [connection signal="pressed" from="ColorRect/RestartButton" to="." method="_on_RestartButton_pressed"]

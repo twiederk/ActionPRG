@@ -6,7 +6,7 @@ var player : Player = null
 
 func before_each():
 	player = Player.new()
-	player.sprite = Sprite.new()
+	player.sprite = Sprite2D.new()
 
 
 func after_each():

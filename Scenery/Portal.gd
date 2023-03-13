@@ -1,12 +1,12 @@
 class_name PortalArea2D
 extends Area2D
 
-export(String) var target_level = Village.NAME
-export(Vector2) var starting_position = Vector2.ZERO
+@export var target_level: String = Village.NAME
+@export var starting_position: Vector2 = Vector2.ZERO
 
 
 func _draw():
-	var e = $CollisionShape2D.shape.extents
+	var e = $CollisionShape2D.shape.size
 	draw_rect(Rect2(e.x * -1, e.y * -1, e.x * 2, e.y * 2), Color(1, 1, 1, 0))
 
 

@@ -1,7 +1,7 @@
 extends Camera2D
 
-onready var topLeft = $Limits/TopLeft
-onready var bottomRight = $Limits/BottomRight
+@onready var topLeft = $Limits/TopLeft
+@onready var bottomRight = $Limits/BottomRight
 
 func _ready():
 	limit_top = topLeft.position.y
@@ -12,5 +12,5 @@ func _ready():
 
 
 func _enable_smoothing() -> void:
-	yield(get_tree().create_timer(0.01), "timeout")
-	smoothing_enabled = true
+	await get_tree().create_timer(0.01).timeout
+	follow_smoothing_enabled = true

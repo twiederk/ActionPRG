@@ -3,8 +3,8 @@ extends AudioStreamPlayer
 
 func _ready():
 	#warning-ignore-all:RETURN_VALUE_DISCARDED
-	AudioEvents.connect("play_sound", self, "_on_AudioEvents_play_sound")
-	AudioEvents.connect("play_stream", self, "_on_AudioEvents_play_stream")
+	AudioEvents.connect("play_sound",Callable(self,"_on_AudioEvents_play_sound"))
+	AudioEvents.connect("play_stream",Callable(self,"_on_AudioEvents_play_stream"))
 
 
 func _on_AudioEvents_play_sound(sound: String) -> void:

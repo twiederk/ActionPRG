@@ -28,7 +28,7 @@ func _free_current_level():
 
 func _load_level(level_name: String) -> void:
 	var Level = load(str("res://Levels/", level_name, "/", level_name, ".tscn"))
-	var level = Level.instance()
+	var level = Level.instantiate()
 	add_child(level)
 	LevelStats.set_current_level(level_name)
 
@@ -60,9 +60,9 @@ func _save_game(file_name: String, player: Player) -> void:
 	var player_stats = PlayerStats.save()
 	var player_postion = player.save()
 	var level_stats = LevelStats.save()
-	save_game.store_line(to_json(player_stats))
-	save_game.store_line(to_json(player_postion))
-	save_game.store_line(to_json(level_stats))
+	save_game.store_line(JSON.new().stringify(player_stats))
+	save_game.store_line(JSON.new().stringify(player_postion))
+	save_game.store_line(JSON.new().stringify(level_stats))
 	save_game.close()
 
 
@@ -83,8 +83,10 @@ func _load_dictionaries(file_name) -> Array:
 	var file = File.new()
 	file.open(str("user://", file_name, ".save"), File.READ)
 	var dictionaries = []
-	while file.get_position() < file.get_len():
-		dictionaries.append(parse_json(file.get_line()))
+	while file.get_position() < file.get_length():
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(file.get_line()))
+		dictionaries.append(test_json_conv.get_data()
 	file.close()
 	return dictionaries
 

@@ -1,8 +1,8 @@
 class_name GameStartUI
 extends Control
 
-onready var versionLabel = $ColorRect/VersionLabel
-onready var startButton = $ColorRect/StartButton
+@onready var versionLabel = $ColorRect/VersionLabel
+@onready var startButton = $ColorRect/StartButton
 
 func _ready():
 	show()

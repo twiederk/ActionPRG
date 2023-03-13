@@ -1,6 +1,6 @@
 class_name PlantResource
 extends Resource
 
-export(Texture) var texture
+@export var texture: Texture2D
 
 

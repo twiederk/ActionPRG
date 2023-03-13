@@ -15,7 +15,7 @@ func after_each():
 
 func test_can_open_door_not_Player():
 	# arrange
-	var body = double(KinematicBody2D).new()
+	var body = double(CharacterBody2D).new()
 
 	# act
 	var result = normal_door._can_open_door(body)

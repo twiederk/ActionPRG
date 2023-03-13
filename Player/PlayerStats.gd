@@ -21,7 +21,7 @@ const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
 const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 const LEVEL_UP_VOICE = preload("res://Assets/Sounds/LevelUpVoice.ogg")
 
-export(Array, int) var _keys = [0, 0, 0, 0, 0, 0]
+@export var _keys = [0, 0, 0, 0, 0, 0] # (Array, int)
 
 var _max_health: int = MAX_HEALTH
 var _health = _max_health
@@ -34,7 +34,7 @@ var _level: int = 1
 
 func _ready():
 	# warning-ignore:RETURN_VALUE_DISCARDED
-	connect("enemie_killed", self, "_on_enemie_killed")
+	connect("enemie_killed",Callable(self,"_on_enemie_killed"))
 
 
 func set_max_health(new_max_health) -> void:
@@ -67,7 +67,7 @@ func get_weapon() -> WeaponResource:
 	return _weapon
 
 
-func get_weapon_swipe_texture() -> Texture:
+func get_weapon_swipe_texture() -> Texture2D:
 	return _weapon.swipe_texture
 
 

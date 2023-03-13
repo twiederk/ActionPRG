@@ -1,7 +1,7 @@
 class_name HealingWell
 extends Area2D
 
-onready var animationPlayer = $AnimationPlayer
+@onready var animationPlayer = $AnimationPlayer
 
 signal entered_healing_area
 

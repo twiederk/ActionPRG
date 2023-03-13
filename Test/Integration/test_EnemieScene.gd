@@ -10,7 +10,7 @@ func before_each():
 	var enemie_resource = EnemieResource.new()
 	enemie_resource.ranged_weapon = ranged_weapon
 
-	enemie_scene = Enemie.instance()
+	enemie_scene = Enemie.instantiate()
 	enemie_scene.enemie_resource = enemie_resource
 	add_child(enemie_scene)
 

@@ -117,7 +117,7 @@ func _get_lines(file_name: String) -> Array:
 	var file = File.new()
 	file.open(file_name, File.READ)
 	var lines = []
-	while file.get_position() < file.get_len():
+	while file.get_position() < file.get_length():
 		lines.append(file.get_line())
 	file.close()
 	return lines

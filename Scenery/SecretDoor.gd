@@ -19,6 +19,6 @@ func open() -> void:
 
 
 func _collapse():
-	var enemyDeathEffect = EnemyDeathEffect.instance()
+	var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position

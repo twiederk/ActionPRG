@@ -1,5 +1,5 @@
 class_name Die
-extends Reference
+extends RefCounted
 
 enum Name { D1 = 1, D2 = 2, D4 = 4, D6 = 6, D8 = 8, D10 = 10 }
 

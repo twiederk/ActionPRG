@@ -10,7 +10,7 @@ const PotionScene = preload("res://Items/Potions/Potion.tscn")
 const WeaponScene = preload("res://Items/Weapons/Weapon.tscn")
 const TWEEN_DISTANCE = 20
 
-export(Array, Resource) var treasure_content
+@export var treasure_content # (Array, Resource)
 
 var treasure_state = TreasureState.CLOSE
 var check_open_sfx = load("res://Assets/Sounds/ChestOpen.ogg")
@@ -21,8 +21,8 @@ var directions = {
 	3: Vector2.UP,
 }
 
-onready var sprite = $Sprite
-onready var audioStreamPlayer = $AudioStreamPlayer
+@onready var sprite = $Sprite2D
+@onready var audioStreamPlayer = $AudioStreamPlayer
 
 
 func _on_TreasureChest_body_entered(_body):
@@ -62,15 +62,15 @@ func create_treasuries() -> Array:
 func create_node(item_resource: Resource) -> Node2D:
 	var node
 	if item_resource is ArmorResource:
-		node = ArmorScene.instance()
+		node = ArmorScene.instantiate()
 	if item_resource is GemResource:
-		node = GemScene.instance()
+		node = GemScene.instantiate()
 	if item_resource is KeyResource:
-		node = KeyScene.instance()
+		node = KeyScene.instantiate()
 	if item_resource is PotionResource:
-		node = PotionScene.instance()
+		node = PotionScene.instantiate()
 	if item_resource is WeaponResource:
-		node = WeaponScene.instance()
+		node = WeaponScene.instantiate()
 	node.item_resource = item_resource
 	return node
 
@@ -93,4 +93,4 @@ func tween_treasure(item: Item, target_position) -> void:
 	item.set_pickable(false)
 	var tween = create_tween()
 	tween.tween_property(item, "global_position", target_position, 0.4)
-	tween.tween_callback(item, "set_pickable", [true]).set_delay(0.2)
+	tween.tween_callback(Callable(item,"set_pickable").bind(true)).set_delay(0.2)

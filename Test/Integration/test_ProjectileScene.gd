@@ -5,7 +5,7 @@ const Projectile = preload("res://Enemies/Projectile.tscn")
 func test_ready():
 	
 	# arrange
-	var projectile_scene = Projectile.instance()
+	var projectile_scene = Projectile.instantiate()
 	var ranged_weapon = RangedWeaponResource.new()
 	ranged_weapon.frame_coords = Vector2(10, 20)
 	projectile_scene.ranged_weapon = ranged_weapon

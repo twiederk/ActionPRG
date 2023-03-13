@@ -19,7 +19,7 @@ func test_get_set_current_level():
 func test_visited_node():
 
 	# arrange
-	var node_path = NodePath("Village/YSort/Fixtures/SilverKey")
+	var node_path = NodePath("Village/Node2D/Fixtures/SilverKey")
 
 	# act
 	level_stats.visited_node(node_path)
@@ -27,7 +27,7 @@ func test_visited_node():
 	# assert
 	var visited_nodes = level_stats.get_visited_nodes()
 	assert_eq(visited_nodes.size(), 1, "Should contain silver key")
-	assert_eq(visited_nodes[0], "Village/YSort/Fixtures/SilverKey", "Should be path of silver_key")
+	assert_eq(visited_nodes[0], "Village/Node2D/Fixtures/SilverKey", "Should be path of silver_key")
 
 
 func test_reset():

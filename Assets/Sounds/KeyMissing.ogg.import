@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qj8enh1ahwd"
+path="res://.godot/imported/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggvorbisstr"
 
 [deps]
 
 source_file="res://Assets/Sounds/KeyMissing.ogg"
-dest_files=[ "res://.import/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggstr" ]
+dest_files=["res://.godot/imported/KeyMissing.ogg-d746b3cd742acaad5552851d2e19cf5b.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

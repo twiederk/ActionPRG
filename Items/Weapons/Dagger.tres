@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Items/Weapons/WeaponResource.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sounds/WeaponPickUp.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Graphics/Player/Player.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/Player/Player.png" type="Texture2D" id=3]
 
 [resource]
 script = ExtResource( 1 )

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="FontFile" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0, 0, 1 )
@@ -18,7 +18,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 13
 font_data = ExtResource( 1 )
 

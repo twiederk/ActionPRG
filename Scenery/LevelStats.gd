@@ -10,7 +10,7 @@ var _current_level = Village.NAME
 
 func _ready():
 	# warning-ignore:RETURN_VALUE_DISCARDED
-	connect("node_visited", self, "visited_node")
+	connect("node_visited",Callable(self,"visited_node"))
 
 
 func get_current_level() -> String:
