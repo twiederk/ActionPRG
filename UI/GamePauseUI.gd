@@ -1,10 +1,10 @@
 class_name GamePauseUI
 extends Control
 
-onready var resumeButton = $ColorRect/ResumeButton
+@onready var resumeButton = $ColorRect/ResumeButton
 
 
-func _unhandled_input(event):
+func _unhandled_key_input(event):
 	if event.is_action_pressed("toggle_pause"):
 		var tree = get_tree()
 		tree.paused = not tree.paused
@@ -12,7 +12,8 @@ func _unhandled_input(event):
 			open()
 		else:
 			close()
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
+		
 
 func open():
 	show()

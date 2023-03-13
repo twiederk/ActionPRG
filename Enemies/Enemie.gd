@@ -1,5 +1,5 @@
 class_name Enemie
-extends KinematicBody2D
+extends CharacterBody2D
 
 enum EnemieState {IDLE, WANDER, CHASE, SHOOT}
 
@@ -8,40 +8,39 @@ const PROJECTILE_TILE_FACING = Vector2(1, 1)
 const Projectile = preload("res://Enemies/Projectile.tscn")
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
-export(Resource) var enemie_resource
-export(String) var boss_name = ""
+@export var enemie_resource: Resource
+@export var boss_name: String = ""
 
 var acceleration = 150
 var max_speed = 25
 var FRICTION = 200
 var WANDER_TARGET_RANGE = 4
 var health: int = 0
-var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var weight = 0
 var _ranged_weapon_cool_down_time: float = 0
 
 var state = EnemieState.CHASE
 
-onready var sprite = $Sprite
-onready var shadowSprite = $ShadowSprite
-onready var chaseDetectionZone = $ChaseDetectionZone
-onready var shootDetectionZone = $ShootDetectionZone
-onready var hitbox = $Hitbox
-onready var hurtbox = $Hurtbox
-onready var bodyCollision = $BodyCollision
-onready var softCollision = $SoftCollision
-onready var wanderController = $WanderController
-onready var animationPlayer = $AnimationPlayer
-onready var healthBar = $HealthBar
-onready var nameLabel = $NameLabel
-onready var projectilePosition = $ProjectilePosition
+@onready var sprite = $Sprite2D
+@onready var shadowSprite = $ShadowSprite
+@onready var chaseDetectionZone = $ChaseDetectionZone
+@onready var shootDetectionZone = $ShootDetectionZone
+@onready var hitbox = $Hitbox
+@onready var hurtbox = $Hurtbox
+@onready var bodyCollision = $BodyCollision
+@onready var softCollision = $SoftCollision
+@onready var wanderController = $WanderController
+@onready var animationPlayer = $AnimationPlayer
+@onready var healthBar = $HealthBar
+@onready var nameLabel = $NameLabel
+@onready var projectilePosition = $ProjectilePosition
 
 
 func _ready():
 	_init_game_properties()
 	nameLabel.text = boss_name
-	animationPlayer.seek(rand_range(0, 0.5), true)
+	animationPlayer.seek(randf_range(0, 0.5), true)
 	state = pick_random_state([EnemieState.IDLE, EnemieState.WANDER])
 
 
@@ -53,9 +52,8 @@ func _init_game_properties():
 	weight = enemie_resource.weight
 
 
-func _physics_process(delta):
-	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
-	knockback = move_and_slide(knockback)
+func _physics_process(delta: float):
+	knockback_move(delta)
 
 	match state:
 		EnemieState.IDLE:
@@ -81,7 +79,15 @@ func _physics_process(delta):
 	if softCollision.is_colliding():
 		velocity = softCollision.get_push_vector() * delta * 400
 
-	velocity = move_and_slide(velocity)
+	move_and_slide()
+
+
+func knockback_move(delta: float) -> void:
+	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+	var current_velocity = velocity
+	set_velocity(knockback)
+	move_and_slide()
+	set_velocity(current_velocity)
 
 
 func chase_state(delta: float) -> void:
@@ -119,7 +125,7 @@ func shoot(delta: float, player_position: Vector2) -> void:
 
 
 func create_projectile(player_position: Vector2, ranged_weapon: RangedWeaponResource) -> Projectile:
-	var projectile = Projectile.instance()
+	var projectile = Projectile.instantiate()
 	projectile.position = calc_projectile_position(player_position)
 	var direction = projectile.position.direction_to(player_position)
 	projectile.velocity = direction * ranged_weapon.speed
@@ -133,7 +139,7 @@ func calc_projectile_position(player_position: Vector2) -> Vector2:
 		projectile_position = global_position + projectilePosition.position
 	else:
 		projectile_position = Vector2(global_position.x - projectilePosition.position.x,
-									  global_position.y + projectilePosition.position.y)
+									global_position.y + projectilePosition.position.y)
 	return projectile_position
 
 
@@ -150,7 +156,7 @@ func has_ranged_weapon() -> bool:
 
 func update_wander():
 	state = pick_random_state([EnemieState.IDLE, EnemieState.WANDER])
-	wanderController.start_wander_timer(rand_range(1, 3))
+	wanderController.start_wander_timer(randf_range(1, 3))
 
 
 func pick_random_state(state_list):
@@ -159,10 +165,10 @@ func pick_random_state(state_list):
 
 
 func die():
-	LevelStats.emit_signal("node_visited", get_path())
-	PlayerStats.emit_signal("enemie_killed", enemie_resource)
+	LevelStats.node_visited.emit(get_path())
+	PlayerStats.enemie_killed.emit(enemie_resource)
 	queue_free()
-	var enemyDeathEffect = EnemyDeathEffect.instance()
+	var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
 

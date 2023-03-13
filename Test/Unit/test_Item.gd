@@ -1,6 +1,6 @@
 extends GutTest
 
-func test_get_set_pickable():
+func test_get_set_collectable():
 	# arrange
 	var item = Item.new()
 

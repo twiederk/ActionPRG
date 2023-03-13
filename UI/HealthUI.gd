@@ -6,8 +6,8 @@ extends Control
 func _ready():
 	_on_PlayerStats_health_changed(PlayerStats.get_health())
 	_on_PlayerStats_max_health_changed(PlayerStats.get_max_health())
-	PlayerStats.connect("health_changed", self, "_on_PlayerStats_health_changed")
-	PlayerStats.connect("max_health_changed", self, "_on_PlayerStats_max_health_changed")
+	PlayerStats.health_changed.connect(_on_PlayerStats_health_changed)
+	PlayerStats.max_health_changed.connect(_on_PlayerStats_max_health_changed)
 
 
 func _on_PlayerStats_health_changed(health):

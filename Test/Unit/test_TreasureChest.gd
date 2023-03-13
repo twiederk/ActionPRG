@@ -74,19 +74,10 @@ func test_create_treasure():
 
 	# assert
 	assert_eq(treasuries.size(), 5, "Should contain all treasure items")
-	assert_true(treasuries[0] is Armor, "Should be Armor scene")
 	assert_true(treasuries[0].item_resource is ArmorResource, "Should be ArmorResource")
-
-	assert_true(treasuries[1] is Gem, "Should be Gem scene")
 	assert_true(treasuries[1].item_resource is GemResource, "Should be GemResource")
-
-	assert_true(treasuries[2] is Key, "Should be Key scene")
 	assert_true(treasuries[2].item_resource is KeyResource, "Should be KeyResource")
-
-	assert_true(treasuries[3] is Potion, "Should be Potion scene")
 	assert_true(treasuries[3].item_resource is PotionResource, "Should be PotionResource")
-
-	assert_true(treasuries[4] is Weapon, "Should be Weapon scene")
 	assert_true(treasuries[4].item_resource is WeaponResource, "Should be WeaponResource")
 
 	# tear down

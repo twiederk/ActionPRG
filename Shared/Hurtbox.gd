@@ -6,18 +6,18 @@ signal invincibility_ended
 
 var HitEffect = preload("res://Effects/HitEffect.tscn")
 
-var invincible = false setget set_invincible
+var invincible = false : set = set_invincible
 
-onready var timer = $Timer
-onready var collisionShape = $CollisionShape2D
+@onready var timer = $Timer
+@onready var collisionShape = $CollisionShape2D
 
 
 func set_invincible(value):
 	invincible = value
 	if invincible == true:
-		emit_signal("invincibility_started")
+		invincibility_started.emit()
 	else:
-		emit_signal("invincibility_ended")
+		invincibility_ended.emit()
 
 
 func start_invincibility(duration):
@@ -26,7 +26,7 @@ func start_invincibility(duration):
 
 
 func create_hit_effect():
-	var effect = HitEffect.instance()
+	var effect = HitEffect.instantiate()
 	var main = get_tree().current_scene
 	main.add_child(effect)
 	effect.global_position = global_position

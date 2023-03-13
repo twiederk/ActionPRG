@@ -1,7 +1,7 @@
 class_name SoftCollision
 extends Area2D
 
-onready var collisionShape2D = $CollisionShape2D
+@onready var collisionShape2D = $CollisionShape2D
 
 func is_colliding():
 	var areas = get_overlapping_areas()

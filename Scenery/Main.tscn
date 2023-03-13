@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8hpaamwngx07"]
+
+[ext_resource type="PackedScene" uid="uid://c5051tgos4wb3" path="res://UI/GameStartUI.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://wpfh50p4qofj" path="res://UI/GameOverUI.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b178v6d02784s" path="res://Levels/Village/Village.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cb2xahivsku83" path="res://UI/HealthUI.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://rx3qqmgxxt80" path="res://UI/KeyUI.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://dpev0xd2x82h2" path="res://UI/InventoryUI.tscn" id="6"]
+[ext_resource type="Script" path="res://Scenery/Main.gd" id="7"]
+[ext_resource type="PackedScene" path="res://Scenery/GlobalAudioStreamPlayer.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bvmaaym5qahcy" path="res://UI/ExperienceUI.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://blnkh5gxj1yaj" path="res://UI/GamePauseUI.tscn" id="10"]
+
+[node name="Main" type="Node"]
+script = ExtResource("7")
+
+[node name="Village" parent="." instance=ExtResource("3")]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("8")]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="GUI" instance=ExtResource("4")]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 63.0
+offset_bottom = 14.0
+
+[node name="InventoryUI" parent="GUI" instance=ExtResource("6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ExperienceUI" parent="GUI" instance=ExtResource("9")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 18.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="KeyUI" parent="GUI" instance=ExtResource("5")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_right = -3.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+
+[node name="GameStartUI" parent="GUI" instance=ExtResource("1")]
+visible = false
+
+[node name="GameOverUI" parent="GUI" instance=ExtResource("2")]
+visible = false
+
+[node name="GamePauseUI" parent="GUI" instance=ExtResource("10")]
+process_mode = 3
+visible = false

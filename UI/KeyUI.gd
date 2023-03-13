@@ -2,14 +2,14 @@ class_name KeyUI
 extends Control
 
 
-onready var gold_key_label = $GridContainer/GoldKeyLabel
-onready var gold_key_sprite = $GoldKeySprite
+@onready var gold_key_label = $GridContainer/GoldKeyLabel
+@onready var gold_key_sprite = $GoldKeySprite
 
-onready var silver_key_label = $GridContainer/SilverKeyLabel
-onready var silver_key_sprite = $SilverKeySprite
+@onready var silver_key_label = $GridContainer/SilverKeyLabel
+@onready var silver_key_sprite = $SilverKeySprite
 
-onready var bronze_key_label = $GridContainer/BronzeKeyLabel
-onready var bronze_key_sprite = $BronzeKeySprite
+@onready var bronze_key_label = $GridContainer/BronzeKeyLabel
+@onready var bronze_key_sprite = $BronzeKeySprite
 
 
 # warning-ignore-all:RETURN_VALUE_DISCARDED
@@ -17,8 +17,8 @@ func _ready():
 	gold_key_label.text = str(PlayerStats.get_key(Key.GOLD))
 	silver_key_label.text = str(PlayerStats.get_key(Key.SILVER))
 	bronze_key_label.text = str(PlayerStats.get_key(Key.BRONZE))
-	PlayerStats.connect("key_changed", self, "_on_PlayerStats_key_changed")
-	KeyEvents.connect("key_missing", self, "_on_KeyEvents_key_missing")
+	PlayerStats.key_changed.connect(_on_PlayerStats_key_changed)
+	KeyEvents.key_missing.connect(_on_KeyEvents_key_missing)
 
 
 func _on_PlayerStats_key_changed(key_material: int, count: int) -> void:
@@ -34,8 +34,8 @@ func _on_KeyEvents_key_missing(key_material: int) -> void:
 func blink_key(key_sprite) -> void:
 	var tween = create_tween()
 	for _i in range(10):
-		tween.tween_property(key_sprite, "modulate", Color.red, 0.1)
-		tween.tween_property(key_sprite, "modulate", Color.white, 0.1)
+		tween.tween_property(key_sprite, "modulate", Color.RED, 0.1)
+		tween.tween_property(key_sprite, "modulate", Color.WHITE, 0.1)
 
 
 func _get_key_label(key_material: int) -> Label:
@@ -52,8 +52,8 @@ func _get_key_label(key_material: int) -> Label:
 	return key_label
 
 
-func _get_key_sprite(key_material: int) -> Sprite:
-	var key_sprite: Sprite
+func _get_key_sprite(key_material: int) -> Sprite2D:
+	var key_sprite: Sprite2D
 	match key_material:
 		Key.GOLD:
 			key_sprite = gold_key_sprite

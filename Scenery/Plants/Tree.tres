@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=3 format=3 uid="uid://3um2sb1h56oq"]
+
+[ext_resource type="Script" path="res://Scenery/Plants/PlantResource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://4rb1dh6hiauj" path="res://Assets/Graphics/World/Tree.png" id="2_qbq8g"]
+
+[resource]
+script = ExtResource("1")
+texture = ExtResource("2_qbq8g")

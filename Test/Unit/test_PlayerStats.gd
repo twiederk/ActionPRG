@@ -407,7 +407,7 @@ func test_load():
 	}
 	
 	# act
-	stats.load(player_stats)
+	stats.load_game(player_stats)
 	
 	# assert
 	assert_eq(stats.get_health(), 1, "Should set health to 1")

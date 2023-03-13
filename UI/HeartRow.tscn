@@ -1,22 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b2tfyxi3p1haf"]
 
-[ext_resource path="res://UI/HeartRow.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Graphics/UI/HeartUIEmpty.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Graphics/UI/HeartUIFull.png" type="Texture" id=3]
+[ext_resource type="Script" path="res://UI/HeartRow.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dtcfd2wqyc6tf" path="res://Assets/Graphics/UI/HeartUIEmpty.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://0e5quwjivlkn" path="res://Assets/Graphics/UI/HeartUIFull.png" id="3"]
 
 [node name="HeartRow" type="Control"]
-script = ExtResource( 1 )
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1")
 
 [node name="HeartUIEmpty" type="TextureRect" parent="."]
-margin_right = 60.0
-margin_bottom = 11.0
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 2
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 11.0
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="HeartUIFull" type="TextureRect" parent="."]
-margin_right = 60.0
-margin_bottom = 11.0
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 2
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 11.0
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 1

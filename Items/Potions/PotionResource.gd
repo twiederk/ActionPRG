@@ -3,11 +3,11 @@ extends Resource
 
 enum Effect { HEAL, STRENGTH }
 
-export var frame_coords: Vector2
-export var shadow = true
-export var pickup_stream = preload("res://Assets/Sounds/PotionPickUp.ogg")
-export(int) var value = 0
-export(Effect) var effect = Effect.HEAL
+@export var frame_coords: Vector2
+@export var shadow = true
+@export var pickup_stream = preload("res://Assets/Sounds/PotionPickUp.ogg")
+@export var value: int = 0
+@export var effect: PotionResource.Effect = Effect.HEAL
 
 
 func action(stats) -> void:

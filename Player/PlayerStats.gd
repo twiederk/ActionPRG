@@ -21,7 +21,7 @@ const DEFAULT_WEAPON = preload("res://Items/Weapons/Dagger.tres")
 const DEFAULT_ARMOR = preload("res://Items/Armor/Cloth.tres")
 const LEVEL_UP_VOICE = preload("res://Assets/Sounds/LevelUpVoice.ogg")
 
-export(Array, int) var _keys = [0, 0, 0, 0, 0, 0]
+@export var _keys = [0, 0, 0, 0, 0, 0] # (Array, int)
 
 var _max_health: int = MAX_HEALTH
 var _health = _max_health
@@ -34,13 +34,13 @@ var _level: int = 1
 
 func _ready():
 	# warning-ignore:RETURN_VALUE_DISCARDED
-	connect("enemie_killed", self, "_on_enemie_killed")
+	enemie_killed.connect(_on_enemie_killed)
 
 
 func set_max_health(new_max_health) -> void:
 	_max_health = new_max_health
 	self._health = min(_health, _max_health)
-	emit_signal("max_health_changed", _max_health)
+	max_health_changed.emit(_max_health)
 
 
 func get_max_health() -> int:
@@ -49,9 +49,9 @@ func get_max_health() -> int:
 
 func set_health(new_health: int) -> void:
 	_health = max(new_health, 0)
-	emit_signal("health_changed", _health)
+	health_changed.emit(_health)
 	if _health <= 0:
-		emit_signal("no_health")
+		no_health.emit()
 
 
 func get_health() -> int:
@@ -60,20 +60,20 @@ func get_health() -> int:
 
 func set_weapon(weapon_resource: WeaponResource) -> void:
 	_weapon = weapon_resource
-	emit_signal("weapon_changed", _weapon)
+	weapon_changed.emit(_weapon)
 
 
 func get_weapon() -> WeaponResource:
 	return _weapon
 
 
-func get_weapon_swipe_texture() -> Texture:
+func get_weapon_swipe_texture() -> Texture2D:
 	return _weapon.swipe_texture
 
 
 func set_armor(armor_resource: ArmorResource) -> void:
 	_armor = armor_resource
-	emit_signal("armor_changed", _armor)
+	armor_changed.emit(_armor)
 
 
 func get_armor() -> ArmorResource:
@@ -99,7 +99,7 @@ func change_key(key_material: int, count: int) -> void:
 
 func set_key(key_material: int, key_count: int) -> void:
 	_keys[key_material] = key_count
-	emit_signal("key_changed", key_material, key_count)
+	key_changed.emit(key_material, key_count)
 
 
 func heal(life: int = 1) -> void:
@@ -118,7 +118,7 @@ func hurt(hit_damage: int = 1) -> void:
 
 func set_strength(strength: int) -> void:
 	_strength = strength
-	emit_signal("strength_changed", _strength)
+	strength_changed.emit(_strength)
 
 
 func get_strength() -> int:
@@ -148,7 +148,7 @@ func reset() -> void:
 
 func set_experience_points(experience_points: int) -> void:
 	_experience_points = experience_points
-	emit_signal("experience_points_changed", _experience_points)
+	experience_points_changed.emit(_experience_points)
 
 
 func get_experience_points() -> int:
@@ -163,7 +163,7 @@ func gain_experience_points(experience_points: int) -> void:
 
 func set_level(level: int) -> void:
 	_level = level
-	emit_signal("level_changed", _level, _experience_points)
+	level_changed.emit(_level, _experience_points)
 
 
 func get_level() -> int:
@@ -182,7 +182,7 @@ func get_next_level_at(current_level: int) -> int:
 
 
 func level_up(current_level: int) -> void:
-	AudioEvents.emit_signal("play_stream", LEVEL_UP_VOICE)
+	AudioEvents.play_stream.emit(LEVEL_UP_VOICE)
 	var next_level = current_level + 1
 	set_level(next_level)
 	set_max_health(get_max_health() + LEVEL_UP_HEALTH)
@@ -204,7 +204,7 @@ func save() -> Dictionary:
 	}
 
 
-func load(player_data: Dictionary) -> void:
+func load_game(player_data: Dictionary) -> void:
 	set_health(player_data["health"])
 	set_max_health(player_data["max_health"])
 	set_strength(player_data["strength"])

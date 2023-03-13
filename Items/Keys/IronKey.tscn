@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuvkq0rmpufli"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_8rc61"]
+[ext_resource type="Resource" path="res://Items/Keys/IronKey.tres" id="2_653od"]
+
+[node name="IronKey" instance=ExtResource("1_8rc61")]
+item_resource = ExtResource("2_653od")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 500

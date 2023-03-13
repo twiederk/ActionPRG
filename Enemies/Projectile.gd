@@ -4,7 +4,7 @@ extends Node2D
 var velocity: Vector2 = Vector2.ZERO
 var ranged_weapon
 
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 
 
 func _ready():

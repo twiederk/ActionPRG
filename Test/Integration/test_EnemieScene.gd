@@ -10,7 +10,7 @@ func before_each():
 	var enemie_resource = EnemieResource.new()
 	enemie_resource.ranged_weapon = ranged_weapon
 
-	enemie_scene = Enemie.instance()
+	enemie_scene = Enemie.instantiate()
 	enemie_scene.enemie_resource = enemie_resource
 	add_child(enemie_scene)
 
@@ -68,7 +68,7 @@ func test_shoot_with_range_attack_cooled_down():
 
 	# tear down
 	enemie_scene.enemie_resource.ranged_weapon.damage_die = null
-	enemie_scene.enemie_resource.ranged_weapon.cool_down_time = null
+	enemie_scene.enemie_resource.ranged_weapon.cool_down_time = 0.0
 
 
 func test_shoot_with_range_attack_heated_up():
@@ -103,7 +103,7 @@ func test_shoot_with_range_attack_cooling_down():
 
 	# tear down
 	enemie_scene.enemie_resource.ranged_weapon.damage_die = null
-	enemie_scene.enemie_resource.ranged_weapon.cool_down_time = null
+	enemie_scene.enemie_resource.ranged_weapon.cool_down_time = 0.0
 
 
 func test_create_projectile():

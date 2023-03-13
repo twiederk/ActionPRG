@@ -1,7 +1,7 @@
 class_name KeySprite
-extends Sprite
+extends Sprite2D
 
-export(Resource) var key
+@export var key: Resource
 
 
 

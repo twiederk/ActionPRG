@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpfyaip3naqk2"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_rmiww"]
+[ext_resource type="Resource" path="res://Items/Potions/RedPotion.tres" id="2_3l6m0"]
+
+[node name="RedPotion" instance=ExtResource("1_rmiww")]
+item_resource = ExtResource("2_3l6m0")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 590

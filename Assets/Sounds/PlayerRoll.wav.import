@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample"
+type="AudioStreamWAV"
+uid="uid://b8f207dbpk1ng"
+path="res://.godot/imported/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample"
 
 [deps]
 
 source_file="res://Assets/Sounds/PlayerRoll.wav"
-dest_files=[ "res://.import/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample" ]
+dest_files=["res://.godot/imported/PlayerRoll.wav-4dee1b712ce7376a4a57a7d21e434724.sample"]
 
 [params]
 

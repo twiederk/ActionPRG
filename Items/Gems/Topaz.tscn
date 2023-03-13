@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4plvpnyaifx"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_bysw1"]
+[ext_resource type="Resource" path="res://Items/Gems/Topaz.tres" id="2_sarb3"]
+
+[node name="Topaz" instance=ExtResource("1_bysw1")]
+item_resource = ExtResource("2_sarb3")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 442

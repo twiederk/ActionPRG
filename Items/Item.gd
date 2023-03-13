@@ -3,12 +3,12 @@ extends Area2D
 
 signal picked_up_item(item_resource)
 
-export(Resource) var item_resource
+@export var item_resource: Resource = preload("res://Items/Weapons/Hand.tres")
 
-var _pickable = true
+var _collectable = true
 
-onready var sprite = $Sprite
-onready var shadowSprite = $ShadowSprite
+@onready var sprite = $Sprite2D
+@onready var shadowSprite = $ShadowSprite
 
 
 func _ready():
@@ -17,18 +17,18 @@ func _ready():
 
 
 func _on_Item_body_entered(body) -> void:
-	if is_pickable():
+	if is_collectable():
 		#warning-ignore:RETURN_VALUE_DISCARDED
-		connect("picked_up_item", body, "_on_Item_picked_up_item", [], CONNECT_ONESHOT)
-		emit_signal("picked_up_item", item_resource)
-		AudioEvents.emit_signal("play_stream", item_resource.pickup_stream)
-		LevelStats.emit_signal("node_visited", get_path())
+		picked_up_item.connect(body._on_Item_picked_up_item)
+		picked_up_item.emit(item_resource)
+		AudioEvents.play_stream.emit(item_resource.pickup_stream)
+		LevelStats.node_visited.emit(get_path())
 		queue_free()
 
 
-func set_pickable(pickable: bool) -> void:
-	_pickable = pickable
+func set_collectable(pickable: bool) -> void:
+	_collectable = pickable
 
 
-func is_pickable() -> bool:
-	return _pickable
+func is_collectable() -> bool:
+	return _collectable

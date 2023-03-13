@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://725j32cqvfdr"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_quwb4"]
+[ext_resource type="Resource" path="res://Items/Weapons/RubinSword.tres" id="2_pgobq"]
+
+[node name="RubinSword" instance=ExtResource("1_quwb4")]
+item_resource = ExtResource("2_pgobq")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 1722

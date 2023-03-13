@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://chfw1rthpah8l"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_deors"]
+[ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleSmall.tres" id="2_mowr1"]
+
+[node name="CrystalPurpleSmall" instance=ExtResource("1_deors")]
+item_resource = ExtResource("2_mowr1")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 1786

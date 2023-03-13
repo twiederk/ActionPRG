@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/PotionPickUp.ogg-8224a6a63617c3e23b14232d04d94248.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7gdguractknn"
+path="res://.godot/imported/PotionPickUp.ogg-8224a6a63617c3e23b14232d04d94248.oggvorbisstr"
 
 [deps]
 
 source_file="res://Assets/Sounds/PotionPickUp.ogg"
-dest_files=[ "res://.import/PotionPickUp.ogg-8224a6a63617c3e23b14232d04d94248.oggstr" ]
+dest_files=["res://.godot/imported/PotionPickUp.ogg-8224a6a63617c3e23b14232d04d94248.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqdestrheygi"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_wd7u8"]
+[ext_resource type="Resource" path="res://Items/Keys/CopperKey.tres" id="2_7vsoy"]
+
+[node name="CopperKey" instance=ExtResource("1_wd7u8")]
+item_resource = ExtResource("2_7vsoy")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 520

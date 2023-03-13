@@ -15,7 +15,7 @@ func after_each():
 
 func test_can_open_door_not_Player():
 	# arrange
-	var body = double(KinematicBody2D).new()
+	var body = CharacterBody2D.new()
 
 	# act
 	var result = normal_door._can_open_door(body)
@@ -23,10 +23,13 @@ func test_can_open_door_not_Player():
 	# assert
 	assert_false(result, "Should not open door when body is not a player")
 
+	# tear down
+	body.free()
+
 
 func test_can_open_door_Player_with_key():
 	# arrange
-	var body = double(Player).new()
+	var body = Player.new()
 	PlayerStats.set_key(Key.GOLD, 1)
 
 	# act
@@ -38,17 +41,23 @@ func test_can_open_door_Player_with_key():
 	# tear down
 	PlayerStats.set_key(Key.GOLD, 0)
 
+	# tear down
+	body.free()
+
 
 func test_can_open_door_Player_no_key():
 	# arrange
 	PlayerStats.reset()
-	var body = double(Player).new()
+	var body = Player.new()
 
 	# act
 	var result = normal_door._can_open_door(body)
 
 	# assert
 	assert_false(result, "Should not open door when player has no key")
+
+	# tear down
+	body.free()
 
 
 func test_open():
@@ -66,10 +75,13 @@ func test_open():
 func test_is_missing_key_true():
 	# arrange
 	PlayerStats.reset()
-	var body = double(Player).new()
+	var body = Player.new()
 
 	# act
 	var result = normal_door._is_missing_key(body)
 
 	# assert
 	assert_true(result, "Should missing key when door is closed and no key carried by the player")
+
+	# tear down
+	body.free()
