@@ -55,8 +55,7 @@ func save_game():
 
 
 func _save_game(file_name: String, player: Player) -> void:
-	var save_game = File.new()
-	save_game.open(str("user://", file_name, ".save"), File.WRITE)
+	var save_game = FileAccess.open(str("user://", file_name, ".save"), FileAccess.WRITE)
 	var player_stats = PlayerStats.save()
 	var player_postion = player.save()
 	var level_stats = LevelStats.save()
@@ -80,14 +79,12 @@ func _load_game(file_name: String) -> Dictionary:
 
 
 func _load_dictionaries(file_name) -> Array:
-	var file = File.new()
-	file.open(str("user://", file_name, ".save"), File.READ)
+	var file = FileAccess.open(str("user://", file_name, ".save"), FileAccess.READ)
 	var dictionaries = []
 	while file.get_position() < file.get_length():
 		var test_json_conv = JSON.new()
-		test_json_conv.parse(file.get_line()))
-		dictionaries.append(test_json_conv.get_data()
-	file.close()
+		test_json_conv.parse(file.get_line())
+		dictionaries.append(test_json_conv.get_data())
 	return dictionaries
 
 
