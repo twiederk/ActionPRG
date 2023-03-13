@@ -11,7 +11,7 @@ const FRICTION = 500
 enum PlayerState { MOVE, ROLL, ATTACK }
 
 var state = PlayerState.MOVE
-var velocity = Vector2.ZERO
+#var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
 
