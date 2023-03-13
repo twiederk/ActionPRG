@@ -90,7 +90,7 @@ func place_treasuries(treasuries: Array) -> void:
 
 func tween_treasure(item: Item, target_position) -> void:
 	item.global_position = global_position
-	item.set_pickable(false)
+	item.set_collectable(false)
 	var tween = create_tween()
 	tween.tween_property(item, "global_position", target_position, 0.4)
-	tween.tween_callback(Callable(item,"set_pickable").bind(true)).set_delay(0.2)
+	tween.tween_callback(Callable(item,"set_collectable").bind(true)).set_delay(0.2)

@@ -5,7 +5,7 @@ signal picked_up_item(item_resource)
 
 @export var item_resource: Resource
 
-var _pickable = true
+var _collectable = true
 
 @onready var sprite = $Sprite2D
 @onready var shadowSprite = $ShadowSprite
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Item_body_entered(body) -> void:
-	if is_pickable():
+	if is_collectable():
 		#warning-ignore:RETURN_VALUE_DISCARDED
 		connect("picked_up_item",Callable(body,"_on_Item_picked_up_item").bind(),CONNECT_ONE_SHOT)
 		emit_signal("picked_up_item", item_resource)
@@ -26,9 +26,9 @@ func _on_Item_body_entered(body) -> void:
 		queue_free()
 
 
-func set_pickable(pickable: bool) -> void:
-	_pickable = pickable
+func set_collectable(pickable: bool) -> void:
+	_collectable = pickable
 
 
-func is_pickable() -> bool:
-	return _pickable
+func is_collectable() -> bool:
+	return _collectable
