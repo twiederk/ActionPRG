@@ -1,16 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=3 format=3 uid="uid://3um2sb1h56oq"]
 
-[ext_resource path="res://Assets/Graphics/World/Tree.png" type="Texture2D" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "class_name PlantResource
-extends Resource
-
-export(Texture2D) var texture
-
-
-"
+[ext_resource type="Script" path="res://Scenery/Plants/PlantResource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://4rb1dh6hiauj" path="res://Assets/Graphics/World/Tree.png" id="2_qbq8g"]
 
 [resource]
-script = SubResource( 1 )
-texture = ExtResource( 1 )
+script = ExtResource("1")
+texture = ExtResource("2_qbq8g")
