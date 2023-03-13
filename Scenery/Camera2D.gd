@@ -13,4 +13,4 @@ func _ready():
 
 func _enable_smoothing() -> void:
 	await get_tree().create_timer(0.01).timeout
-	follow_smoothing_enabled = true
+	position_smoothing_enabled = true
