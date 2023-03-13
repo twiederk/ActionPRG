@@ -16,7 +16,7 @@ var max_speed = 25
 var FRICTION = 200
 var WANDER_TARGET_RANGE = 4
 var health: int = 0
-var velocity = Vector2.ZERO
+#var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var weight = 0
 var _ranged_weapon_cool_down_time: float = 0
@@ -137,7 +137,7 @@ func calc_projectile_position(player_position: Vector2) -> Vector2:
 		projectile_position = global_position + projectilePosition.position
 	else:
 		projectile_position = Vector2(global_position.x - projectilePosition.position.x,
-									  global_position.y + projectilePosition.position.y)
+									global_position.y + projectilePosition.position.y)
 	return projectile_position
 
 
