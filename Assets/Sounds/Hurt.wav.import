@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Hurt.wav-1c4338a53ea509ca128f77da0be6237d.sample"
+type="AudioStreamWAV"
+uid="uid://be8cqann7ygla"
+path="res://.godot/imported/Hurt.wav-1c4338a53ea509ca128f77da0be6237d.sample"
 
 [deps]
 
 source_file="res://Assets/Sounds/Hurt.wav"
-dest_files=[ "res://.import/Hurt.wav-1c4338a53ea509ca128f77da0be6237d.sample" ]
+dest_files=["res://.godot/imported/Hurt.wav-1c4338a53ea509ca128f77da0be6237d.sample"]
 
 [params]
 
