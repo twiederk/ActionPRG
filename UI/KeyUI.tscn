@@ -1,60 +1,59 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://rx3qqmgxxt80"]
 
-[ext_resource path="res://Items/Keys/GoldKey.tres" type="Resource" id=1]
-[ext_resource path="res://UI/KeySprite.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/KeyUI.gd" type="Script" id=3]
-[ext_resource path="res://Items/Keys/BronzeKey.tres" type="Resource" id=4]
-[ext_resource path="res://Items/Keys/SilverKey.tres" type="Resource" id=5]
+[ext_resource type="Resource" path="res://Items/Keys/GoldKey.tres" id="1"]
+[ext_resource type="PackedScene" path="res://UI/KeySprite.tscn" id="2"]
+[ext_resource type="Script" path="res://UI/KeyUI.gd" id="3"]
+[ext_resource type="Resource" path="res://Items/Keys/BronzeKey.tres" id="4"]
+[ext_resource type="Resource" path="res://Items/Keys/SilverKey.tres" id="5"]
 
 [node name="KeyUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 33.0
 offset_bottom = 58.0
-color = Color( 0.564706, 0.564706, 0.564706, 0.498039 )
+color = Color(0.564706, 0.564706, 0.564706, 0.498039)
 
-[node name="GoldKeySprite" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24, 8 )
+[node name="GoldKeySprite" parent="." instance=ExtResource("2")]
+position = Vector2(24, 8)
 hframes = 16
 vframes = 128
-key = ExtResource( 1 )
+key = ExtResource("1")
 
-[node name="SilverKeySprite" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24, 28 )
+[node name="SilverKeySprite" parent="." instance=ExtResource("2")]
+position = Vector2(24, 28)
 hframes = 16
 vframes = 128
-key = ExtResource( 5 )
+key = ExtResource("5")
 
-[node name="BronzeKeySprite" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24, 48 )
+[node name="BronzeKeySprite" parent="." instance=ExtResource("2")]
+position = Vector2(24, 48)
 hframes = 16
 vframes = 128
-key = ExtResource( 4 )
+key = ExtResource("4")
 
 [node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 44.0
 
 [node name="GoldKeyLabel" type="Label" parent="GridContainer"]
-offset_right = 9.0
-offset_bottom = 17.0
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "0	"
 
 [node name="SilverKeyLabel" type="Label" parent="GridContainer"]
-offset_top = 21.0
-offset_right = 9.0
-offset_bottom = 38.0
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "0	"
 
 [node name="BronzeKeyLabel" type="Label" parent="GridContainer"]
-offset_top = 42.0
-offset_right = 9.0
-offset_bottom = 59.0
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "0"
