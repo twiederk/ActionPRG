@@ -11,7 +11,7 @@
 [ext_resource type="Resource" path="res://Items/Gems/Amber.tres" id="11"]
 [ext_resource type="Resource" path="res://Items/Gems/Topaz.tres" id="12"]
 [ext_resource type="Resource" path="res://Items/Gems/Opal.tres" id="13"]
-[ext_resource type="TileSet" path="res://Levels/Cave/CaveTileset.tres" id="14"]
+[ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="14"]
 [ext_resource type="TileSet" path="res://Levels/Village/Village.tres" id="15"]
 [ext_resource type="PackedScene" path="res://Scenery/Plants/Bush.tscn" id="16"]
 [ext_resource type="PackedScene" path="res://Items/Keys/Key.tscn" id="18"]
