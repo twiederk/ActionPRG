@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" path="res://Items/Gems/Gem.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
-[ext_resource type="PackedScene" path="res://Items/Keys/Key.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://dycmwwofckp6f" path="res://Items/Keys/Key.tscn" id="16"]
 [ext_resource type="Resource" path="res://Items/Keys/BronzeKey.tres" id="17"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
 [ext_resource type="Resource" path="res://Items/Weapons/RubinSword.tres" id="19"]
@@ -182,22 +182,27 @@ y_sort_enabled = true
 
 [node name="PurpleCrystalLarge" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
 position = Vector2(249, 279)
+collision_mask = 0
 item_resource = ExtResource("10")
 
 [node name="PurpleCrystalLarge2" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
 position = Vector2(265, 311)
+collision_mask = 0
 item_resource = ExtResource("10")
 
 [node name="PurpleCrystalMedium" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
 position = Vector2(247, 311)
+collision_mask = 0
 item_resource = ExtResource("11")
 
 [node name="PurpleCrystalSmall" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
 position = Vector2(231, 297)
+collision_mask = 0
 item_resource = ExtResource("12")
 
 [node name="PurpleCrystalSmall2" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
 position = Vector2(231, 279)
+collision_mask = 0
 item_resource = ExtResource("12")
 
 [node name="Treasure_Zyxel" type="Node2D" parent="Node2D"]
@@ -206,46 +211,57 @@ position = Vector2(127, 710)
 
 [node name="GreenCystalMedium" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(-46, -11)
+collision_mask = 0
 item_resource = ExtResource("24")
 
 [node name="GreenCystalMedium2" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(-23, -29)
+collision_mask = 0
 item_resource = ExtResource("24")
 
 [node name="GreenCystalMedium3" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(-5, -39)
+collision_mask = 0
 item_resource = ExtResource("24")
 
 [node name="GreenCystalSmall" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(25, -14)
+collision_mask = 0
 item_resource = ExtResource("25")
 
 [node name="GreenCystalSmall2" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(25, -35)
+collision_mask = 0
 item_resource = ExtResource("25")
 
 [node name="GreenCystalSmall3" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(24, -54)
+collision_mask = 0
 item_resource = ExtResource("25")
 
 [node name="GreenCystalSmall4" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(7, -55)
+collision_mask = 0
 item_resource = ExtResource("25")
 
 [node name="GreenCystalSmall5" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(-14, -56)
+collision_mask = 0
 item_resource = ExtResource("25")
 
 [node name="GreenCystalLarge" parent="Node2D/Treasure_Zyxel" instance=ExtResource("13")]
 position = Vector2(-28, -11)
+collision_mask = 0
 item_resource = ExtResource("23")
 
 [node name="RubinSword" parent="Node2D/Treasure_Zyxel" instance=ExtResource("20")]
 position = Vector2(-9, 2)
+collision_mask = 0
 item_resource = ExtResource("19")
 
 [node name="RubinPlate" parent="Node2D/Treasure_Zyxel" instance=ExtResource("22")]
 position = Vector2(16, 2)
+collision_mask = 0
 item_resource = ExtResource("21")
 
 [node name="Bats" type="Node2D" parent="Node2D"]
@@ -308,6 +324,7 @@ key = 2
 
 [node name="HealPotion" parent="Node2D/Fixtures" instance=ExtResource("5")]
 position = Vector2(-135, 344)
+collision_mask = 0
 item_resource = ExtResource("3")
 
 [node name="VillagePortal" parent="Node2D/Fixtures" instance=ExtResource("9")]
@@ -320,10 +337,12 @@ starting_position = Vector2(1176, 169)
 
 [node name="BronzeKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
 position = Vector2(277, 423)
+collision_mask = 0
 item_resource = ExtResource("17")
 
 [node name="GoldKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
 position = Vector2(40, 697)
+collision_mask = 0
 item_resource = ExtResource("7")
 
 [connection signal="door_opened" from="Node2D/Fixtures/NormalDoor" to="." method="_on_NormalDoor_door_opened"]

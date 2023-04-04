@@ -14,9 +14,9 @@
 shader = ExtResource("9")
 shader_parameter/active = false
 
-[sub_resource type="CapsuleShape2D" id="2"]
-radius = 2.99999
-height = 5.99998
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8n5n"]
+radius = 4.0
+height = 14.0
 
 [sub_resource type="Animation" id="3"]
 length = 0.4
@@ -732,13 +732,11 @@ graph_offset = Vector2(0, -190.209)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="46"]
 
-[sub_resource type="CapsuleShape2D" id="47"]
-radius = 6.0
-height = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av0o5"]
 
-[sub_resource type="CapsuleShape2D" id="48"]
-radius = 2.0
-height = 4.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jy17"]
+radius = 5.0
+height = 14.0
 
 [sub_resource type="Animation" id="49"]
 resource_name = "Start"
@@ -797,7 +795,7 @@ frame = 36
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
 rotation = -1.5708
-shape = SubResource("2")
+shape = SubResource("CapsuleShape2D_v8n5n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -823,7 +821,7 @@ collision_mask = 8
 script = ExtResource("4")
 
 [node name="CollisionShape2D" parent="HitboxPivot/PlayerHitbox" index="0"]
-shape = SubResource("47")
+shape = SubResource("CapsuleShape2D_av0o5")
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("5")]
@@ -831,7 +829,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, -4)
-shape = SubResource("48")
+shape = SubResource("CapsuleShape2D_4jy17")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7")
