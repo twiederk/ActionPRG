@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://pfbh475geebh"]
+[gd_scene load_steps=33 format=3 uid="uid://pfbh475geebh"]
 
 [ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="1"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBrown.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://Items/Potions/Potion.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="6"]
-[ext_resource type="Resource" path="res://Items/Keys/GoldKey.tres" id="7"]
 [ext_resource type="PackedScene" path="res://Scenery/Camera2D.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://Scenery/Portal.tscn" id="9"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleLarge.tres" id="10"]
@@ -17,7 +16,6 @@
 [ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
 [ext_resource type="PackedScene" uid="uid://dycmwwofckp6f" path="res://Items/Keys/Key.tscn" id="16"]
-[ext_resource type="Resource" path="res://Items/Keys/BronzeKey.tres" id="17"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
 [ext_resource type="Resource" path="res://Items/Weapons/RubinSword.tres" id="19"]
 [ext_resource type="PackedScene" path="res://Items/Weapons/Weapon.tscn" id="20"]
@@ -338,12 +336,10 @@ starting_position = Vector2(1176, 169)
 [node name="BronzeKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
 position = Vector2(277, 423)
 collision_mask = 0
-item_resource = ExtResource("17")
 
 [node name="GoldKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
 position = Vector2(40, 697)
 collision_mask = 0
-item_resource = ExtResource("7")
 
 [connection signal="door_opened" from="Node2D/Fixtures/NormalDoor" to="." method="_on_NormalDoor_door_opened"]
 

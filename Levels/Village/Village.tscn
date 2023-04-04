@@ -1,7 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://b178v6d02784s"]
 
 [ext_resource type="Resource" path="res://Items/Weapons/Sword.tres" id="2"]
-[ext_resource type="Resource" path="res://Items/Keys/GoldKey.tres" id="3"]
 [ext_resource type="TileSet" uid="uid://cioneeel7hhtt" path="res://Levels/Village/IslandTileSet4.tres" id="3_van85"]
 [ext_resource type="Resource" path="res://Items/Potions/BluePotion.tres" id="4"]
 [ext_resource type="Resource" path="res://Items/Armor/LeatherArmor.tres" id="5"]
@@ -30,6 +29,7 @@
 [ext_resource type="Resource" path="res://Scenery/Plants/ChristmasTree.tres" id="31"]
 [ext_resource type="Resource" path="res://Items/Potions/RedFlower.tres" id="32"]
 [ext_resource type="Resource" path="res://Items/Armor/ChainMail.tres" id="33"]
+[ext_resource type="Resource" path="res://Items/Keys/GoldKey.tres" id="33_28gpe"]
 [ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="34"]
 [ext_resource type="Resource" path="res://Items/Weapons/LongSword.tres" id="35"]
 [ext_resource type="Resource" path="res://Items/Keys/SilverKey.tres" id="37"]
@@ -1452,16 +1452,15 @@ item_resource = ExtResource("35")
 [node name="GoldKey_House" parent="Node2D/Fixtures" instance=ExtResource("18")]
 position = Vector2(118, 138)
 collision_mask = 0
-item_resource = ExtResource("3")
+item_resource = ExtResource("33_28gpe")
 
 [node name="GoldKey_Georg" parent="Node2D/Fixtures" instance=ExtResource("18")]
 position = Vector2(785, 753)
 collision_mask = 0
-item_resource = ExtResource("3")
+item_resource = ExtResource("33_28gpe")
 
-[node name="SilverKey_Home" parent="Node2D/Fixtures" instance=ExtResource("18")]
-position = Vector2(463, 111)
-collision_mask = 0
+[node name="SilverKey_Home" parent="Node2D/Fixtures" instance=ExtResource("34")]
+position = Vector2(464, 109)
 item_resource = ExtResource("37")
 
 [node name="RedPotion" parent="Node2D/Fixtures" instance=ExtResource("19")]

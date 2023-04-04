@@ -3,7 +3,7 @@ extends Area2D
 
 signal picked_up_item(item_resource)
 
-@export var item_resource: Resource
+@export var item_resource: Resource = preload("res://Items/Weapons/Hand.tres")
 
 var _collectable = true
 
