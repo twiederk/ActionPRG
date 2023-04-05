@@ -1,11 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://pfbh475geebh"]
+[gd_scene load_steps=31 format=3 uid="uid://pfbh475geebh"]
 
 [ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="1"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="2"]
 [ext_resource type="TileSet" uid="uid://dtocvv6seb2b6" path="res://Levels/Cave/CaveTileset4.tres" id="2_u4q1w"]
-[ext_resource type="Resource" path="res://Items/Potions/RedPotion.tres" id="3"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBrown.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://Items/Potions/Potion.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://Scenery/Camera2D.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://Scenery/Portal.tscn" id="9"]
@@ -15,11 +13,10 @@
 [ext_resource type="PackedScene" path="res://Items/Gems/Gem.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
+[ext_resource type="PackedScene" uid="uid://725j32cqvfdr" path="res://Items/Weapons/RubinSword.tscn" id="16_hpqgu"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
-[ext_resource type="Resource" path="res://Items/Weapons/RubinSword.tres" id="19"]
-[ext_resource type="PackedScene" path="res://Items/Weapons/Weapon.tscn" id="20"]
-[ext_resource type="Resource" path="res://Items/Armor/RubinPlate.tres" id="21"]
-[ext_resource type="PackedScene" path="res://Items/Armor/Armor.tscn" id="22"]
+[ext_resource type="PackedScene" uid="uid://dswhj611sdxmp" path="res://Items/Armor/RubinPlate.tscn" id="18_8pe5u"]
+[ext_resource type="PackedScene" uid="uid://cpfyaip3naqk2" path="res://Items/Potions/RedPotion.tscn" id="21_nggfi"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenLarge.tres" id="23"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenMedium.tres" id="24"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenSmall.tres" id="25"]
@@ -253,15 +250,11 @@ position = Vector2(-28, -11)
 collision_mask = 0
 item_resource = ExtResource("23")
 
-[node name="RubinSword" parent="Node2D/Treasure_Zyxel" instance=ExtResource("20")]
+[node name="RubinSword" parent="Node2D/Treasure_Zyxel" instance=ExtResource("16_hpqgu")]
 position = Vector2(-9, 2)
-collision_mask = 0
-item_resource = ExtResource("19")
 
-[node name="RubinPlate" parent="Node2D/Treasure_Zyxel" instance=ExtResource("22")]
+[node name="RubinPlate" parent="Node2D/Treasure_Zyxel" instance=ExtResource("18_8pe5u")]
 position = Vector2(16, 2)
-collision_mask = 0
-item_resource = ExtResource("21")
 
 [node name="Bats" type="Node2D" parent="Node2D"]
 y_sort_enabled = true
@@ -321,10 +314,8 @@ y_sort_enabled = true
 position = Vector2(-39, 393)
 key = 2
 
-[node name="HealPotion" parent="Node2D/Fixtures" instance=ExtResource("5")]
+[node name="HealPotion" parent="Node2D/Fixtures" instance=ExtResource("21_nggfi")]
 position = Vector2(-135, 344)
-collision_mask = 0
-item_resource = ExtResource("3")
 
 [node name="VillagePortal" parent="Node2D/Fixtures" instance=ExtResource("9")]
 position = Vector2(-42, 136)
