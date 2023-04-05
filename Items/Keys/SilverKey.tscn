@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hoh47cxc2sfi"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_jqdb5"]
+[ext_resource type="Resource" path="res://Items/Keys/SilverKey.tres" id="2_gmuui"]
+
+[node name="SilverKey" instance=ExtResource("1_jqdb5")]
+item_resource = ExtResource("2_gmuui")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 530

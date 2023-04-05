@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://pfbh475geebh"]
+[gd_scene load_steps=34 format=3 uid="uid://pfbh475geebh"]
 
 [ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="1"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="2"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" path="res://Items/Gems/Gem.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
-[ext_resource type="PackedScene" uid="uid://dycmwwofckp6f" path="res://Items/Keys/Key.tscn" id="16"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
 [ext_resource type="Resource" path="res://Items/Weapons/RubinSword.tres" id="19"]
 [ext_resource type="PackedScene" path="res://Items/Weapons/Weapon.tscn" id="20"]
@@ -25,7 +24,9 @@
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenMedium.tres" id="24"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenSmall.tres" id="25"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatPurple.tscn" id="26"]
+[ext_resource type="PackedScene" uid="uid://dtcu0q84400je" path="res://Items/Keys/BronzeKey.tscn" id="26_vyur3"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatBlue.tscn" id="27"]
+[ext_resource type="PackedScene" uid="uid://cbqrh3cuk84gh" path="res://Items/Keys/GoldKey.tscn" id="27_gek5y"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 resource_local_to_scene = true
@@ -333,13 +334,11 @@ starting_position = Vector2(1065, 300)
 position = Vector2(247, 520)
 starting_position = Vector2(1176, 169)
 
-[node name="BronzeKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
-position = Vector2(277, 423)
-collision_mask = 0
+[node name="BronzeKey" parent="Node2D/Fixtures" instance=ExtResource("26_vyur3")]
+position = Vector2(278, 423)
 
-[node name="GoldKey" parent="Node2D/Fixtures" instance=ExtResource("16")]
+[node name="GoldKey" parent="Node2D/Fixtures" instance=ExtResource("27_gek5y")]
 position = Vector2(40, 697)
-collision_mask = 0
 
 [connection signal="door_opened" from="Node2D/Fixtures/NormalDoor" to="." method="_on_NormalDoor_door_opened"]
 

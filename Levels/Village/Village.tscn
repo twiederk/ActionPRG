@@ -13,7 +13,6 @@
 [ext_resource type="Resource" path="res://Items/Gems/Opal.tres" id="13"]
 [ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="14"]
 [ext_resource type="PackedScene" path="res://Scenery/Plants/Bush.tscn" id="16"]
-[ext_resource type="PackedScene" uid="uid://dycmwwofckp6f" path="res://Items/Keys/Key.tscn" id="18"]
 [ext_resource type="PackedScene" path="res://Items/Potions/Potion.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="20"]
 [ext_resource type="PackedScene" path="res://Scenery/Plants/Tree.tscn" id="21"]
@@ -28,10 +27,11 @@
 [ext_resource type="Resource" path="res://Items/Armor/Leather.tres" id="30"]
 [ext_resource type="Resource" path="res://Scenery/Plants/ChristmasTree.tres" id="31"]
 [ext_resource type="Resource" path="res://Items/Potions/RedFlower.tres" id="32"]
+[ext_resource type="PackedScene" uid="uid://cbqrh3cuk84gh" path="res://Items/Keys/GoldKey.tscn" id="32_rxdkc"]
 [ext_resource type="Resource" path="res://Items/Armor/ChainMail.tres" id="33"]
-[ext_resource type="Resource" path="res://Items/Keys/GoldKey.tres" id="33_28gpe"]
 [ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="34"]
 [ext_resource type="Resource" path="res://Items/Weapons/LongSword.tres" id="35"]
+[ext_resource type="PackedScene" uid="uid://hoh47cxc2sfi" path="res://Items/Keys/SilverKey.tscn" id="35_ywn7t"]
 [ext_resource type="Resource" path="res://Items/Keys/SilverKey.tres" id="37"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatPurple.tscn" id="38"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatBlue.tscn" id="39"]
@@ -1449,19 +1449,14 @@ item_resource = ExtResource("33")
 position = Vector2(1425, 548)
 item_resource = ExtResource("35")
 
-[node name="GoldKey_House" parent="Node2D/Fixtures" instance=ExtResource("18")]
-position = Vector2(118, 138)
-collision_mask = 0
-item_resource = ExtResource("33_28gpe")
+[node name="GoldKey_House" parent="Node2D/Fixtures" instance=ExtResource("32_rxdkc")]
+position = Vector2(118, 141)
 
-[node name="GoldKey_Georg" parent="Node2D/Fixtures" instance=ExtResource("18")]
-position = Vector2(785, 753)
-collision_mask = 0
-item_resource = ExtResource("33_28gpe")
+[node name="GoldKey_George" parent="Node2D/Fixtures" instance=ExtResource("32_rxdkc")]
+position = Vector2(785, 755)
 
-[node name="SilverKey_Home" parent="Node2D/Fixtures" instance=ExtResource("34")]
-position = Vector2(464, 109)
-item_resource = ExtResource("37")
+[node name="SilverKey_House" parent="Node2D/Fixtures" instance=ExtResource("35_ywn7t")]
+position = Vector2(463, 107)
 
 [node name="RedPotion" parent="Node2D/Fixtures" instance=ExtResource("19")]
 position = Vector2(48, 236)
