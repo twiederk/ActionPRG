@@ -12,7 +12,6 @@
 [ext_resource type="Resource" path="res://Items/Gems/Opal.tres" id="13"]
 [ext_resource type="TileSet" uid="uid://cs18t5whrtklj" path="res://Levels/Cave/CaveTileset.tres" id="14"]
 [ext_resource type="PackedScene" path="res://Scenery/Plants/Bush.tscn" id="16"]
-[ext_resource type="PackedScene" path="res://Items/Potions/Potion.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="20"]
 [ext_resource type="PackedScene" path="res://Scenery/Plants/Tree.tscn" id="21"]
 [ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="22"]
@@ -27,11 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://drjnhbcbv7oig" path="res://Items/Weapons/LongSword.tscn" id="29_wqbxd"]
 [ext_resource type="Resource" path="res://Items/Armor/Leather.tres" id="30"]
 [ext_resource type="Resource" path="res://Scenery/Plants/ChristmasTree.tres" id="31"]
-[ext_resource type="Resource" path="res://Items/Potions/RedFlower.tres" id="32"]
 [ext_resource type="PackedScene" uid="uid://cpfyaip3naqk2" path="res://Items/Potions/RedPotion.tscn" id="32_aia1b"]
 [ext_resource type="PackedScene" uid="uid://cbqrh3cuk84gh" path="res://Items/Keys/GoldKey.tscn" id="32_rxdkc"]
+[ext_resource type="PackedScene" uid="uid://ch14ybdk5jo1x" path="res://Items/Potions/BluePotion.tscn" id="33_1o8nm"]
 [ext_resource type="PackedScene" uid="uid://hoh47cxc2sfi" path="res://Items/Keys/SilverKey.tscn" id="35_ywn7t"]
 [ext_resource type="Resource" path="res://Items/Keys/SilverKey.tres" id="37"]
+[ext_resource type="PackedScene" uid="uid://cu45h7nk3xns7" path="res://Items/Potions/RedFlower.tscn" id="37_0udnk"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatPurple.tscn" id="38"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/BatBlue.tscn" id="39"]
 [ext_resource type="PackedScene" path="res://Enemies/Bat/GiantBat.tscn" id="40"]
@@ -1459,87 +1459,55 @@ position = Vector2(48, 236)
 [node name="RedPotion2" parent="Node2D/Fixtures" instance=ExtResource("32_aia1b")]
 position = Vector2(-337, 17)
 
-[node name="BluePotion" parent="Node2D/Fixtures" instance=ExtResource("19")]
+[node name="BluePotion" parent="Node2D/Fixtures" instance=ExtResource("33_1o8nm")]
 position = Vector2(-225, 300)
-collision_mask = 0
-item_resource = ExtResource("4")
 
 [node name="Flowers" type="Node2D" parent="Node2D/Fixtures"]
 
-[node name="RedFlower" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(552, 295)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(363, 207)
 
-[node name="RedFlower8" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(312, 215)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower2" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(349, 227)
 
-[node name="RedFlower9" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(332, 226)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower3" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(335, 246)
 
-[node name="RedFlower10" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(353, 218)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower4" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(310, 210)
 
-[node name="RedFlower11" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(350, 241)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower5" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(326, 225)
 
-[node name="RedFlower12" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(366, 201)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower6" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(551, 295)
 
-[node name="RedFlower2" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(579, 303)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower7" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(577, 302)
 
-[node name="RedFlower5" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(491, 601)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower8" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(491, 602)
 
-[node name="RedFlower6" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(508, 588)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower9" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(514, 589)
 
-[node name="RedFlower7" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(513, 609)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower10" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(512, 609)
 
-[node name="RedFlower13" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(1082, 774)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower11" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(-86, 548)
 
-[node name="RedFlower14" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(1099, 761)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower12" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(-75, 567)
 
-[node name="RedFlower15" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(1104, 782)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower13" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(1086, 775)
 
-[node name="RedFlower3" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(-85, 552)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower14" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(1103, 757)
 
-[node name="RedFlower4" parent="Node2D/Fixtures/Flowers" instance=ExtResource("19")]
-position = Vector2(-73, 571)
-collision_mask = 0
-item_resource = ExtResource("32")
+[node name="RedFlower15" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
+position = Vector2(1112, 781)
 
 [node name="Door_Charly" parent="Node2D/Fixtures" instance=ExtResource("22")]
 position = Vector2(-207, 541)
