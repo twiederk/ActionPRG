@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://8se3f7q3qyxx"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_xx4qc"]
+[ext_resource type="Resource" path="res://Items/Armor/ChainMail.tres" id="2_w44pv"]
+
+[node name="ChainMail" instance=ExtResource("1_xx4qc")]
+item_resource = ExtResource("2_w44pv")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 63

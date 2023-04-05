@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dswhj611sdxmp"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_ajxae"]
+[ext_resource type="Resource" path="res://Items/Armor/RubinPlate.tres" id="2_5xh07"]
+
+[node name="RubinPlate" instance=ExtResource("1_ajxae")]
+item_resource = ExtResource("2_5xh07")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 66

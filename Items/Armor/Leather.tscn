@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2x0kqxiepr8v"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_lt6on"]
+[ext_resource type="Resource" path="res://Items/Armor/Leather.tres" id="2_rookw"]
+
+[node name="Leather" instance=ExtResource("1_lt6on")]
+item_resource = ExtResource("2_rookw")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 60
