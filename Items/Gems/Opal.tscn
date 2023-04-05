@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpw3nisvdyl2h"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_xgevy"]
+[ext_resource type="Resource" path="res://Items/Gems/Opal.tres" id="2_eghhc"]
+
+[node name="Opal" instance=ExtResource("1_xgevy")]
+item_resource = ExtResource("2_eghhc")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 445
