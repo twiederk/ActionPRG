@@ -1,26 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bexjs3wo6bc7b"]
 
-[ext_resource path="res://Assets/Graphics/World/Grass.png" type="Texture2D" id=1]
-[ext_resource path="res://Scenery/Plants/Grass.gd" type="Script" id=2]
-[ext_resource path="res://Shared/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource type="Texture2D" uid="uid://bfp48wtwm1ld0" path="res://Assets/Graphics/World/Grass.png" id="1"]
+[ext_resource type="Script" path="res://Scenery/Plants/Grass.gd" id="2"]
+[ext_resource type="PackedScene" path="res://Shared/Hurtbox.tscn" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
-size = Vector2( 7.11344, 6.97129 )
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_123ca"]
+size = Vector2(14, 14)
 
 [node name="Grass" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 centered = false
-offset = Vector2( -8, -8 )
+offset = Vector2(-8, -8)
 
-[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+[node name="Hurtbox" parent="." instance=ExtResource("3")]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 8, 8 )
-shape = SubResource( 1 )
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_123ca")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
