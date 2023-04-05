@@ -54,6 +54,9 @@ func _init_game_properties():
 
 
 func _physics_process(delta):
+# TODO fix velocity
+#	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+#	knockback = move_and_slide(knockback)
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	set_velocity(knockback)
 	move_and_slide()
@@ -83,6 +86,8 @@ func _physics_process(delta):
 	if softCollision.is_colliding():
 		velocity = softCollision.get_push_vector() * delta * 400
 
+# TODO fix velocity
+#	velocity = move_and_slide(velocity)
 	set_velocity(velocity)
 	move_and_slide()
 	velocity = velocity
