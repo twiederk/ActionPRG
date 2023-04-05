@@ -20,9 +20,9 @@
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenLarge.tres" id="23"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenMedium.tres" id="24"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenSmall.tres" id="25"]
-[ext_resource type="PackedScene" path="res://Enemies/Bat/BatPurple.tscn" id="26"]
+[ext_resource type="PackedScene" uid="uid://0pijo3lcghk7" path="res://Enemies/Bat/BatPurple.tscn" id="26"]
 [ext_resource type="PackedScene" uid="uid://dtcu0q84400je" path="res://Items/Keys/BronzeKey.tscn" id="26_vyur3"]
-[ext_resource type="PackedScene" path="res://Enemies/Bat/BatBlue.tscn" id="27"]
+[ext_resource type="PackedScene" uid="uid://6d4ujvosgdek" path="res://Enemies/Bat/BatBlue.tscn" id="27"]
 [ext_resource type="PackedScene" uid="uid://cbqrh3cuk84gh" path="res://Items/Keys/GoldKey.tscn" id="27_gek5y"]
 
 [sub_resource type="ShaderMaterial" id="1"]
