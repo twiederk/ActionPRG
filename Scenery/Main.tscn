@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8hpaamwngx07"]
 
 [ext_resource type="PackedScene" uid="uid://c5051tgos4wb3" path="res://UI/GameStartUI.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://UI/GameOverUI.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://wpfh50p4qofj" path="res://UI/GameOverUI.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://b178v6d02784s" path="res://Levels/Village/Village.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://UI/HealthUI.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://rx3qqmgxxt80" path="res://UI/KeyUI.tscn" id="5"]
