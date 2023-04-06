@@ -168,6 +168,13 @@ show_percentage = true
 [node name="Sprite2D" parent="Node2D/Dragons/Dragon_Zyxel" index="3"]
 material = SubResource("1")
 
+[node name="Hurtbox" parent="Node2D/Dragons/Dragon_Zyxel" index="5"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Hitbox" parent="Node2D/Dragons/Dragon_Zyxel" index="8"]
+collision_mask = 4
+
 [node name="AnimationPlayer" parent="Node2D/Dragons/Dragon_Zyxel" index="11"]
 libraries = {
 "": SubResource("AnimationLibrary_78sgo")
