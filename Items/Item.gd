@@ -17,7 +17,6 @@ func _ready():
 
 
 func _on_Item_body_entered(body) -> void:
-	print("_on_Item_body_entered")
 	if is_collectable():
 		#warning-ignore:RETURN_VALUE_DISCARDED
 		connect("picked_up_item",Callable(body,"_on_Item_picked_up_item").bind(),CONNECT_ONE_SHOT)
