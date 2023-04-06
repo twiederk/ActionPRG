@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfp48wtwm1ld0" path="res://Assets/Graphics/World/Grass.png" id="1"]
 [ext_resource type="Script" path="res://Scenery/Plants/Grass.gd" id="2"]
-[ext_resource type="PackedScene" path="res://Shared/Hurtbox.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://tyd6wmsb46t7" path="res://Shared/Hurtbox.tscn" id="3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_123ca"]
 size = Vector2(14, 14)
@@ -16,7 +16,7 @@ centered = false
 offset = Vector2(-8, -8)
 
 [node name="Hurtbox" parent="." instance=ExtResource("3")]
-collision_layer = 8
+collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(8, 8)

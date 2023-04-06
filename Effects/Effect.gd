@@ -3,8 +3,7 @@ extends AnimatedSprite2D
 
 
 func _ready():
-	# warning-ignore:return_value_discarded
-	connect("animation_finished",Callable(self,"_on_animation_finished"))
+	animation_finished.connect(_on_animation_finished, CONNECT_ONE_SHOT)
 	play("Animate")
 
 func _on_animation_finished():
