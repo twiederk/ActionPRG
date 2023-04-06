@@ -114,8 +114,7 @@ func test_load_game():
 
 
 func _get_lines(file_name: String) -> Array:
-	var file = File.new()
-	file.open(file_name, File.READ)
+	var file = FileAccess.open(file_name, FileAccess.READ)
 	var lines = []
 	while file.get_position() < file.get_length():
 		lines.append(file.get_line())
@@ -124,6 +123,5 @@ func _get_lines(file_name: String) -> Array:
 
 
 func _delete_file(file_name: String) -> void:
-	var dir = Directory.new()
-	dir.open("user://")
+	var dir = DirAccess.open("user://")
 	dir.remove(file_name)
