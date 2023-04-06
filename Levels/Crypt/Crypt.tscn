@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://dk55qy0b1y6en" path="res://Levels/Crypt/DungeonTileset4.tres" id="2_lu11g"]
 [ext_resource type="PackedScene" path="res://Scenery/Camera2D.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Scenery/Portal.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cob5quwsnb0uc" path="res://Scenery/Portal.tscn" id="4"]
 [ext_resource type="Script" path="res://Levels/Crypt/Crypt.gd" id="5"]
-[ext_resource type="PackedScene" path="res://Scenery/SecretDoor.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://3lfs2u0ymhka" path="res://Scenery/SecretDoor.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://hoh47cxc2sfi" path="res://Items/Keys/SilverKey.tscn" id="8_r3awj"]
 
 [node name="Crypt" type="Node"]
@@ -32,9 +32,9 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-3, 17, 0, -65536, 14, 0, -65535, 14, 0, -65534, 14, 0, 65533, 17, 0, 65534, 15, 0, 0, 14, 0, 1, 14, 0, 2, 14, 0, 131070, 16, 0, 65542, 9, 0, 65543, 65545, 0, 196605, 65547, 0, 131073, 12, 1, 131074, 12, 1, 262141, 65547, 0, 196610, 65546, 0, 196614, 9, 0, 196615, 65545, 0, 196619, 65545, 0, 196620, 9, 0, 327677, 65547, 0, 262146, 10, 0, 917511, 9, 0, 917512, 65545, 0, 917513, 9, 0, 917514, 9, 0, 917515, 65545, 0, 917516, 9, 0, 1048583, 9, 0, 1048584, 65545, 0, 1048585, 9, 0, 1048586, 9, 0, 1048587, 65545, 0, 1048588, 9, 0)
 
 [node name="CryptSecretPassageTileMap" type="TileMap" parent="."]
-tile_set = ExtResource("1")
+tile_set = ExtResource("2_lu11g")
 format = 2
-layer_0/tile_data = PackedInt32Array(655372, 65539, 2, 655373, 65539, 2, 655374, 65539, 2, 655375, 65539, 2, 655376, 65539, 2, 655377, 65539, 2, 655378, 262147, 0, 720914, 3, 1, 786446, 65539, 0, 786447, 65539, 0, 786448, 65539, 0, 786449, 65539, 0, 786450, 65539, 0)
+layer_0/tile_data = PackedInt32Array(655372, 65537, 2, 655373, 65537, 2, 655374, 65537, 2, 655375, 65537, 2, 655376, 65537, 2, 655377, 65537, 2, 655378, 262145, 0, 720914, 1, 1, 786446, 65537, 0, 786447, 65537, 0, 786448, 65537, 0, 786449, 65537, 0, 786450, 65537, 0, 720907, 65536, 7, 720908, 65536, 7, 720909, 65536, 7, 720910, 65536, 7, 720911, 65536, 7, 720912, 65536, 7, 720913, 65536, 7)
 
 [node name="CryptSecretPassageStrairs" type="TileMap" parent="CryptSecretPassageTileMap"]
 tile_set = ExtResource("1")

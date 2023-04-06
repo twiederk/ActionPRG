@@ -12,4 +12,4 @@ func _ready():
 func _on_SecretDoor_door_opened(world_position):
 	cryptSecretPassageTileMap.visible = true
 	var door_position = cryptWallTileMap.local_to_map(world_position)
-	cryptWallTileMap.set_cellv(door_position, -1)
+	cryptWallTileMap.erase_cell(0, door_position)

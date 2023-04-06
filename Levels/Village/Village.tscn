@@ -5,7 +5,7 @@
 [ext_resource type="Resource" path="res://Items/Potions/BluePotion.tres" id="4"]
 [ext_resource type="Resource" path="res://Items/Gems/Amethyst.tres" id="6"]
 [ext_resource type="TileSet" uid="uid://mh3p5pq1v3rx" path="res://Levels/Village/VillageTileSet4.tres" id="7_136ol"]
-[ext_resource type="PackedScene" path="res://Scenery/Portal.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://cob5quwsnb0uc" path="res://Scenery/Portal.tscn" id="8"]
 [ext_resource type="Resource" path="res://Items/Potions/RedPotion.tres" id="9"]
 [ext_resource type="Resource" path="res://Items/Gems/Amber.tres" id="11"]
 [ext_resource type="Resource" path="res://Items/Gems/Topaz.tres" id="12"]
