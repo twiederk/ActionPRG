@@ -162,6 +162,7 @@ visible = false
 shape = SubResource("21")
 
 [node name="Hitbox" parent="." instance=ExtResource("7")]
+collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 modulate = Color(1, 0.188235, 0, 0.564706)
