@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://qr5aqgbc38ux"]
+[gd_scene load_steps=26 format=3 uid="uid://qr5aqgbc38ux"]
 
 [ext_resource type="Texture2D" uid="uid://cp77bl15y4irp" path="res://Assets/Graphics/Enemies/Bat_purple.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://63yncynokwlo" path="res://Assets/Graphics/Shadows/SmallShadow.png" id="2"]
@@ -11,6 +11,22 @@
 [ext_resource type="PackedScene" path="res://Enemies/WanderController.tscn" id="9"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="10"]
 [ext_resource type="Resource" path="res://Enemies/Bat/BatPurple.tres" id="11"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcyse"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xawv"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="ShaderMaterial" id="17"]
 resource_local_to_scene = true
@@ -127,6 +143,8 @@ offset_left = -9.0
 offset_top = -28.0
 offset_right = 9.0
 offset_bottom = -25.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bcyse")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8xawv")
 show_percentage = false
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
