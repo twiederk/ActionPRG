@@ -16,7 +16,6 @@ var max_speed = 25
 var FRICTION = 200
 var WANDER_TARGET_RANGE = 4
 var health: int = 0
-#var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var weight = 0
 var _ranged_weapon_cool_down_time: float = 0
