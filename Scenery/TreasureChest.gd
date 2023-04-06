@@ -47,7 +47,7 @@ func open_treasure_chest() -> void:
 	treasure_state = TreasureState.OPEN
 	audioStreamPlayer.stream = check_open_sfx
 	audioStreamPlayer.play()
-	sprite.texture = load("res://Assets/Graphics/Scenery/TreasureChest_open.png")
+	sprite.texture = load("res://Assets/Graphics/World/TreasureChest_open.png")
 	place_treasuries(create_treasuries())
 
 
