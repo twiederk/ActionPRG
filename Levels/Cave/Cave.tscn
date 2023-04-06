@@ -11,7 +11,7 @@
 [ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleMedium.tres" id="11"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleSmall.tres" id="12"]
 [ext_resource type="PackedScene" path="res://Items/Gems/Gem.tscn" id="13"]
-[ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://d1u5d2d77ennh" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
 [ext_resource type="PackedScene" uid="uid://725j32cqvfdr" path="res://Items/Weapons/RubinSword.tscn" id="16_hpqgu"]
 [ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]

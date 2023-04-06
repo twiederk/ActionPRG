@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://oyu3udx5uxs2" path="res://Scenery/Plants/Bush.tscn" id="16"]
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://da3oemcahi4u7" path="res://Scenery/Plants/Tree.tscn" id="21"]
-[ext_resource type="PackedScene" path="res://Scenery/NormalDoor.tscn" id="22"]
+[ext_resource type="PackedScene" uid="uid://d1u5d2d77ennh" path="res://Scenery/NormalDoor.tscn" id="22"]
 [ext_resource type="TileSet" path="res://Levels/Crypt/DungeonTileset.tres" id="23"]
 [ext_resource type="PackedScene" path="res://Scenery/TreasureChest.tscn" id="24"]
 [ext_resource type="PackedScene" path="res://Scenery/InvisibleBarrier.tscn" id="25"]
@@ -1515,7 +1515,11 @@ position = Vector2(-207, 541)
 [node name="Door_Hildegard" parent="Node2D/Fixtures" instance=ExtResource("22")]
 position = Vector2(210, 357)
 
-[node name="Door_Hildegard2" parent="Node2D/Fixtures" instance=ExtResource("22")]
+[node name="Door_Wizard_Tower" parent="Node2D/Fixtures" instance=ExtResource("22")]
 position = Vector2(1392, 186)
+
+[connection signal="door_opened" from="Node2D/Fixtures/Door_Charly" to="." method="_on_NormalDoor_door_opened"]
+[connection signal="door_opened" from="Node2D/Fixtures/Door_Hildegard" to="." method="_on_NormalDoor_door_opened"]
+[connection signal="door_opened" from="Node2D/Fixtures/Door_Wizard_Tower" to="." method="_on_NormalDoor_door_opened"]
 
 [editable path="Camera3D"]

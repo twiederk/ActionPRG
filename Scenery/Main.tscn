@@ -61,8 +61,6 @@ visible = false
 
 [node name="GameOverUI" parent="GUI" instance=ExtResource("2")]
 visible = false
-layout_mode = 3
-anchors_preset = 0
 
 [node name="GamePauseUI" parent="GUI" instance=ExtResource("10")]
 process_mode = 2

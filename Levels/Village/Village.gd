@@ -8,5 +8,6 @@ const NAME = "Village"
 
 
 func _on_NormalDoor_door_opened(world_position):
+	print("open the door")
 	var door_position = wall_tile_map.local_to_map(world_position)
 	wall_tile_map.set_cellv(door_position, -1)

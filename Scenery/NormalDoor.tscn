@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://d1u5d2d77ennh"]
 
-[ext_resource path="res://Scenery/NormalDoor.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sounds/KeyMissing.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Sounds/DoorOpen.ogg" type="AudioStream" id=3]
+[ext_resource type="Script" path="res://Scenery/NormalDoor.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://qj8enh1ahwd" path="res://Assets/Sounds/KeyMissing.ogg" id="2"]
+[ext_resource type="AudioStream" uid="uid://c0r0q4iahnnen" path="res://Assets/Sounds/DoorOpen.ogg" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id="1"]
 
 [node name="NormalDoor" type="Area2D"]
 collision_layer = 64
-collision_mask = 0
-script = ExtResource( 1 )
-DOOR_OPEN_SFX = ExtResource( 3 )
-MISSING_KEY_SFX = ExtResource( 2 )
+collision_mask = 2
+script = ExtResource("1")
+DOOR_OPEN_SFX = ExtResource("3")
+MISSING_KEY_SFX = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [connection signal="body_entered" from="." to="." method="_on_NormalDoor_body_entered"]
