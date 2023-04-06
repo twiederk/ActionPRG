@@ -52,16 +52,8 @@ func _init_game_properties():
 	weight = enemie_resource.weight
 
 
-func _physics_process(delta):
-# TODO fix velocity
-#   before
-#	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
-#	knockback = move_and_slide(knockback)
-#   after
-#	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
-#	set_velocity(knockback)
-#	move_and_slide()
-#	knockback = velocity
+func _physics_process(delta: float):
+	knockback_move(delta)
 
 	match state:
 		EnemieState.IDLE:
@@ -88,6 +80,14 @@ func _physics_process(delta):
 		velocity = softCollision.get_push_vector() * delta * 400
 
 	move_and_slide()
+
+
+func knockback_move(delta: float) -> void:
+	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+	var current_velocity = velocity
+	set_velocity(knockback)
+	move_and_slide()
+	set_velocity(current_velocity)
 
 
 func chase_state(delta: float) -> void:
