@@ -1518,8 +1518,4 @@ position = Vector2(210, 357)
 [node name="Door_Hildegard2" parent="Node2D/Fixtures" instance=ExtResource("22")]
 position = Vector2(1392, 186)
 
-[connection signal="door_opened" from="Node2D/Fixtures/Door_Charly" to="." method="_on_NormalDoor_door_opened"]
-[connection signal="door_opened" from="Node2D/Fixtures/Door_Hildegard" to="." method="_on_NormalDoor_door_opened"]
-[connection signal="door_opened" from="Node2D/Fixtures/Door_Hildegard2" to="." method="_on_NormalDoor_door_opened"]
-
 [editable path="Camera3D"]
