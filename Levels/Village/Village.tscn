@@ -1480,7 +1480,7 @@ position = Vector2(310, 210)
 position = Vector2(326, 225)
 
 [node name="RedFlower6" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
-position = Vector2(551, 295)
+position = Vector2(557, 297)
 
 [node name="RedFlower7" parent="Node2D/Fixtures/Flowers" instance=ExtResource("37_0udnk")]
 position = Vector2(577, 302)

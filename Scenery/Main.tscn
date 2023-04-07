@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scenery/Main.gd" id="7"]
 [ext_resource type="PackedScene" path="res://Scenery/GlobalAudioStreamPlayer.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://bvmaaym5qahcy" path="res://UI/ExperienceUI.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://UI/GamePauseUI.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://blnkh5gxj1yaj" path="res://UI/GamePauseUI.tscn" id="10"]
 
 [node name="Main" type="Node"]
 script = ExtResource("7")
@@ -63,5 +63,3 @@ visible = false
 [node name="GamePauseUI" parent="GUI" instance=ExtResource("10")]
 process_mode = 2
 visible = false
-layout_mode = 3
-anchors_preset = 0
