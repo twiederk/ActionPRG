@@ -21,8 +21,6 @@ script = ExtResource("7")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="GUI" instance=ExtResource("4")]
-layout_mode = 3
-anchors_preset = 0
 offset_left = 3.0
 offset_top = 3.0
 offset_right = 63.0
