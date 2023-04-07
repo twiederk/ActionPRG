@@ -4,8 +4,8 @@ extends Control
 @onready var resumeButton = $ColorRect/ResumeButton
 
 
-func _unhandled_input(event):
-	print("_unhandled_input")
+func _unhandled_key_input(event):
+	print("_unhandled_key_input")
 	if event.is_action_pressed("toggle_pause"):
 		var tree = get_tree()
 		tree.paused = not tree.paused
@@ -14,6 +14,7 @@ func _unhandled_input(event):
 		else:
 			close()
 		get_viewport().set_input_as_handled()
+		
 
 func open():
 	show()
