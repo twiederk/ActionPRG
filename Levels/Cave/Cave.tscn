@@ -342,6 +342,8 @@ position = Vector2(278, 423)
 [node name="GoldKey" parent="Node2D/Fixtures" instance=ExtResource("27_gek5y")]
 position = Vector2(40, 697)
 
+[connection signal="door_opened" from="Node2D/Fixtures/NormalDoor" to="." method="_on_NormalDoor_door_opened"]
+
 [editable path="Camera3D"]
 [editable path="Node2D/Dragons/Dragon_Zyxel"]
 [editable path="Node2D/Dragons/Dragon_Zyxel/Hurtbox"]
