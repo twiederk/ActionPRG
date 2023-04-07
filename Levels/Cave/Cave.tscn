@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d1u5d2d77ennh" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
 [ext_resource type="PackedScene" uid="uid://725j32cqvfdr" path="res://Items/Weapons/RubinSword.tscn" id="16_hpqgu"]
-[ext_resource type="PackedScene" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://q3ya8morqhfo" path="res://Enemies/Dragon/DragonBlue.tscn" id="18"]
 [ext_resource type="PackedScene" uid="uid://dswhj611sdxmp" path="res://Items/Armor/RubinPlate.tscn" id="18_8pe5u"]
 [ext_resource type="PackedScene" uid="uid://cpfyaip3naqk2" path="res://Items/Potions/RedPotion.tscn" id="21_nggfi"]
 [ext_resource type="Resource" path="res://Items/Gems/CrystalGreenLarge.tres" id="23"]
@@ -33,6 +33,7 @@ shader_parameter/active = false
 [sub_resource type="Animation" id="18"]
 resource_name = "Fly"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -161,12 +162,6 @@ boss_name = "Dragon"
 [node name="Dragon_Zyxel" parent="Node2D/Dragons" instance=ExtResource("18")]
 position = Vector2(132, 717)
 boss_name = "Zyxel"
-
-[node name="NameLabel" parent="Node2D/Dragons/Dragon_Zyxel" index="0"]
-horizontal_alignment = 0
-
-[node name="HealthBar" parent="Node2D/Dragons/Dragon_Zyxel" index="1"]
-show_percentage = true
 
 [node name="Sprite2D" parent="Node2D/Dragons/Dragon_Zyxel" index="3"]
 material = SubResource("1")
