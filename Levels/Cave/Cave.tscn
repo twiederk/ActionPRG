@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bx2lyqitg86pb" path="res://Player/Player.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://Scenery/Camera2D.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://cob5quwsnb0uc" path="res://Scenery/Portal.tscn" id="9"]
-[ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleLarge.tres" id="10"]
-[ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleMedium.tres" id="11"]
-[ext_resource type="Resource" path="res://Items/Gems/CrystalPurpleSmall.tres" id="12"]
+[ext_resource type="PackedScene" uid="uid://b60e26rq1f507" path="res://Items/Gems/CrystalPurpleMedium.tscn" id="10_xokan"]
+[ext_resource type="PackedScene" uid="uid://chfw1rthpah8l" path="res://Items/Gems/CrystalPurpleSmall.tscn" id="11_i7a8s"]
+[ext_resource type="PackedScene" uid="uid://cgcgew06ggswx" path="res://Items/Gems/CrystalPurpleLarge.tscn" id="12_0uo3h"]
 [ext_resource type="PackedScene" path="res://Items/Gems/Gem.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://d1u5d2d77ennh" path="res://Scenery/NormalDoor.tscn" id="14"]
 [ext_resource type="Script" path="res://Levels/Cave/Cave.gd" id="15"]
@@ -156,14 +156,13 @@ remote_path = NodePath("../../../Camera3D")
 y_sort_enabled = true
 
 [node name="Dragon_Dragon" parent="Node2D/Dragons" instance=ExtResource("4")]
+visible = false
 position = Vector2(227, 315)
-collision_mask = 385
 boss_name = "Dragon"
 
 [node name="Dragon_Zyxel" parent="Node2D/Dragons" instance=ExtResource("18")]
 visible = false
 position = Vector2(132, 717)
-collision_mask = 385
 boss_name = "Zyxel"
 
 [node name="Sprite2D" parent="Node2D/Dragons/Dragon_Zyxel" index="3"]
@@ -185,30 +184,20 @@ libraries = {
 [node name="Trasure_Dragon" type="Node2D" parent="Node2D"]
 y_sort_enabled = true
 
-[node name="PurpleCrystalLarge" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
+[node name="CrystalPurpleLarge" parent="Node2D/Trasure_Dragon" instance=ExtResource("12_0uo3h")]
 position = Vector2(249, 279)
-collision_mask = 0
-item_resource = ExtResource("10")
 
-[node name="PurpleCrystalLarge2" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
+[node name="CrystalPurpleLarge2" parent="Node2D/Trasure_Dragon" instance=ExtResource("12_0uo3h")]
 position = Vector2(265, 311)
-collision_mask = 0
-item_resource = ExtResource("10")
 
-[node name="PurpleCrystalMedium" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
+[node name="CrystalPurpleMedium" parent="Node2D/Trasure_Dragon" instance=ExtResource("10_xokan")]
 position = Vector2(247, 311)
-collision_mask = 0
-item_resource = ExtResource("11")
 
-[node name="PurpleCrystalSmall" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
+[node name="CrystalPurpleSmall" parent="Node2D/Trasure_Dragon" instance=ExtResource("11_i7a8s")]
 position = Vector2(231, 297)
-collision_mask = 0
-item_resource = ExtResource("12")
 
-[node name="PurpleCrystalSmall2" parent="Node2D/Trasure_Dragon" instance=ExtResource("13")]
+[node name="CrystalPurpleSmall2" parent="Node2D/Trasure_Dragon" instance=ExtResource("11_i7a8s")]
 position = Vector2(231, 279)
-collision_mask = 0
-item_resource = ExtResource("12")
 
 [node name="Treasure_Zyxel" type="Node2D" parent="Node2D"]
 y_sort_enabled = true
@@ -270,67 +259,51 @@ y_sort_enabled = true
 
 [node name="BatBlue" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(74, 387)
-collision_mask = 385
 
 [node name="BatBlue2" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(101, 374)
-collision_mask = 385
 
 [node name="BatBlue3" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(89, 380)
-collision_mask = 385
 
 [node name="BatBlue4" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(76, 282)
-collision_mask = 385
 
 [node name="BatBlue5" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(88, 289)
-collision_mask = 385
 
 [node name="BatBlue6" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(102, 299)
-collision_mask = 385
 
 [node name="BatPurple" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(-86, 327)
-collision_mask = 385
 
 [node name="BatBlue7" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(245, 396)
-collision_mask = 385
 
 [node name="BatPurple3" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(232, 391)
-collision_mask = 385
 
 [node name="BatPurple4" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(222, 402)
-collision_mask = 385
 
 [node name="BatPurple5" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(233, 549)
-collision_mask = 385
 
 [node name="BatPurple6" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(262, 537)
-collision_mask = 385
 
 [node name="BatBlue8" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(236, 408)
-collision_mask = 385
 
 [node name="BatBlue9" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(247, 542)
-collision_mask = 385
 
 [node name="BatBlue10" parent="Node2D/Bats" instance=ExtResource("27")]
 position = Vector2(262, 553)
-collision_mask = 385
 
 [node name="BatPurple2" parent="Node2D/Bats" instance=ExtResource("26")]
 position = Vector2(-86, 348)
-collision_mask = 385
 
 [node name="Fixtures" type="Node2D" parent="Node2D"]
 y_sort_enabled = true
