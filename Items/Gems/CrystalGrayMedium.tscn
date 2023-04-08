@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmg5nrs8avji8"]
+
+[ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1_hqkxq"]
+[ext_resource type="Resource" path="res://Items/Gems/CrystalGrayMedium.tres" id="2_wri6u"]
+
+[node name="CrystalGrayMedium" instance=ExtResource("1_hqkxq")]
+item_resource = ExtResource("2_wri6u")
+
+[node name="Sprite2D" parent="." index="1"]
+frame = 1785
