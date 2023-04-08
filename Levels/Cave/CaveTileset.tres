@@ -1,56 +1,9 @@
-[gd_resource type="TileSet" load_steps=26 format=3 uid="uid://cs18t5whrtklj"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://cs18t5whrtklj"]
 
 [ext_resource type="Texture2D" uid="uid://bgyofkhtlrb8" path="res://Assets/Graphics/Tilesets/cave_B.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://d0jb2yin4w267" path="res://Assets/Graphics/Tilesets/cave_A.png" id="2"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38wft"]
-texture = ExtResource("2")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1olfn"]
-texture = ExtResource("2")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jvvh"]
-texture = ExtResource("1")
-margins = Vector2i(208, 96)
-0:0/next_alternative_id = 8
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/1/physics_layer_0/angular_velocity = 0.0
-0:0/2 = 2
-0:0/2/flip_v = true
-0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/2/physics_layer_0/angular_velocity = 0.0
-0:0/3 = 3
-0:0/3/flip_h = true
-0:0/3/flip_v = true
-0:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/3/physics_layer_0/angular_velocity = 0.0
-0:0/4 = 4
-0:0/4/transpose = true
-0:0/4/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/4/physics_layer_0/angular_velocity = 0.0
-0:0/5 = 5
-0:0/5/flip_h = true
-0:0/5/transpose = true
-0:0/5/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/5/physics_layer_0/angular_velocity = 0.0
-0:0/6 = 6
-0:0/6/flip_v = true
-0:0/6/transpose = true
-0:0/6/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/6/physics_layer_0/angular_velocity = 0.0
-0:0/7 = 7
-0:0/7/flip_h = true
-0:0/7/flip_v = true
-0:0/7/transpose = true
-0:0/7/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gd2y"]
+resource_name = "Pillars"
 texture = ExtResource("1")
 margins = Vector2i(0, 145)
 0:0/next_alternative_id = 8
@@ -383,6 +336,7 @@ margins = Vector2i(0, 145)
 3:1/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lga50"]
+resource_name = "Stairs"
 texture = ExtResource("1")
 margins = Vector2i(64, 145)
 0:0/next_alternative_id = 8
@@ -535,6 +489,7 @@ margins = Vector2i(64, 145)
 1:1/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2yk4"]
+resource_name = "Boxes"
 texture = ExtResource("1")
 margins = Vector2i(0, 177)
 0:0/next_alternative_id = 8
@@ -809,6 +764,7 @@ margins = Vector2i(0, 177)
 5:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -7, 8, -7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ly6b"]
+resource_name = "Ladders"
 texture = ExtResource("1")
 margins = Vector2i(112, 145)
 0:0/next_alternative_id = 8
@@ -924,6 +880,7 @@ margins = Vector2i(112, 145)
 0:2/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bqu4"]
+resource_name = "Signs"
 texture = ExtResource("1")
 margins = Vector2i(96, 161)
 0:0/next_alternative_id = 8
@@ -1002,6 +959,7 @@ margins = Vector2i(96, 161)
 0:1/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7nmm"]
+resource_name = "Ladder down"
 texture = ExtResource("1")
 margins = Vector2i(96, 145)
 0:0/next_alternative_id = 8
@@ -1043,6 +1001,7 @@ margins = Vector2i(96, 145)
 0:0/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kj4w"]
+resource_name = "Fence"
 texture = ExtResource("1")
 margins = Vector2i(128, 176)
 0:0/next_alternative_id = 8
@@ -1992,6 +1951,7 @@ margins = Vector2i(128, 176)
 6:2/7/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brp6k"]
+resource_name = "Bridge Wood"
 texture = ExtResource("1")
 margins = Vector2i(128, 144)
 0:0/next_alternative_id = 8
@@ -2292,6 +2252,7 @@ margins = Vector2i(128, 144)
 3:1/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqc5k"]
+resource_name = "Bridge Stone"
 texture = ExtResource("1")
 margins = Vector2i(48, 93)
 0:0/next_alternative_id = 8
@@ -2517,10 +2478,8 @@ margins = Vector2i(48, 93)
 2:1/7/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/7/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lcdtg"]
-texture = ExtResource("2")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcrt5"]
+resource_name = "Walls"
 texture = ExtResource("1")
 0:0/next_alternative_id = 8
 0:0/0 = 0
@@ -4056,6 +4015,7 @@ texture = ExtResource("1")
 11:2/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lv8x"]
+resource_name = "Switch"
 texture = ExtResource("1")
 margins = Vector2i(128, 112)
 0:0/next_alternative_id = 8
@@ -4355,51 +4315,8 @@ margins = Vector2i(128, 112)
 3:1/7/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/7/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rrw4"]
-texture = ExtResource("1")
-margins = Vector2i(240, 208)
-0:0/next_alternative_id = 8
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/1/physics_layer_0/angular_velocity = 0.0
-0:0/2 = 2
-0:0/2/flip_v = true
-0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/2/physics_layer_0/angular_velocity = 0.0
-0:0/3 = 3
-0:0/3/flip_h = true
-0:0/3/flip_v = true
-0:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/3/physics_layer_0/angular_velocity = 0.0
-0:0/4 = 4
-0:0/4/transpose = true
-0:0/4/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/4/physics_layer_0/angular_velocity = 0.0
-0:0/5 = 5
-0:0/5/flip_h = true
-0:0/5/transpose = true
-0:0/5/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/5/physics_layer_0/angular_velocity = 0.0
-0:0/6 = 6
-0:0/6/flip_v = true
-0:0/6/transpose = true
-0:0/6/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/6/physics_layer_0/angular_velocity = 0.0
-0:0/7 = 7
-0:0/7/flip_h = true
-0:0/7/flip_v = true
-0:0/7/transpose = true
-0:0/7/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/7/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1oig"]
-texture = ExtResource("2")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwd1u"]
+resource_name = "Crystal Large"
 texture = ExtResource("1")
 margins = Vector2i(0, 49)
 0:0/next_alternative_id = 8
@@ -4650,6 +4567,7 @@ margins = Vector2i(0, 49)
 2:1/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfc7i"]
+resource_name = "Crystal"
 texture = ExtResource("1")
 margins = Vector2i(0, 81)
 0:0/next_alternative_id = 8
@@ -5122,6 +5040,7 @@ margins = Vector2i(0, 81)
 2:3/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x8aa"]
+resource_name = "Boulders"
 texture = ExtResource("1")
 margins = Vector2i(48, 49)
 0:0/next_alternative_id = 8
@@ -5576,6 +5495,7 @@ margins = Vector2i(48, 49)
 4:1/7/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lvhs"]
+resource_name = "Rails"
 texture = ExtResource("1")
 margins = Vector2i(128, 48)
 0:0/next_alternative_id = 8
@@ -6320,6 +6240,7 @@ margins = Vector2i(128, 48)
 4:3/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2si22"]
+resource_name = "Wagons"
 texture = ExtResource("1")
 margins = Vector2i(208, 80)
 0:0/next_alternative_id = 8
@@ -6435,6 +6356,7 @@ margins = Vector2i(208, 80)
 2:0/7/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bep66"]
+resource_name = "Wagons large"
 texture = ExtResource("1")
 margins = Vector2i(208, 48)
 0:0/next_alternative_id = 8
@@ -6689,17 +6611,12 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_38wft")
-sources/1 = SubResource("TileSetAtlasSource_1olfn")
-sources/2 = SubResource("TileSetAtlasSource_lcdtg")
-sources/3 = SubResource("TileSetAtlasSource_u1oig")
 sources/4 = SubResource("TileSetAtlasSource_uwd1u")
 sources/5 = SubResource("TileSetAtlasSource_bfc7i")
 sources/6 = SubResource("TileSetAtlasSource_3x8aa")
 sources/7 = SubResource("TileSetAtlasSource_1lvhs")
 sources/8 = SubResource("TileSetAtlasSource_2si22")
 sources/9 = SubResource("TileSetAtlasSource_bep66")
-sources/10 = SubResource("TileSetAtlasSource_1jvvh")
 sources/11 = SubResource("TileSetAtlasSource_0gd2y")
 sources/12 = SubResource("TileSetAtlasSource_lga50")
 sources/13 = SubResource("TileSetAtlasSource_x2yk4")
@@ -6711,4 +6628,3 @@ sources/18 = SubResource("TileSetAtlasSource_brp6k")
 sources/19 = SubResource("TileSetAtlasSource_iqc5k")
 sources/20 = SubResource("TileSetAtlasSource_tcrt5")
 sources/21 = SubResource("TileSetAtlasSource_6lv8x")
-sources/22 = SubResource("TileSetAtlasSource_5rrw4")
