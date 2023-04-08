@@ -159,7 +159,6 @@ position = Vector2(227, 315)
 boss_name = "Dragon"
 
 [node name="Dragon_Zyxel" parent="Node2D/Dragons" instance=ExtResource("18")]
-visible = false
 position = Vector2(132, 717)
 boss_name = "Zyxel"
 
