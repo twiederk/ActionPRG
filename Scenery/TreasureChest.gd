@@ -75,8 +75,8 @@ func create_node(item_resource: Resource) -> Node2D:
 	return node
 
 
-func get_target_position(global_position: Vector2, index: int) -> Vector2:
-	return global_position + (directions[index % directions.size()] * TWEEN_DISTANCE)
+func get_target_position(global_pos: Vector2, index: int) -> Vector2:
+	return global_pos + (directions[index % directions.size()] * TWEEN_DISTANCE)
 
 
 func place_treasuries(treasuries: Array) -> void:

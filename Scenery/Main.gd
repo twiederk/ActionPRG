@@ -55,14 +55,14 @@ func save_game():
 
 
 func _save_game(file_name: String, player: Player) -> void:
-	var save_game = FileAccess.open(str("user://", file_name, ".save"), FileAccess.WRITE)
+	var save_game_file = FileAccess.open(str("user://", file_name, ".save"), FileAccess.WRITE)
 	var player_stats = PlayerStats.save()
 	var player_postion = player.save()
 	var level_stats = LevelStats.save()
-	save_game.store_line(JSON.new().stringify(player_stats))
-	save_game.store_line(JSON.new().stringify(player_postion))
-	save_game.store_line(JSON.new().stringify(level_stats))
-	save_game.close()
+	save_game_file.store_line(JSON.stringify(player_stats))
+	save_game_file.store_line(JSON.stringify(player_postion))
+	save_game_file.store_line(JSON.stringify(level_stats))
+	save_game_file.close()
 
 
 func load_game() -> void:
