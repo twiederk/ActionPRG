@@ -8,11 +8,11 @@ func _ready():
 
 
 func _on_AudioEvents_play_sound(sound: String) -> void:
-	var stream = load(str("res://Assets/Sounds/", sound))
-	self.stream = stream
+	var stream_resource = load(str("res://Assets/Sounds/", sound))
+	self.stream = stream_resource
 	play()
 
 
-func _on_AudioEvents_play_stream(stream: Resource) -> void:
-	self.stream = stream
+func _on_AudioEvents_play_stream(stream_resource: Resource) -> void:
+	self.stream = stream_resource
 	play()
