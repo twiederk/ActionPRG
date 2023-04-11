@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tyd6wmsb46t7" path="res://Shared/Hurtbox.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://Enemies/HealthBar.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://Enemies/PlayerDetectionZone.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Shared/Hitbox.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://cj6dra6wh788q" path="res://Shared/Hitbox.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://Enemies/SoftCollision.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://Enemies/WanderController.tscn" id="9"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="10"]
