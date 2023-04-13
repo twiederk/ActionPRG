@@ -15,7 +15,8 @@ func test_ready():
 	add_child(projectile_scene)
 	
 	# assert
-	assert_eq(projectile_scene.sprite.frame_coords, Vector2(10, 20), "Should set frame coords of ranged weapon")
+	assert_eq(projectile_scene.sprite.frame_coords, Vector2i(10, 20), "Should set frame coords of ranged weapon")
+#	assert_eq(projectile_scene.sprite.frame_coords, Vector2i(10, 20))
 
 	# tear down
 	for child in get_children():
