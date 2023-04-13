@@ -80,7 +80,7 @@ func test_create_treasure():
 	assert_true(treasuries[1] is Gem, "Should be Gem scene")
 	assert_true(treasuries[1].item_resource is GemResource, "Should be GemResource")
 
-	assert_true(treasuries[2] is Key, "Should be Key scene")
+	assert_true(treasuries[2] is Item, "Should be Key scene")
 	assert_true(treasuries[2].item_resource is KeyResource, "Should be KeyResource")
 
 	assert_true(treasuries[3] is Potion, "Should be Potion scene")
