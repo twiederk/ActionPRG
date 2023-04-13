@@ -5,11 +5,12 @@ var experienceUI = null
 func before_each():
 	experienceUI = ExperienceUI.new()
 	experienceUI.experience_progress_bar = ProgressBar.new()
-	experienceUI.level_label = double(Label).new()
+	experienceUI.level_label = Label.new()
 
 
 func after_each():
 	experienceUI.experience_progress_bar.free()
+	experienceUI.level_label.free()
 	experienceUI.free()
 
 
