@@ -70,7 +70,7 @@ func test_load():
 	}
 
 	# act
-	var level_name = level_stats.load(level_dictionary)
+	var level_name = level_stats.load_game(level_dictionary)
 
 	# assert
 	assert_eq(level_name, "Cave", "Should return Cave as level name")

@@ -72,9 +72,9 @@ func load_game() -> void:
 
 func _load_game(file_name: String) -> Dictionary:
 	var dictionaries = _load_dictionaries(file_name)
-	PlayerStats.load(dictionaries[0])
+	PlayerStats.load_game(dictionaries[0])
 	var player_position = _load_player_position(dictionaries[1])
-	var level_name = LevelStats.load(dictionaries[2])
+	var level_name = LevelStats.load_game(dictionaries[2])
 	return { "current_level": level_name, "player_position": player_position }
 
 

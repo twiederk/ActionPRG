@@ -43,6 +43,6 @@ func save() -> Dictionary:
 	}
 
 
-func load(level_data: Dictionary) -> String:
+func load_game(level_data: Dictionary) -> String:
 	_visited_nodes = level_data["visited_nodes"]
 	return level_data["current_level"]

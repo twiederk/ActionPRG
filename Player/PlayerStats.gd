@@ -204,7 +204,7 @@ func save() -> Dictionary:
 	}
 
 
-func load(player_data: Dictionary) -> void:
+func load_game(player_data: Dictionary) -> void:
 	set_health(player_data["health"])
 	set_max_health(player_data["max_health"])
 	set_strength(player_data["strength"])
