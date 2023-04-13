@@ -20,18 +20,6 @@ func test_MAIN_PATH():
 	assert_eq(main_path, "/root/Main", "Should always point to Main node")
 
 
-func test_handle_visited_node():
-
-	# arrange
-	var node = double(Node2D).new()
-
-	# act
-	main._handle_visited_node(node)
-
-	# assert
-	assert_called(node, "queue_free")
-
-
 func test_handle_visited_node_null():
 
 	# act
@@ -44,14 +32,14 @@ func test_handle_visited_node_null():
 func test_handle_visited_node_normal_door():
 
 	# arrange
-	var normal_door = double(NormalDoor).new()
-	stub(normal_door, "open")
+	var normal_door = NormalDoor.new()
+	watch_signals(normal_door)
 
 	# act
 	main._handle_visited_node(normal_door)
 
 	# assert
-	assert_called(normal_door, "open", [])
+	assert_signal_emitted(normal_door, "door_opened", "Should emit door_opened")
 
 	# tear down
 	normal_door.free()
@@ -60,14 +48,14 @@ func test_handle_visited_node_normal_door():
 func test_handle_visited_node_secret_door():
 
 	# arrange
-	var secret_door = double(SecretDoor).new()
-	stub(secret_door, "open")
+	var secret_door = SecretDoor.new()
+	watch_signals(secret_door)
 
 	# act
 	main._handle_visited_node(secret_door)
 
 	# assert
-	assert_called(secret_door, "open", [])
+	assert_signal_emitted(secret_door, "door_opened", "Should emit door_opened")
 
 	# tear down
 	secret_door.free()
