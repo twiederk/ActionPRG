@@ -16,7 +16,7 @@ func after_each():
 func test_chase_state_player_null_IDLE():
 
 	# arrange
-	enemie.chaseDetectionZone = stub_detection_zone(false)
+	enemie.chaseDetectionZone = PlayerDetectionZone.new()
 
 	# act
 	enemie.chase_state(1.0)
@@ -31,8 +31,8 @@ func test_chase_state_player_null_IDLE():
 func test_shoot_state_player_null_IDLE():
 
 	# arrange
-	enemie.shootDetectionZone = stub_detection_zone(false)
-	enemie.chaseDetectionZone = stub_detection_zone(false)
+	enemie.shootDetectionZone = PlayerDetectionZone.new()
+	enemie.chaseDetectionZone = PlayerDetectionZone.new()
 
 	# act
 	enemie.shoot_state(1.0)
@@ -42,6 +42,7 @@ func test_shoot_state_player_null_IDLE():
 
 	# tear down
 	enemie.shootDetectionZone.free()
+	enemie.chaseDetectionZone.free()
 
 
 func test_shoot_state_player_in_chase_zone_CHASE():
@@ -64,14 +65,18 @@ func test_seek_player_out_of_shoot_zone_and_out_of_chase_zone_IDLE():
 
 	# arrange
 	enemie.state = Enemie.EnemieState.IDLE
-	enemie.shootDetectionZone = stub_detection_zone(false)
-	enemie.chaseDetectionZone = stub_detection_zone(false)
+	enemie.shootDetectionZone = PlayerDetectionZone.new()
+	enemie.chaseDetectionZone = PlayerDetectionZone.new()
 
 	# act
 	enemie.seek_player()
 
 	# assert
 	assert_eq(enemie.state, Enemie.EnemieState.IDLE, "Should stay in state IDLE")
+
+	# tear down
+	enemie.shootDetectionZone.free()
+	enemie.chaseDetectionZone.free()
 
 
 func test_seek_player_in_shoot_zone_and_in_chase_zone_CHASE():
