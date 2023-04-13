@@ -38,5 +38,5 @@
  "show_help": false,
  "suffix": ".gd",
  "tests": [],
- "unit_test_name": "test_seek_player_out_of_shoot_zone_and_out_of_chase_zone_IDLE"
+ "unit_test_name": null
 }
