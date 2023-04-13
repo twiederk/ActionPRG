@@ -17,7 +17,7 @@ func test_calculate_knockback_with_bat_purple():
 
 	# arrange
 	enemie.weight = bat_purple.weight
-	var playerHitbox = double(PlayerHitbox).new()
+	var playerHitbox = PlayerHitbox.new()
 	playerHitbox.knockback_direction = Vector2.DOWN
 
 	# act
@@ -26,12 +26,15 @@ func test_calculate_knockback_with_bat_purple():
 	# assert
 	assert_eq(knockback, Vector2(0, 120), "Should knockback normal bat by 120")
 
+	# tear down
+	playerHitbox.free()
+
 
 func test_calculate_knockback_with_bat_giant():
 
 	# arrange
 	enemie.weight = bat_giant.weight
-	var playerHitbox = double(PlayerHitbox).new()
+	var playerHitbox = PlayerHitbox.new()
 	playerHitbox.knockback_direction = Vector2.DOWN
 
 	# act
@@ -39,6 +42,9 @@ func test_calculate_knockback_with_bat_giant():
 
 	# assert
 	assert_eq(knockback, Vector2(0, 80), "Should knockback giant bat by 80")
+
+	# tear down
+	playerHitbox.free()
 
 
 func test_has_ranged_weapon_with_ranged_weapon():
