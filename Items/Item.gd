@@ -19,9 +19,9 @@ func _ready():
 func _on_Item_body_entered(body) -> void:
 	if is_collectable():
 		#warning-ignore:RETURN_VALUE_DISCARDED
-		connect("picked_up_item",Callable(body,"_on_Item_picked_up_item").bind(),CONNECT_ONE_SHOT)
-		emit_signal("picked_up_item", item_resource)
-		AudioEvents.play_stream.emit(item_resource.pickup_stream)
+		picked_up_item.connect(body._on_Item_picked_up_item)
+		picked_up_item.emit(item_resource)
+		AudioEvents.play_stream.emit("play_stream", item_resource.pickup_stream)
 		LevelStats.node_visited.emit(get_path())
 		queue_free()
 
