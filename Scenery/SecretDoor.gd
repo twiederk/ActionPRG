@@ -8,7 +8,7 @@ signal door_opened(world_position)
 
 func _on_SecretDoor_area_entered(area):
 	if area is PlayerHitbox:
-		LevelStats.emit_signal("node_visited", get_path())
+		LevelStats.node_visited.emit(get_path())
 		_collapse()
 		open()
 
