@@ -17,7 +17,7 @@ func _ready():
 	gold_key_label.text = str(PlayerStats.get_key(Key.GOLD))
 	silver_key_label.text = str(PlayerStats.get_key(Key.SILVER))
 	bronze_key_label.text = str(PlayerStats.get_key(Key.BRONZE))
-	PlayerStats.key_changed.onnect(_on_PlayerStats_key_changed)
+	PlayerStats.key_changed.connect(_on_PlayerStats_key_changed)
 	KeyEvents.connect("key_missing",Callable(self,"_on_KeyEvents_key_missing"))
 
 
