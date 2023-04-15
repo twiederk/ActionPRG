@@ -40,7 +40,7 @@ func _ready():
 func set_max_health(new_max_health) -> void:
 	_max_health = new_max_health
 	self._health = min(_health, _max_health)
-	emit_signal("max_health_changed", _max_health)
+	max_health_changed.emit(_max_health)
 
 
 func get_max_health() -> int:
