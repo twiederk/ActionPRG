@@ -26,7 +26,7 @@ var stats = PlayerStats
 
 func _ready():
 	randomize()
-	stats.connect("no_health",Callable(self,"queue_free"))
+	stats.no_health.connect(queue_free)
 	animationTree.active = true
 	playerHitbox.knockback_direction = roll_vector
 	sprite.texture = stats.get_weapon_swipe_texture()
