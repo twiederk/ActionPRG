@@ -99,7 +99,7 @@ func change_key(key_material: int, count: int) -> void:
 
 func set_key(key_material: int, key_count: int) -> void:
 	_keys[key_material] = key_count
-	emit_signal("key_changed", key_material, key_count)
+	key_changed.emit(key_material, key_count)
 
 
 func heal(life: int = 1) -> void:
