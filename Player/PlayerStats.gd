@@ -49,7 +49,7 @@ func get_max_health() -> int:
 
 func set_health(new_health: int) -> void:
 	_health = max(new_health, 0)
-	emit_signal("health_changed", _health)
+	health_changed.emit(_health)
 	if _health <= 0:
 		no_health.emit()
 
