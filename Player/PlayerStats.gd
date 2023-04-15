@@ -34,7 +34,7 @@ var _level: int = 1
 
 func _ready():
 	# warning-ignore:RETURN_VALUE_DISCARDED
-	connect("enemie_killed",Callable(self,"_on_enemie_killed"))
+	enemie_killed.connect(_on_enemie_killed)
 
 
 func set_max_health(new_max_health) -> void:
