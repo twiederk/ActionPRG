@@ -21,7 +21,7 @@ func _on_Item_body_entered(body) -> void:
 		#warning-ignore:RETURN_VALUE_DISCARDED
 		picked_up_item.connect(body._on_Item_picked_up_item)
 		picked_up_item.emit(item_resource)
-		AudioEvents.play_stream.emit("play_stream", item_resource.pickup_stream)
+		AudioEvents.play_stream.emit(item_resource.pickup_stream)
 		LevelStats.node_visited.emit(get_path())
 		queue_free()
 

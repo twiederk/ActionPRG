@@ -148,7 +148,7 @@ func reset() -> void:
 
 func set_experience_points(experience_points: int) -> void:
 	_experience_points = experience_points
-	emit_signal("experience_points_changed", _experience_points)
+	experience_points_changed.emit(_experience_points)
 
 
 func get_experience_points() -> int:
