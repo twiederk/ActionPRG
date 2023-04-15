@@ -182,7 +182,7 @@ func get_next_level_at(current_level: int) -> int:
 
 
 func level_up(current_level: int) -> void:
-	AudioEvents.emit_signal("play_stream", LEVEL_UP_VOICE)
+	AudioEvents.play_stream.emit(LEVEL_UP_VOICE)
 	var next_level = current_level + 1
 	set_level(next_level)
 	set_max_health(get_max_health() + LEVEL_UP_HEALTH)
