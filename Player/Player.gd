@@ -112,7 +112,7 @@ func _on_Hurtbox_area_entered(area) -> void:
 	stats.hurt(area.get_damage())
 	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
-	AudioEvents.emit_signal("play_sound", "Hurt.wav")
+	AudioEvents.play_sound.emit("Hurt.wav")
 
 
 func _on_Hurtbox_invincibility_started() -> void:
