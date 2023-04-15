@@ -15,9 +15,9 @@ var invincible = false : set = set_invincible
 func set_invincible(value):
 	invincible = value
 	if invincible == true:
-		emit_signal("invincibility_started")
+		invincibility_started.emit()
 	else:
-		emit_signal("invincibility_ended")
+		invincibility_ended.emit()
 
 
 func start_invincibility(duration):
