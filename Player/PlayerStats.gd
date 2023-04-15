@@ -60,7 +60,7 @@ func get_health() -> int:
 
 func set_weapon(weapon_resource: WeaponResource) -> void:
 	_weapon = weapon_resource
-	emit_signal("weapon_changed", _weapon)
+	weapon_changed.emit(_weapon)
 
 
 func get_weapon() -> WeaponResource:
