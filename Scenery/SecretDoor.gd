@@ -14,7 +14,7 @@ func _on_SecretDoor_area_entered(area):
 
 
 func open() -> void:
-	emit_signal("door_opened", global_position)
+	door_opened.emit(global_position)
 	queue_free()
 
 
