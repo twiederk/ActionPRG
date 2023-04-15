@@ -12,7 +12,7 @@ func _ready():
 	_on_PlayerStats_weapon_changed(PlayerStats.get_weapon())
 	_on_PlayerStats_armor_changed(PlayerStats.get_armor())
 	PlayerStats.weapon_changed.connect(_on_PlayerStats_weapon_changed)
-	PlayerStats.connect("armor_changed",Callable(self,"_on_PlayerStats_armor_changed"))
+	PlayerStats.armor_changed.connect(_on_PlayerStats_armor_changed)
 	PlayerStats.strength_changed.connect(_on_PlayerStats_strength_changed)
 
 
