@@ -16,7 +16,7 @@ func _on_NormalDoor_body_entered(body):
 		LevelStats.node_visited.emit(get_path())
 		open()
 	elif _is_missing_key(body):
-		KeyEvents.emit_signal("key_missing", key)
+		KeyEvents.key_missing.emit(key)
 		AudioEvents.emit_signal("play_stream", MISSING_KEY_SFX)
 
 

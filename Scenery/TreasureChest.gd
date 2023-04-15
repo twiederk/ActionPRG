@@ -30,7 +30,7 @@ func _on_TreasureChest_body_entered(_body):
 		open_treasure_chest()
 	elif is_missing_key(PlayerStats.get_key(Key.SILVER)):
 		audioStreamPlayer.play()
-		KeyEvents.emit_signal("key_missing", Key.SILVER)
+		KeyEvents.key_missing.emit(Key.SILVER)
 
 
 func can_be_opened(key) -> bool:
