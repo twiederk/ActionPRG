@@ -13,7 +13,7 @@ func _ready():
 	_on_PlayerStats_armor_changed(PlayerStats.get_armor())
 	PlayerStats.connect("weapon_changed",Callable(self,"_on_PlayerStats_weapon_changed"))
 	PlayerStats.connect("armor_changed",Callable(self,"_on_PlayerStats_armor_changed"))
-	PlayerStats.connect("strength_changed",Callable(self,"_on_PlayerStats_strength_changed"))
+	PlayerStats.strength_changed.connect(_on_PlayerStats_strength_changed)
 
 
 func _on_PlayerStats_weapon_changed(weapon_resource: WeaponResource) -> void:

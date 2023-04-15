@@ -118,7 +118,7 @@ func hurt(hit_damage: int = 1) -> void:
 
 func set_strength(strength: int) -> void:
 	_strength = strength
-	emit_signal("strength_changed", _strength)
+	strength_changed.emit(_strength)
 
 
 func get_strength() -> int:
