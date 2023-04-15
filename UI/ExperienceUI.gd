@@ -11,7 +11,7 @@ var _level = 1
 func _ready():
 	_on_PlayerStats_level_changed(PlayerStats.get_level(), PlayerStats.get_experience_points())
 	_on_PlayerStats_experience_points_changed(PlayerStats.get_experience_points())
-	PlayerStats.connect("level_changed",Callable(self,"_on_PlayerStats_level_changed"))
+	PlayerStats.level_changed.connect(_on_PlayerStats_level_changed)
 	PlayerStats.connect("experience_points_changed",Callable(self,"_on_PlayerStats_experience_points_changed"))
 
 

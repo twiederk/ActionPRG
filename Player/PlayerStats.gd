@@ -163,7 +163,7 @@ func gain_experience_points(experience_points: int) -> void:
 
 func set_level(level: int) -> void:
 	_level = level
-	emit_signal("level_changed", _level, _experience_points)
+	level_changed.emit(_level, _experience_points)
 
 
 func get_level() -> int:
