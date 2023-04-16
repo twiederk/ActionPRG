@@ -1,7 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://10f6svktec47"]
+[gd_scene load_steps=2 format=3 uid="uid://10f6svktec47"]
 
 [ext_resource type="PackedScene" uid="uid://6216wlljb3b5" path="res://Items/Item.tscn" id="1"]
-[ext_resource type="Script" path="res://Items/Gems/Gem.gd" id="2"]
 
 [node name="Gem" instance=ExtResource("1")]
-script = ExtResource("2")
