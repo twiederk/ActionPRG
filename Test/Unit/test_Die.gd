@@ -12,10 +12,9 @@ func test_roll_D4():
 
 	# arrange
 	seed(1)
-	var die = Die.new()
 
 	# act
-	var result = die.roll(Die.Name.D6)
+	var result = Die.roll(Die.Name.D6)
 
 	# assert
 	assert_eq(result, 4, "Should roll a 4")
