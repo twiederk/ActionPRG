@@ -1,8 +1,7 @@
-[gd_scene load_steps=62 format=3 uid="uid://bx2lyqitg86pb"]
+[gd_scene load_steps=61 format=3 uid="uid://bx2lyqitg86pb"]
 
 [ext_resource type="Texture2D" uid="uid://dj1co3ggup1dq" path="res://Assets/Graphics/Player/Player.png" id="1"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://cj6dra6wh788q" path="res://Shared/Hitbox.tscn" id="3"]
 [ext_resource type="Script" path="res://Player/PlayerHitbox.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://tyd6wmsb46t7" path="res://Shared/Hurtbox.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://cvu7ejruou3ym" path="res://Assets/Graphics/Shadows/MediumShadow.png" id="6"]
@@ -58,25 +57,13 @@ tracks/2/keys = {
 "update": 0,
 "values": [90.0]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("AudioStreamPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -84,7 +71,19 @@ tracks/4/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/4/use_blend = true
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="4"]
 length = 0.4
@@ -126,25 +125,13 @@ tracks/2/keys = {
 "update": 0,
 "values": [180.0]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("AudioStreamPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -152,7 +139,19 @@ tracks/4/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/4/use_blend = true
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="5"]
 length = 0.4
@@ -194,25 +193,13 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("AudioStreamPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -220,7 +207,19 @@ tracks/4/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/4/use_blend = true
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="6"]
 length = 0.4
@@ -262,25 +261,13 @@ tracks/2/keys = {
 "update": 0,
 "values": [270.0]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("AudioStreamPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -288,7 +275,19 @@ tracks/4/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/4/use_blend = true
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="7"]
 length = 0.1
@@ -590,6 +589,21 @@ tracks/0/keys = {
 "values": [7, 8, 9, 10, 11, 6]
 }
 
+[sub_resource type="Animation" id="Animation_rif5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j4unv"]
 _data = {
 "AttackDown": SubResource("3"),
@@ -600,6 +614,7 @@ _data = {
 "IdleLeft": SubResource("8"),
 "IdleRight": SubResource("9"),
 "IdleUp": SubResource("10"),
+"RESET": SubResource("Animation_rif5b"),
 "RollDown": SubResource("11"),
 "RollLeft": SubResource("12"),
 "RollRight": SubResource("13"),
@@ -734,9 +749,7 @@ states/Run/position = Vector2(509, 72)
 transitions = ["Idle", "Run", SubResource("39"), "Run", "Idle", SubResource("40"), "Idle", "Attack", SubResource("41"), "Attack", "Idle", SubResource("42"), "Roll", "Idle", SubResource("43"), "Idle", "Roll", SubResource("44")]
 graph_offset = Vector2(0, -190.209)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="46"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av0o5"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_urmoy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jy17"]
 radius = 5.0
@@ -794,7 +807,6 @@ material = SubResource("1")
 position = Vector2(0, -9)
 texture = ExtResource("1")
 hframes = 60
-frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
@@ -809,7 +821,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("45")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("46")
 parameters/Attack/blend_position = Vector2(0, 1)
 parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Roll/blend_position = Vector2(-1, 0.0170277)
@@ -817,15 +828,15 @@ parameters/Run/blend_position = Vector2(0, 1)
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
 position = Vector2(0, -4)
-rotation = 1.5708
 
-[node name="PlayerHitbox" parent="HitboxPivot" instance=ExtResource("3")]
-position = Vector2(15, 0)
+[node name="PlayerHitbox" type="Area2D" parent="HitboxPivot"]
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("4")
 
-[node name="CollisionShape2D" parent="HitboxPivot/PlayerHitbox" index="0"]
-shape = SubResource("CapsuleShape2D_av0o5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxPivot/PlayerHitbox"]
+position = Vector2(15, 0)
+shape = SubResource("CapsuleShape2D_urmoy")
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("5")]
@@ -837,7 +848,6 @@ position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_4jy17")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7")
 
 [node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -848,5 +858,4 @@ libraries = {
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
 
-[editable path="HitboxPivot/PlayerHitbox"]
 [editable path="Hurtbox"]

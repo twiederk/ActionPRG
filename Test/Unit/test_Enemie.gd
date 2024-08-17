@@ -59,4 +59,3 @@ func test_has_ranged_weapon_with_ranged_weapon():
 
 	# assert
 	assert_true(has_ranged_weapon, "Should return true for ranged weapon")
-

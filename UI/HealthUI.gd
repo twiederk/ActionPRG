@@ -18,5 +18,3 @@ func _on_PlayerStats_health_changed(health):
 func _on_PlayerStats_max_health_changed(max_health):
 	for child in get_children():
 		child.calculate_max_health(max_health)
-
-

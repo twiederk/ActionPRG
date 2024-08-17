@@ -4,8 +4,8 @@ extends Control
 @onready var resumeButton = $ColorRect/ResumeButton
 
 
-func _unhandled_key_input(event):
-	if event.is_action_pressed("toggle_pause"):
+func _input(event):
+	if event.is_action_pressed("pause"):
 		var tree = get_tree()
 		tree.paused = not tree.paused
 		if tree.paused:
@@ -40,5 +40,3 @@ func _on_RestartButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
-
-

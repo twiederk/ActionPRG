@@ -11,4 +11,3 @@ const WALL_LAYER = 0
 func _on_NormalDoor_door_opened(world_position):
 	var door_position = wall_tile_map.local_to_map(world_position)
 	wall_tile_map.erase_cell(WALL_LAYER, door_position)
-

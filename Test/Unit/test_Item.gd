@@ -9,4 +9,3 @@ func test_get_set_collectable():
 
 	# tear down
 	item.free()
-

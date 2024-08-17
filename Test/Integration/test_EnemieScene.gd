@@ -177,5 +177,3 @@ func test_calc_projectile_position_right():
 
 	# assert
 	assert_eq(projectile_position, Vector2(-5, -3), "Should place projectile to the right when player is to the right")
-
-
