@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://Enemies/PlayerDetectionZone.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://cj6dra6wh788q" path="res://Shared/Hitbox.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://Enemies/SoftCollision.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://Enemies/WanderController.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://nm3lkcogpnug" path="res://Enemies/WanderController.tscn" id="9"]
 [ext_resource type="Shader" path="res://Shaders/WhiteColor.gdshader" id="10"]
 [ext_resource type="Resource" path="res://Enemies/Bat/BatPurple.tres" id="11"]
 
