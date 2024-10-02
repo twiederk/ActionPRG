@@ -4,6 +4,11 @@ extends Node
 const MAIN_NODE_PATH = "/root/Main"
 
 
+func _ready():
+	if not OS.has_feature("editor"):
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+
+
 func restart():
 	goto_level(Village.NAME, Village.STARTING_POSITION)
 	PlayerStats.reset()
