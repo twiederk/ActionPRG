@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://drtxvu8oi0mfy"]
+
+[ext_resource type="Script" path="res://Levels/Village/Overview.gd" id="1_esri8"]
+[ext_resource type="PackedScene" uid="uid://b1vfnf034iw3h" path="res://Levels/Village/VillageTileMap.tscn" id="2_uje8m"]
+
+[node name="VillageOverview" type="Node2D"]
+position = Vector2(495, 152)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_esri8")
+
+[node name="VillageTileMap" parent="." instance=ExtResource("2_uje8m")]
+process_mode = 4

@@ -4,7 +4,7 @@ extends Node
 const STARTING_POSITION = Vector2(495, 152)
 const NAME = "Village"
 
-@onready var wall_layer: TileMapLayer = $WallLayer
+@onready var wall_layer: TileMapLayer = $VillageTileMap/WallLayer
 
 
 func _on_NormalDoor_door_opened(world_position):
