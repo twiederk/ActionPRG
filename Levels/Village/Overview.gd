@@ -1,6 +1,9 @@
 class_name Overview
 extends Node2D
 
+@onready var village_tile_map: Node2D = $VillageTileMap
+@onready var player_sprite: Sprite2D = $PlayerSprite
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("overview"):
@@ -14,11 +17,17 @@ func _input(event: InputEvent) -> void:
 
 
 func show_overview():
-	var player = get_tree().get_nodes_in_group("player")[0]
-	position = player.position
+	var viewport_size = get_viewport().size / 8
+	var center_position = viewport_size / 2
+	var player_position = get_tree().get_nodes_in_group("player")[0].position
+	position = player_position - Vector2(center_position)
+	player_sprite.position = player_position
 	show()
 
 
 func hide_overview():
 	hide()
 	position = Vector2(-100, -100)
+
+	
+	

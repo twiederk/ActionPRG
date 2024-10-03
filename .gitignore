@@ -10,3 +10,6 @@ lib/
 *.translation
 export_presets.cfg
 .mono/
+
+# IntelliJ
+.idea
