@@ -1476,7 +1476,7 @@ position = Vector2(1392, 186)
 
 [node name="Overview" parent="." instance=ExtResource("3_gfakv")]
 process_mode = 3
-position = Vector2(-50, -50)
+position = Vector2(41, -191)
 
 [connection signal="door_opened" from="Node2D/Fixtures/Door_Charly" to="." method="_on_NormalDoor_door_opened"]
 [connection signal="door_opened" from="Node2D/Fixtures/Door_Hildegard" to="." method="_on_NormalDoor_door_opened"]

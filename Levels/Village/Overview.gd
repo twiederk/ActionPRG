@@ -1,8 +1,14 @@
 class_name Overview
 extends Node2D
 
+var start_position: Vector2
+
 @onready var village_tile_map: Node2D = $VillageTileMap
 @onready var player_sprite: Sprite2D = $PlayerSprite
+
+
+func _ready() -> void:
+	start_position = position
 
 
 func _input(event: InputEvent) -> void:
@@ -26,8 +32,8 @@ func show_overview():
 
 
 func hide_overview():
+	position = start_position
 	hide()
-	position = Vector2(-100, -100)
 
 	
 	
