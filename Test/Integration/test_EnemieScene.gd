@@ -1,6 +1,6 @@
 extends GutTest
 
-const Enemie = preload("res://Enemies/Enemie.tscn")
+const EnemieScene = preload("res://Enemies/Enemie.tscn")
 
 var enemie_scene = null
 
@@ -10,7 +10,7 @@ func before_each():
 	var enemie_resource = EnemieResource.new()
 	enemie_resource.ranged_weapon = ranged_weapon
 
-	enemie_scene = Enemie.instantiate()
+	enemie_scene = EnemieScene.instantiate()
 	enemie_scene.enemie_resource = enemie_resource
 	add_child(enemie_scene)
 

@@ -5,8 +5,8 @@ enum EnemieState {IDLE, WANDER, CHASE, SHOOT}
 
 const DAMAGE_FORCE = 200
 const PROJECTILE_TILE_FACING = Vector2(1, 1)
-const Projectile = preload("res://Enemies/Projectile.tscn")
-const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const ProjectileScene = preload("res://Enemies/Projectile.tscn")
+const EnemyDeathEffectScene = preload("res://Effects/EnemyDeathEffect.tscn")
 
 @export var enemie_resource: Resource
 @export var boss_name: String = ""
@@ -125,7 +125,7 @@ func shoot(delta: float, player_position: Vector2) -> void:
 
 
 func create_projectile(player_position: Vector2, ranged_weapon: RangedWeaponResource) -> Projectile:
-	var projectile = Projectile.instantiate()
+	var projectile = ProjectileScene.instantiate()
 	projectile.position = calc_projectile_position(player_position)
 	var direction = projectile.position.direction_to(player_position)
 	projectile.velocity = direction * ranged_weapon.speed
@@ -168,7 +168,7 @@ func die():
 	LevelStats.node_visited.emit(get_path())
 	PlayerStats.enemie_killed.emit(enemie_resource)
 	queue_free()
-	var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	var enemyDeathEffect = EnemyDeathEffectScene.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
 

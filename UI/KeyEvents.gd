@@ -1,4 +1,4 @@
 extends Node
 
-#warning-ignore:UNUSED_SIGNAL
+@warning_ignore("unused_signal")
 signal key_missing(key_material)

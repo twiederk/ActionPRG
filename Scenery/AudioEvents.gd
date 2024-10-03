@@ -1,5 +1,6 @@
 extends Node
 
-#warning-ignore-all:UNUSED_SIGNAL
+@warning_ignore("unused_signal")
 signal play_sound(sound)
+@warning_ignore("unused_signal")
 signal play_stream(stream)

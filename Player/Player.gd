@@ -30,7 +30,6 @@ func _ready():
 	animationTree.active = true
 	playerHitbox.knockback_direction = roll_vector
 	sprite.texture = stats.get_weapon_swipe_texture()
-	get_window().mode = Window.MODE_MAXIMIZED if (true) else Window.MODE_WINDOWED
 
 
 func _physics_process(delta):
