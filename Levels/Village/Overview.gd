@@ -24,9 +24,11 @@ func _input(event: InputEvent) -> void:
 
 func show_overview():
 	var viewport_size = get_viewport().size / 8
-	var center_position = viewport_size / 2
+	var center_position = Vector2(viewport_size / 2)
 	var player_position = get_tree().get_nodes_in_group("player")[0].position
-	position = player_position - Vector2(center_position)
+	var offset = (Vector2(320, 48) / 8)
+	position = player_position + offset - center_position
+	
 	player_sprite.position = player_position
 	show()
 
